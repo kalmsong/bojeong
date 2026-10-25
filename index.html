@@ -5,8 +5,66 @@
 @media(max-width:960px){.top{height:60px;padding:0 14px}.brand small{display:none}.top .desktop-only{display:none}.display{padding:0}.stage{width:100%;height:auto;aspect-ratio:auto;min-height:calc(100dvh - 122px);border:0;box-shadow:none;container-type:normal;overflow:visible}.slide{position:relative;min-height:calc(100dvh - 122px);overflow:visible;padding:26px 18px 30px}.slidebody{overflow:visible}.slidehead h2{font-size:clamp(25px,6.7vw,36px)}.slidehead p{font-size:14px}.slidefoot{margin-top:24px;font-size:11px}.cover,.definition-layout,.far-layout,.unified-grid,.math-layout,.beta-layout,.map-layout,.gallery-main,.impact-layout,.moa-grid,.final-grid,.chain-bottom{grid-template-columns:1fr;height:auto}.cover{gap:20px}.cover h1{font-size:clamp(58px,13.5vw,90px)}.cover-art{max-height:310px}.cover-tags{margin-top:22px}.slidehead{padding-bottom:14px}.three-argument{grid-template-columns:1fr;height:auto}.argument{min-height:170px}.arg-icon{margin:8px 0}.timeline-grid{grid-template-columns:1fr 1fr;height:auto}.market-bottom,.sim-two{grid-template-columns:1fr}.fork{height:35px}.definition-main .lede{font-size:23px}.formula-wide{font-size:18px}.far-note h3{font-size:28px}.formula-editor,.formula-output,.chart-display,.math-explain,.beta-explain{padding:20px}.formula-major{font-size:26px}.chart-readout{grid-template-columns:1fr auto}.calc-steps{flex-wrap:wrap}.calc-steps>div{flex-basis:42%}.calc-plus{display:none}.result-ribbon{font-size:15px}.chain{display:grid;grid-template-columns:1fr;gap:5px;margin:15px 0 22px}.chain-arrow{text-align:center;transform:rotate(90deg)}.map-layout{gap:10px}.map-canvas{height:430px}.map-sites{max-height:230px}.map-sidebar{min-height:340px}.gallery-photo{height:300px}.gallery-copy{padding:20px}.gallery-tabs{grid-template-columns:repeat(2,1fr)}.impact-bars{margin-bottom:17px}.moa-scale{min-height:330px}.final-statement h3{font-size:38px}.mobilebar{position:sticky;bottom:0;z-index:10;display:flex;justify-content:space-between;align-items:center;background:#fff;border-top:1px solid var(--stroke);padding:10px 15px;gap:8px}.mobilebar button{font-size:13px;background:#fff;border:1px solid #d3dbd3;padding:10px 14px}.mobilebar b{font-variant-numeric:tabular-nums;font-size:13px}.catalog{height:580px}.catalog-head{flex-wrap:wrap}.catalog-head input{flex-basis:100%}.catalog-head select{flex:1}.catalog-head span{display:none}.map-summary p{font-size:12px}}
 @media(max-width:520px){.brand b{font-size:14px}.nav .btn{padding:7px 10px}.top{height:54px}.chapter{font-size:11px}.slide{padding:22px 16px 25px}.pageid{font-size:17px}.slidehead h2{font-size:27px}.cover h1{font-size:61px}.cover-sub{font-size:18px}.timeline-grid{grid-template-columns:1fr}.time-block{padding:17px}.market-main strong{font-size:20px}.market-bottom b{font-size:28px}.sim-bar-row{grid-template-columns:75px 1fr 65px;font-size:11px}.chart-display{padding:14px}.formula-major{font-size:24px}.far-stage{grid-template-columns:75px 1fr}.far-stage b{font-size:25px}.case-location h3{font-size:30px}.calc-steps>div{flex-basis:43%}.calc-steps div strong{font-size:35px}.map-canvas{height:350px}.map-key{font-size:10px;gap:7px}.gallery-photo{height:230px}.case-metrics{margin:12px 0}.switcher{width:100%}.switcher button{flex:1;padding:9px 5px;font-size:12px}.impact-row{grid-template-columns:85px 1fr 64px;gap:6px}.impact-row label{font-size:11px}.moa-big{padding:12px}.moa-big strong{font-size:46px}.moa-logic h3{font-size:27px}.final-statement h3{font-size:30px}}
 @media print{body,.app{background:#fff}.top,.progress,.mobilebar,.toc-layer{display:none!important}.display{display:block;padding:0}.stage{display:block;width:100%;max-width:none;aspect-ratio:auto;height:auto;border:0;box-shadow:none}.slide{display:flex!important;position:relative;page-break-after:always;break-after:page;height:100vh;overflow:hidden}.slidebody{overflow:hidden}.slidefoot{font-size:10px}}
+
+/* V5: source-backed teaching slides, fixed-site comparison, no tab reshuffling */
+.teacher-note{font-size:clamp(11px,1.18cqw,16px);line-height:1.55;color:#556359;background:#eef3ed;border-left:3px solid #357456;padding:11px 15px;margin-top:13px;word-break:keep-all}
+.teacher-note strong{color:#193e2c}
+.teacher-note.slim{padding:8px 12px;font-size:clamp(10px,1.03cqw,14px)}
+.grade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;height:100%;min-height:0}
+.grade-card{border:1px solid var(--stroke);padding:clamp(12px,1.8cqw,26px);background:#fff;display:flex;flex-direction:column;gap:12px;min-width:0}
+.grade-card.alt{background:#f3f7f2}
+.grade-card .category{font-size:12px;font-weight:750;color:var(--green);letter-spacing:.06em}
+.grade-card h3{margin:0;font-size:clamp(20px,2.1cqw,32px);letter-spacing:-.04em}
+.grade-card .keyline{font-size:clamp(16px,1.8cqw,24px);font-weight:800;color:#2b6550}
+.grade-card .grade-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.grade-card .grade-metrics div{border-top:1px solid #d4dcd5;padding:10px 0}
+.grade-card .grade-metrics small{display:block;font-size:11px;color:#667567}
+.grade-card .grade-metrics b{display:block;font-size:clamp(16px,1.7cqw,24px);margin-top:4px}
+.grade-card p{font-size:clamp(11px,1.13cqw,16px);line-height:1.58;color:#5f6d63}
+.grade-card a{font-size:12px;margin-top:auto}
+.fixed-table-wrap{height:100%;min-height:0;overflow-y:auto;border:1px solid #d7ded7}
+.fixed-result-table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:clamp(10px,1.12cqw,15px)}
+.fixed-result-table th{font-size:clamp(10px,1cqw,13px);text-align:left;background:#f0f4ef;color:#546457;padding:clamp(6px,.78cqw,12px);position:sticky;top:0;z-index:1;border-bottom:2px solid #bccbc0}
+.fixed-result-table td{border-bottom:1px solid #e1e7e0;padding:clamp(7px,1cqw,13px) clamp(5px,.8cqw,11px);vertical-align:middle;line-height:1.4;word-break:keep-all}
+.fixed-result-table tr:nth-child(even){background:#f8faf7}
+.fixed-result-table td b{font-weight:800;color:#214b35}
+.fixed-result-table .type-note{font-size:10px;color:#6a7b6d;display:block}
+.fixed-result-table .is-estimate{font-size:10px;color:#78857b;display:block}
+.fixed-table-bottom{font-size:clamp(10px,1cqw,13px);color:#657568;margin-top:9px}
+.moa-focus{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;height:100%;min-height:0}
+.moa-focus>div{min-width:0}
+.moa-big-num{font-size:clamp(37px,4cqw,64px);font-weight:850;line-height:1.05;color:var(--green)}
+.moa-meta-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.moa-meta-row>div{padding:15px;background:#f0f4ef;border:1px solid #d7e1d7}
+.moa-meta-row b{display:block;font-size:clamp(24px,3cqw,52px);line-height:1.1}
+.moa-meta-row small{font-size:12px;color:#6e786f}
+.moa-supply{padding:clamp(16px,2cqw,28px);border:1px solid #d8dfd8;background:white;display:flex;flex-direction:column;justify-content:space-between}
+.moa-supply .supply-line{display:grid;grid-template-columns:75px 1fr 65px;gap:10px;align-items:center;margin:13px 0;font-size:13px}
+.moa-supply .supply-track{height:25px;background:#e1e6e0;position:relative;overflow:hidden}
+.moa-supply .supply-track i{display:block;background:#a47c55;height:100%}
+.stakeholder-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;min-height:0}
+.stakeholder{border:1px solid #d4ddd4;padding:clamp(14px,1.9cqw,26px);min-width:0;display:flex;flex-direction:column}
+.stakeholder .stamp{font-size:12px;color:#56705e;font-weight:800;letter-spacing:.04em}
+.stakeholder strong{font-size:clamp(20px,2.05cqw,30px);line-height:1.3;margin:12px 0}
+.stakeholder p{font-size:clamp(12px,1.23cqw,17px);color:#5f6e62}
+.stakeholder small{font-size:11px;color:#8a9489;display:block;margin-top:auto;padding-top:18px}
+.conclusion-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:25px}
+.conclusion-boxes>div{border-top:3px solid #476e54;padding:14px;background:#f4f7f3}
+.conclusion-boxes strong{font-size:clamp(17px,1.8cqw,27px);display:block;margin-bottom:9px}
+.conclusion-boxes p{font-size:clamp(11px,1.12cqw,16px)}
+.guro-grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:18px;min-height:0}
+.guro-visual{border:1px solid #d7dfd6;background:#fafcf9;padding:15px;display:flex;flex-direction:column}
+.guro-visual svg{height:220px;width:100%;flex:1;min-height:135px}
+.guro-visual a{font-size:12px;font-weight:750;margin-top:8px}
+.guro-visual small{font-size:10px;color:#788679;display:block;margin-top:6px}
+.guro-math{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.guro-math .calc-steps{margin:0}
+.guro-math .result-ribbon{margin:0}
+.guro-math .teacher-note{margin:0}
+@media(max-width:900px){.grade-grid,.moa-focus,.stakeholder-grid,.conclusion-boxes,.guro-grid{grid-template-columns:1fr}.fixed-result-table{min-width:850px;font-size:12px}.fixed-table-wrap{overflow-x:auto}.grade-card .grade-metrics b{font-size:18px}.moa-big-num{font-size:44px}.guro-visual svg{height:220px}}
+@media(min-width:901px) and (max-height:800px){.grade-card{gap:6px}.grade-card p{line-height:1.35}.fixed-result-table td{padding:5px 7px}.stakeholder strong{margin:6px 0}.teacher-note{padding:7px 11px;margin-top:6px}}
 </style></head><body>
-<div class="app"><header class="top"><div class="brand"><span class="brandmark"></span><b>사업성 보정계수</b><small>SEOUL / POLICY STUDY</small></div><nav class="nav"><button class="btn" type="button" id="tocBtn">목차</button><button class="btn desktop-only" id="prev">← 이전</button><span class="page-counter desktop-only" id="pageCounter">01 / 19</span><button class="btn desktop-only" id="next">다음 →</button></nav></header><div class="progress"><div class="progress-inner" id="progress"></div></div>
+<div class="app"><header class="top"><div class="brand"><span class="brandmark"></span><b>사업성 보정계수</b><small>SEOUL / POLICY STUDY</small></div><nav class="nav"><button class="btn" type="button" id="tocBtn">목차</button><button class="btn desktop-only" id="prev">← 이전</button><span class="page-counter desktop-only" id="pageCounter">01 / 20</span><button class="btn desktop-only" id="next">다음 →</button></nav></header><div class="progress"><div class="progress-inner" id="progress"></div></div>
 <main class="display"><div class="stage" id="stage"><section class="slide" data-title="사업성 보정계수" data-ch="01 / 제도 이해" id="s01">
  <header class="slidehead"><div><div class="chapter">01 / 제도 이해</div><h2>사업성 보정계수</h2><p>정비사업의 지역별 차이를 보정하는 제도 — 서울시 2024~2026년</p></div><div class="pageid">01</div></header>
  <div class="slidebody">
@@ -28,7 +86,7 @@
   <path d="M318 46H497" stroke="#2a7152" stroke-width="3"/><text x="318" y="39" fill="#315d48" font-size="13" font-weight="700" letter-spacing="3">BUSINESS FEASIBILITY</text>
  </svg><div class="cover-illustration-caption">비슷한 용적률 · 다른 사업성</div></div>
 </div></div>
- <footer class="slidefoot"><span>SEOUL · 사업성 보정계수 검토 | 기준일 2026.10.25</span><span>01 / 19</span></footer>
+ <footer class="slidefoot"><span>SEOUL · 사업성 보정계수 검토 | 기준일 2026.10.25</span><span>01 / 20</span></footer>
  </section><section class="slide" data-title="사업성 보정계수란?" data-ch="01 / 제도 이해" id="s02">
  <header class="slidehead"><div><div class="chapter">01 / 제도 이해</div><h2>사업성 보정계수란?</h2><p>사업성이 불리한 지역의 허용용적률 인센티브를 확대하는 서울시 정비사업 제도.</p></div><div class="pageid">02</div></header>
  <div class="slidebody">
@@ -42,7 +100,7 @@
   <p class="minor">적용 범위: 일반 정비사업 K 1.0~2.0 · 별도 소규모정비는 최대 1.5</p>
  </div>
 </div></div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026년 성과 발표 <span>↗</span></a></span><span>02 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026년 성과 발표 <span>↗</span></a></span><span>02 / 20</span></footer>
  </section><section class="slide" data-title="왜 이런 제도가 필요했나" data-ch="01 / 제도 이해" id="s03">
  <header class="slidehead"><div><div class="chapter">01 / 제도 이해</div><h2>왜 이런 제도가 필요했나</h2><p>같은 용도지역·유사한 건축 가능 규모라도 지역과 단지에 따라 사업성이 달라집니다.</p></div><div class="pageid">03</div></header>
  <div class="slidebody">
@@ -53,7 +111,7 @@
 </div>
 <div class="takeaway">정비사업 활성화는 절차를 빠르게 하는 것만으로 부족했습니다. <strong>사업이 성립할 수 있는 수익구조</strong>도 필요했습니다.</div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책 배경 <span>↗</span></a></span><span>03 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책 배경 <span>↗</span></a></span><span>03 / 20</span></footer>
  </section><section class="slide" data-title="제도 도입의 흐름" data-ch="01 / 제도 이해" id="s04">
  <header class="slidehead"><div><div class="chapter">01 / 제도 이해</div><h2>제도 도입의 흐름</h2><p>절차 개선에서 출발해 사업성의 지역별 격차를 다루는 정책으로 확장됐습니다.</p></div><div class="pageid">04</div></header>
  <div class="slidebody">
@@ -67,7 +125,7 @@
 </div>
 <div class="timeline-summary"><strong>정책 변화</strong><p><span>정비사업 추진의 속도</span><span class="timeline-arrow">→</span><span>사업성 확보</span><span class="timeline-arrow">→</span><span>지역 간 정비 여건 격차 완화</span></p></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 성과 <span>↗</span></a> · <a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=455098" target="_blank" rel="noopener">모아주택 확대 <span>↗</span></a></span><span>04 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 성과 <span>↗</span></a> · <a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=455098" target="_blank" rel="noopener">모아주택 확대 <span>↗</span></a></span><span>04 / 20</span></footer>
  </section><section class="slide" data-title="공시지가가 낮으면 분양수익도 낮아질까?" data-ch="02 / 사업성의 원리" id="s05">
  <header class="slidehead"><div><div class="chapter">02 / 사업성의 원리</div><h2>공시지가가 낮으면 분양수익도 낮아질까?</h2><p>인과관계를 정확히 구분해야 합니다. 공시지가가 분양가격을 직접 결정하는 것은 아닙니다.</p></div><div class="pageid">05</div></header>
  <div class="slidebody">
@@ -77,7 +135,7 @@
 </div>
 <div class="takeaway">공시지가는 <strong>분양가격의 원인</strong>이 아니라, 지역 시장 여건을 간접적으로 나타내는 <strong>대리지표</strong>입니다.</div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책 목적 <span>↗</span></a></span><span>05 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책 목적 <span>↗</span></a></span><span>05 / 20</span></footer>
  </section><section class="slide" data-title="땅값이 싸도 사업성이 나쁠 수 있다" data-ch="02 / 사업성의 원리" id="s06">
  <header class="slidehead"><div><div class="chapter">02 / 사업성의 원리</div><h2>땅값이 싸도 사업성이 나쁠 수 있다</h2><p>가상의 토지매입형 개발을 비교해 수입과 비용의 차이를 살펴봅니다. 실제 정비사업과는 구별합니다.</p></div><div class="pageid">06</div></header>
  <div class="slidebody">
@@ -93,7 +151,7 @@
 </div>
 <div class="takeaway">핵심은 <strong>토지비 절감 폭과 분양수입 감소 폭 중 무엇이 더 큰가</strong>입니다. 조합형 정비사업에는 기존 자산가치와 권리가액 문제도 추가됩니다.</div>
 </div>
- <footer class="slidefoot"><span>가상 계산 예시 · 정비사업의 실제 수지 산정식과 동일하지 않음</span><span>06 / 19</span></footer>
+ <footer class="slidefoot"><span>가상 계산 예시 · 정비사업의 실제 수지 산정식과 동일하지 않음</span><span>06 / 20</span></footer>
  </section><section class="slide" data-title="보정계수 전에 용적률의 네 단계를 이해하자" data-ch="03 / 용적률과 산식" id="s07">
  <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>보정계수 전에 용적률의 네 단계를 이해하자</h2><p>기준·허용·상한·법적상한은 같은 숫자의 다른 표현이 아니라, 확보 조건이 서로 다른 단계입니다.</p></div><div class="pageid">07</div></header>
  <div class="slidebody">
@@ -104,7 +162,7 @@
  <div class="far-stage slegal"><b>300%</b><div><strong>법적상한용적률</strong><p>법령이 허용하는 추가 완화 상한</p></div></div>
  </div><div class="far-note"><div class="section-label">기억할 부분</div><h3>사업성 보정계수는<br><em>허용용적률 단계의 인센티브</em>를 확대합니다.</h3><p>보정 후에는 정비계획의 용적률 구조가 달라질 수 있습니다. 단, 법적상한용적률 300%가 자동 확보되는 것은 아닙니다.</p><div class="far-comparison"><div><span>보정 전 허용</span><b>230%</b></div><div><span>보정계수 2.0</span><b>250%</b></div></div></div>
 </div></div>
- <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 세부기준 <span>↗</span></a></span><span>07 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 세부기준 <span>↗</span></a></span><span>07 / 20</span></footer>
  </section><section class="slide" data-title="사업성 보정계수의 전체 구조" data-ch="03 / 용적률과 산식" id="s08">
  <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>사업성 보정계수의 전체 구조</h2><p>계수 K를 먼저 계산하고, 확보한 인센티브에 곱해 허용용적률을 다시 구합니다.</p></div><div class="pageid">08</div></header>
  <div class="slidebody">
@@ -115,7 +173,7 @@
  <div class="extra-inputs" id="rebuildInputs" hidden><label>대지면적 <output id="areaOutput">16,800㎡</output><input type="range" id="areaSlideMain" min="5000" max="25000" step="200" value="16800"></label><label>기존 세대수 <output id="unitsOutput">344세대</output><input type="range" id="unitsMain" min="150" max="750" step="10" value="340"></label></div>
  </div><div class="formula-output"><div class="section-label">계산 결과 <span>인터랙티브 시뮬레이션</span></div><div class="kline"><span>공시지가 보정</span><b id="kLand">1.40</b></div><div class="kline"><span>대지 α</span><b id="kAlpha">0.00</b></div><div class="kline"><span>밀도 β</span><b id="kBeta">0.00</b></div><div class="kresult"><span>최종 K</span><strong id="kResult">1.40</strong></div><div class="allowresult">허용용적률 <strong id="allowResult">238.0%</strong></div><p class="minor">기준 210% + 인센티브 20%p × K (설명용 제3종일반주거지역)</p></div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">산정 세부기준 <span>↗</span></a></span><span>08 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">산정 세부기준 <span>↗</span></a></span><span>08 / 20</span></footer>
  </section><section class="slide" data-title="재개발은 공시지가 비율을 적용한다" data-ch="03 / 용적률과 산식" id="s09">
  <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>재개발은 공시지가 비율을 적용한다</h2><p>서울시 평균 공시지가와 대상구역 평균 공시지가를 비교합니다.</p></div><div class="pageid">09</div></header>
  <div class="slidebody">
@@ -124,7 +182,7 @@
  <div class="takeaway">서울 평균보다 대상지의 공시지가가 낮을수록, 산식상 보정계수가 커질 수 있습니다. 최종 범위는 1.0~2.0입니다.</div></div>
  <div class="chart-display"><div class="section-label">대상지가에 따른 K의 변화</div><svg id="redevChart" viewBox="0 0 540 300" role="img" aria-label="공시지가별 보정계수 그래프"></svg><div class="chart-readout"><span>현재 보정계수</span><strong id="redevelopK">1.51</strong><span>허용용적률</span><strong id="redevelopFAR">240.2%</strong></div></div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">2025년 공시지가 공고 <span>↗</span></a></span><span>09 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">2025년 공시지가 공고 <span>↗</span></a></span><span>09 / 20</span></footer>
  </section><section class="slide" data-title="재건축 ① 대지면적 보정 α" data-ch="03 / 용적률과 산식" id="s10">
  <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>재건축 ① 대지면적 보정 α</h2><p>작은 단지는 규모의 경제가 불리해 별도의 보정값을 더합니다.</p></div><div class="pageid">10</div></header>
  <div class="slidebody">
@@ -133,7 +191,7 @@
  <div class="inline-result"><span>적용 α</span><b id="alphaResult">0.14</b><small id="alphaRule">직선보간</small></div></div>
  <div class="chart-display"><div class="section-label">대지면적에 따른 α 변화</div><svg id="alphaChart" viewBox="0 0 540 300" role="img" aria-label="대지면적 보정계수 인터랙티브 그래프"></svg><p class="minor">2만㎡ 직전까지 보간값이 적용되며, 적용 대상에서 벗어나면 α는 0입니다.</p></div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 재건축 α 기준 <span>↗</span></a></span><span>10 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 재건축 α 기준 <span>↗</span></a></span><span>10 / 20</span></footer>
  </section><section class="slide" data-title="재건축 ② 세대밀도 보정 β" data-ch="03 / 용적률과 산식" id="s11">
  <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>재건축 ② 세대밀도 보정 β</h2><p>같은 대지라도 조합원이 많으면 일반분양으로 확보할 수 있는 면적이 줄어듭니다.</p></div><div class="pageid">11</div></header>
  <div class="slidebody">
@@ -143,17 +201,29 @@
  <div class="takeaway">공급면적 110㎡ 정도면 평균 전용 85㎡ 공급이 가능하다는 기준을 적용합니다. 그보다 작게 공급할 수밖에 없는 단지에 β가 추가됩니다.</div></div>
  <div class="chart-display"><div class="section-label">기존 세대수에 따른 공급 가능 면적</div><svg id="betaChart" viewBox="0 0 540 300" role="img" aria-label="세대수에 따른 평균 공급면적과 세대밀도 보정계수"></svg><div class="chart-readout"><span>세대당 공급면적</span><strong id="supplyResult">88.1㎡</strong><span>적용 β</span><strong id="betaResult">0.17</strong></div></div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 재건축 β 기준 <span>↗</span></a> · <a class="source" href="https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250305170956_12865.pdf" target="_blank" rel="noopener">구로우성 가용용적률 <span>↗</span></a></span><span>11 / 19</span></footer>
- </section><section class="slide" data-title="구로우성아파트: 실제 산식에 대입하면" data-ch="03 / 용적률과 산식" id="s12">
- <header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>구로우성아파트: 실제 산식에 대입하면</h2><p>실제 정비계획에 공개된 값을 넣어 보정계수와 허용용적률을 계산합니다.</p></div><div class="pageid">12</div></header>
- <div class="slidebody">
-<div class="case-calc"><div class="case-location"><span>구로구 구로동 23 · 재건축</span><h3>구로우성아파트</h3><p>대지면적 16,813.7㎡ / 기존 344세대</p><a href="https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250305170956_12865.pdf" target="_blank" rel="noopener">서울시보 정비계획 원문 보기 ↗</a></div>
- <div class="calc-steps"><div><span>① 공시지가</span><strong>1.29</strong><small>7,192,258 ÷ 5,588,458</small></div><span class="calc-plus">+</span><div><span>② 대지 α</span><strong>0.14</strong><small>16,813.7㎡ 직선보간</small></div><span class="calc-plus">+</span><div><span>③ 밀도 β</span><strong>0.00</strong><small>344세대 수용 가능</small></div><span class="calc-plus">=</span><div class="calc-total"><span>사업성 보정계수</span><strong>1.43</strong></div></div>
- <div class="result-ribbon"><span>기준 210%</span><span>+</span><span>인센티브 20%p × 1.43</span><span>=</span><b>허용 238.6%</b></div>
-</div><p class="minor">공개된 일반분양 +12세대에는 다른 제도 변경 효과도 포함됩니다. 보정계수만의 순효과가 아닙니다.</p>
-</div>
- <footer class="slidefoot"><span><a class="source" href="https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250305170956_12865.pdf" target="_blank" rel="noopener">서울시보 2025.3.6. 정비계획 <span>↗</span></a></span><span>12 / 19</span></footer>
- </section><section class="slide" data-title="용적률 인센티브가 사업수지로 연결되는 과정" data-ch="04 / 적용과 성과" id="s13">
+ <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 재건축 β 기준 <span>↗</span></a> · <a class="source" href="https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250305170956_12865.pdf" target="_blank" rel="noopener">구로우성 가용용적률 <span>↗</span></a></span><span>11 / 20</span></footer>
+ </section><section class="slide" data-ch="03 / 용적률과 산식" data-title="구로우성아파트: 실제 산식에 대입하면" id="s12">
+<header class="slidehead"><div><div class="chapter">03 / 용적률과 산식</div><h2>구로우성아파트: 실제 산식에 대입하면</h2><p>공식 정비계획에서 공시지가·대지면적·기존 세대수를 모두 확인할 수 있는 사례입니다.</p></div><div class="pageid">12</div></header>
+<div class="slidebody">
+<div class="guro-grid"><div class="guro-visual"><div class="section-label">정비구역 개념 재구성 · 원본 도면은 아래 링크</div>
+<svg viewBox="0 0 430 260" role="img" aria-label="구로우성아파트 두 공동주택 획지의 위치관계 개념도">
+<rect x="0" y="0" width="430" height="260" fill="#f4f6f1"/>
+<path d="M25 64 L410 30 M55 248 L422 149 M52 22L119 257 M315 1L368 245" fill="none" stroke="#d0d5d0" stroke-width="24"/>
+<path d="M25 64 L410 30 M55 248 L422 149 M52 22L119 257 M315 1L368 245" fill="none" stroke="#fff" stroke-width="18"/>
+<path d="M105 107L283 85 297 194 135 228Z" fill="#dcead8" stroke="#3c7855" stroke-width="2"/>
+<path d="M305 82L382 70 402 142 322 155Z" fill="#dcead8" stroke="#3c7855" stroke-width="2"/>
+<g fill="#284f38" font-size="17" font-weight="700" text-anchor="middle"><text x="210" y="160">획지 1</text><text x="351" y="116">획지 2</text></g>
+<text x="36" y="34" font-size="12" fill="#718173">정비구역 · 주요 도로 관계 개념도</text>
+<text x="152" y="250" font-size="11" fill="#819084">※ 축척·필지형상·방향은 실제 도면과 다름</text>
+</svg>
+<a href="https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606729" target="_blank" rel="noopener">실제 정비계획 결정도·토지이용계획도 보기 ↗</a>
+<small>서울시 고시 제2025-118호 · 2025.03.06. / 본 그림은 설명용이며 원본 정비계획도가 아닙니다.</small>
+</div><div class="guro-math">
+<div class="calc-steps"><div><span>① 지가비율</span><strong>1.29</strong><small>7,192,258 ÷ 5,588,458</small></div><span class="calc-plus">+</span><div><span>② 대지 α</span><strong>0.14</strong><small>대지 16,813.7㎡</small></div><span class="calc-plus">+</span><div><span>③ 밀도 β</span><strong>0</strong><small>기존 344세대 수용</small></div><span class="calc-plus">=</span><div class="calc-total"><span>적용계수 K</span><strong>1.43</strong></div></div>
+<div class="result-ribbon"><span>기준 210%</span><span>+</span><span>20%p × 1.43</span><span>=</span><b>허용 238.6%</b></div>
+<div class="teacher-note slim"><strong>왜 β는 0일까?</strong> 공식 계산상 가용용적률로 약 400세대 수용 가능하여 기존 344세대에 대응할 수 있기 때문입니다.</div>
+<div class="teacher-note slim"><strong>주의:</strong> 발표된 일반분양 +12세대는 다른 기준 변경까지 포함한 복합효과로, K만의 독립적인 수익이 아닙니다.</div>
+</div></div></div><footer class="slidefoot"><span><a class="source" href="https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250305170956_12865.pdf" target="_blank" rel="noopener">서울시보 제2025-118호 산식 ↗</a></span><span>12 / 20</span></footer></section><section class="slide" data-title="용적률 인센티브가 사업수지로 연결되는 과정" data-ch="04 / 적용과 성과" id="s13">
  <header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>용적률 인센티브가 사업수지로 연결되는 과정</h2><p>허용용적률 상승이 곧 확정 이익을 뜻하지는 않습니다.</p></div><div class="pageid">13</div></header>
  <div class="slidebody">
 <div class="chain">
@@ -164,7 +234,7 @@
 </div>
 <div class="chain-bottom"><div><div class="section-label">간단한 사업성 계산 구조</div><h3>사업수입 − 총사업비 = 사업의 잉여</h3><p>공사비, 금융비, 종전자산 평가, 분양가격이 함께 반영돼야 조합원 분담금이 정해집니다.</p></div><div><div class="section-label">분양면적 비중 변화 예시</div><div class="mini-compare"><span>보정 전</span><div class="rental-bar"><i style="width:91.67%"></i></div><b>275% 분양</b></div><div class="mini-compare"><span>보정 후</span><div class="rental-bar"><i style="width:95%"></i></div><b>285% 분양</b></div><small>총 300%·법적상한 완화분 공공주택 50% 가정</small></div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 분양·임대 예시 <span>↗</span></a></span><span>13 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://ms.smc.seoul.kr/record/appendixDownload.do?key=118e605f12016d435ddd98e70cdefdd7d5ee060b2796116ed8093838d547cf058188275887c9d3b1" target="_blank" rel="noopener">서울시 분양·임대 예시 <span>↗</span></a></span><span>13 / 20</span></footer>
  </section><section class="slide" data-title="서울 어디에 적용됐을까" data-ch="04 / 적용과 성과" id="s14">
  <header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>서울 어디에 적용됐을까</h2><p>확인된 개별 사업지 20곳. 번호는 아래 리스트와 연결되며, 기본 화면은 서울 전체입니다.</p></div><div class="pageid">14</div></header>
  <div class="slidebody">
@@ -179,7 +249,7 @@
  <div id="mapDetails" class="map-details">지도 번호나 사업지명을 선택하면 계획 용적률, 적용 계수, 진행단계가 표시됩니다.</div>
  </div></div>
 </div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 발표 분포 <span>↗</span></a> · <a class="source" href="https://github.com/southkorea/seoul-maps" target="_blank" rel="noopener">서울 자치구 경계: southkorea/seoul-maps <span>↗</span></a></span><span>14 / 19</span></footer>
+ <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 발표 분포 <span>↗</span></a> · <a class="source" href="https://github.com/southkorea/seoul-maps" target="_blank" rel="noopener">서울 자치구 경계: southkorea/seoul-maps <span>↗</span></a></span><span>14 / 20</span></footer>
  </section><section class="slide" data-title="사업지별 적용 현황을 한눈에" data-ch="04 / 적용과 성과" id="s15">
  <header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>사업지별 적용 현황을 한눈에</h2><p>서울시의 전체 57곳과 구분하여 개별 조사·정리한 20곳을 제공합니다.</p></div><div class="pageid">15</div></header>
  <div class="slidebody">
@@ -187,40 +257,44 @@
 <div class="catalog-scroll"><table><thead><tr><th>번호 / 사업지</th><th>유형</th><th>계수 K</th><th>용적률·인센티브</th><th>계획상 효과</th><th>최근 확인 단계</th></tr></thead><tbody id="siteTable"></tbody></table></div>
  <div class="catalog-detail" id="catalogDetail"><span>표의 사업지를 클릭하면 출처와 상세 내용을 확인할 수 있습니다.</span></div></div>
 </div>
- <footer class="slidefoot"><span>주의: 용적률 숫자는 정비계획 기준이며 단계와 산정 방식이 서로 달라 단순 높낮이 비교에 유의</span><span>15 / 19</span></footer>
- </section><section class="slide" data-title="대표 사업지는 무엇이 달라졌을까" data-ch="04 / 적용과 성과" id="s16">
- <header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>대표 사업지는 무엇이 달라졌을까</h2><p>재개발·재건축을 구분해 계획상 개선과 후속 추진을 함께 봅니다.</p></div><div class="pageid">16</div></header>
- <div class="slidebody">
-<div class="cases-gallery">
- <div class="gallery-main"><div class="gallery-photo"><img id="casePhoto" alt="계획안 원문에 게시된 조감도" decoding="async" referrerpolicy="no-referrer"/><div class="image-fallback" id="imageFallback"><div class="fallback-symbol">▤</div><b>정비계획 이미지</b><span>원문에서 계획안을 확인할 수 있습니다</span></div><div class="gallery-caption" id="casePhotoCredit">이미지 출처·연도 확인</div></div>
- <div class="gallery-copy"><div class="section-label" id="caseType">재개발 사례</div><h3 id="caseName">상도15구역</h3><p id="caseDescription"></p><div id="caseMetrics" class="case-metrics"></div><a id="caseSource" target="_blank" rel="noopener">사업지 계획안·근거 보기 ↗</a></div></div>
- <div class="gallery-tabs" id="caseTabs"></div>
+ <footer class="slidefoot"><span>주의: 용적률 숫자는 정비계획 기준이며 단계와 산정 방식이 서로 달라 단순 높낮이 비교에 유의</span><span>15 / 20</span></footer>
+ </section><section class="slide" data-ch="04 / 적용과 성과" data-title="재개발과 재건축, 실제 사업에서 무엇이 달라졌나" id="s16">
+<header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>재개발과 재건축, 실제 사업에서 무엇이 달라졌나</h2><p>서로 다른 사업유형을 동일한 항목으로 비교합니다. 분담금은 모두 발표 당시 예상치입니다.</p></div><div class="pageid">16</div></header>
+<div class="slidebody"><div class="grade-grid">
+<div class="grade-card"><span class="category">RECONSTRUCTION / 재건축</span><h3>대흥·성원·동진빌라</h3><div class="keyline">K 2.00 · 분양가능 +118세대</div>
+<div class="grade-metrics"><div><small>계획상 조합원당 부담 감소</small><b>약 1억 원</b></div><div><small>정비계획 인센티브</small><b>상한 2.0 적용</b></div><div><small>함께 반영된 제도</small><b>2종 → 3종 상향</b></div><div><small>후속 계획 규모</small><b>약 1,453세대</b></div></div>
+<p>사업성이 낮아 추진이 더뎠던 재건축. 계수 외에 종상향도 동시 적용되어, 1억 원 감소를 K만의 효과로 돌리면 안 됩니다.</p>
+<a href="https://www.yna.co.kr/view/AKR20241106178500004" target="_blank" rel="noopener">2024년 첫 적용 보도·계획 조감도 ↗</a></div>
+<div class="grade-card alt"><span class="category">REDEVELOPMENT / 재개발</span><h3>상도15구역</h3><div class="keyline">K 1.77 · 분양가능 +74세대</div>
+<div class="grade-metrics"><div><small>계획상 조합원당 부담 감소</small><b>약 3,000만 원</b></div><div><small>인센티브 증가</small><b>20 → 35.4%p</b></div><div><small>후속 인허가</small><b>통합심의</b></div><div><small>정비사업 유형</small><b>주택재개발</b></div></div>
+<p>낮은 지역 토지가격을 보정해 분양 가능 물량을 늘린 사례. 통합심의 진전은 확인되지만 확정 사업이익은 아닙니다.</p>
+<a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책효과·정비계획 근거 ↗</a></div></div></div><footer class="slidefoot"><span>근거: 서울시 2024.11 첫 적용 발표 · 2026.02 성과 발표 / 다른 완화제도와 복합 적용</span><span>16 / 20</span></footer></section><section class="slide" data-ch="04 / 적용과 성과" data-title="적용계수·일반분양·1인당 부담을 사업지별로 비교" id="s17">
+<header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>적용계수·일반분양·1인당 부담을 사업지별로 비교</h2><p>탭을 바꾸지 않고 모든 핵심 지표를 고정된 순서로 보여줍니다. 사업성은 금액으로, 추진상태는 별도로 읽습니다.</p></div><div class="pageid">17</div></header>
+<div class="slidebody"><div class="fixed-table-wrap"><table class="fixed-result-table"><colgroup><col style="width:24%"><col style="width:9%"><col style="width:13%"><col style="width:19%"><col style="width:25%"><col style="width:10%"></colgroup>
+<thead><tr><th>사업지 / 유형</th><th>계수 K</th><th>분양 물량</th><th>조합원당 분담금</th><th>추진단계 확인</th><th>근거</th></tr></thead><tbody><tr><td><b>대흥·성원·동진빌라</b><span class="type-note">재건축</span></td><td><b>2.00</b></td><td>+118세대</td><td><b>약 1억</b><span class="is-estimate">추정 감소액</span></td><td>사업시행인가 관련 후속 공고</td><td><a href="https://www.yna.co.kr/view/AKR20241106178500004" target="_blank" rel="noopener" aria-label="대흥·성원·동진빌라 원문 열기">원문 ↗</a></td></tr><tr><td><b>방학신동아1단지</b><span class="type-note">재건축</span></td><td><b>2.00</b></td><td>+148세대</td><td><b>약 3,800만</b><span class="is-estimate">추정 감소액</span></td><td>사업시행자 지정</td><td><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener" aria-label="방학신동아1단지 원문 열기">원문 ↗</a></td></tr><tr><td><b>상계동 154-3 일대</b><span class="type-note">재개발</span></td><td><b>1.96</b></td><td>+332세대</td><td><b>약 7,200만</b><span class="is-estimate">추정 감소액</span></td><td>정비계획 심의</td><td><a href="https://www.yna.co.kr/view/AKR20241106178500004" target="_blank" rel="noopener" aria-label="상계동 154-3 일대 원문 열기">원문 ↗</a></td></tr><tr><td><b>상도15구역</b><span class="type-note">재개발</span></td><td><b>1.77</b></td><td>+74세대</td><td><b>약 3,000만</b><span class="is-estimate">추정 감소액</span></td><td>2026 통합심의</td><td><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener" aria-label="상도15구역 원문 열기">원문 ↗</a></td></tr><tr><td><b>상도14구역</b><span class="type-note">재개발</span></td><td><b>1.58</b></td><td>+53세대</td><td><b>약 6,000만</b><span class="is-estimate">추정 감소액</span></td><td>사업시행자 지정</td><td><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener" aria-label="상도14구역 원문 열기">원문 ↗</a></td></tr><tr><td><b>상봉13구역</b><span class="type-note">재개발</span></td><td><b>1.64</b></td><td>+43세대</td><td><b>약 6,000만</b><span class="is-estimate">추정 감소액</span></td><td>조합설립인가</td><td><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener" aria-label="상봉13구역 원문 열기">원문 ↗</a></td></tr><tr><td><b>시흥1동 871 일대</b><span class="type-note">재개발</span></td><td><b>1.88</b></td><td>+57세대</td><td><b>약 4,500만</b><span class="is-estimate">추정 감소액</span></td><td>정비계획 심의</td><td><a href="https://www.yna.co.kr/view/AKR20241106178500004" target="_blank" rel="noopener" aria-label="시흥1동 871 일대 원문 열기">원문 ↗</a></td></tr><tr><td><b>구로우성아파트</b><span class="type-note">재건축</span></td><td><b>1.43</b></td><td>+12세대*</td><td><b>미공개</b><span class="is-estimate">추정 감소액</span></td><td>사업시행자 지정 고시</td><td><a href="https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606729" target="_blank" rel="noopener" aria-label="구로우성아파트 원문 열기">원문 ↗</a></td></tr></tbody></table></div>
+<div class="fixed-table-bottom">* 구로우성 +12세대는 다른 산정기준 변경이 포함된 복합효과. 모든 금액은 계획 수립·심의 당시 추정 감소액이며 실제 이익이 아님. 1인당 추정액 × 세대수를 단순히 총사업이익으로 계산하면 안 됩니다.</div>
+<div class="teacher-note slim"><strong>사업성으로 어떤 효과인가?</strong> 추가 분양 가능 물량 확보 → 예상 수입 증가 → 조합원 부담 감소 가능성. 단, 공사비·분양가격·사업지별 권리가액이 달라 K와 금액이 일대일 대응하지 않습니다.</div></div><footer class="slidefoot"><span>출처: 서울시 공식 보도자료·정비계획 심의 발표 / 비교항목의 단계와 시점은 사업지별로 다름</span><span>17 / 20</span></footer></section><section class="slide" data-ch="05 / 확장과 평가" data-title="모아타운은 무엇이 다르게 개선됐을까" id="s18">
+<header class="slidehead"><div><div class="chapter">05 / 확장과 평가</div><h2>모아타운은 무엇이 다르게 개선됐을까</h2><p>일반 정비사업과는 별도로 최대 K 1.5를 적용하며, 임대주택 공급 비중을 조정한 최신 사례가 있습니다.</p></div><div class="pageid">18</div></header>
+<div class="slidebody"><div class="moa-focus">
+<div><div class="section-label">별도 소규모 정비사업 트랙</div><div class="moa-big-num">K 최대 1.5</div><p>일반 재개발·재건축의 상한 2.0과 다릅니다. 모아주택은 일정 공공성 조건 아래 임대주택 부담을 조정하는 방식을 사용합니다.</p>
+<div class="moa-meta-row"><div><b>60곳</b><small>모아타운 · 2026년 3월 심의</small></div><div><b>8곳</b><small>가로주택 · 2026년 3월 심의</small></div></div>
+<div class="teacher-note"><strong>어떤 의미인가?</strong> 더 높이 짓는 것뿐 아니라 <b>총 2,121세대라는 공급량을 그대로 두고 임대와 비임대 물량 구성을 조정</b>할 수도 있습니다.</div>
 </div>
-</div>
- <footer class="slidefoot"><span><a class="source" href="https://www.designgroup-utopia.com/project/40" target="_blank" rel="noopener">상도15구역 계획 원문 <span>↗</span></a> · <a class="source" href="https://www.arunews.com/news/articleView.html?idxno=46936" target="_blank" rel="noopener">상봉13구역 자료 <span>↗</span></a></span><span>16 / 19</span></footer>
- </section><section class="slide" data-title="실제 사업성은 얼마나 개선됐나" data-ch="04 / 적용과 성과" id="s17">
- <header class="slidehead"><div><div class="chapter">04 / 적용과 성과</div><h2>실제 사업성은 얼마나 개선됐나</h2><p>서울시 정비계획 심의 때 발표한 예상 효과입니다. 확정 분양수익 또는 분담금은 아닙니다.</p></div><div class="pageid">17</div></header>
- <div class="slidebody">
-<div class="impact-layout"><div><div class="switcher" id="metricSwitch"><button type="button" data-metric="gain" class="active">일반분양 증가</button><button type="button" data-metric="burden">추정 분담금 감소</button><button type="button" data-metric="coef">보정계수</button></div><div id="impactBars" class="impact-bars"></div><p class="minor">한 시점의 계획상 추정치. 계수가 높은 순서와 분담금 감소 규모의 순서는 반드시 일치하지 않습니다.</p></div>
-<div class="outcome-note"><div class="section-label">성과를 읽는 기준</div><div class="evidence"><span class="evi-n">01</span><div><b>계획상 효과</b><p>일반분양 증가와 분담금 감소는 발표됨</p></div></div><div class="evidence"><span class="evi-n">02</span><div><b>후속 단계</b><p>사업시행자 지정·조합설립인가 등이 확인됨</p></div></div><div class="evidence"><span class="evi-n">03</span><div><b>확정 수익성</b><p>관리처분·공사비 확정·일반분양 결과가 필요</p></div></div></div></div>
-</div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 정책성과 <span>↗</span></a></span><span>17 / 19</span></footer>
- </section><section class="slide" data-title="모아타운·가로주택에도 보정계수 도입" data-ch="05 / 확장과 평가" id="s18">
- <header class="slidehead"><div><div class="chapter">05 / 확장과 평가</div><h2>모아타운·가로주택에도 보정계수 도입</h2><p>2026년 3월 심의에서 일반 정비사업과 별도의 소규모 정비사업 체계에 반영됐습니다.</p></div><div class="pageid">18</div></header>
- <div class="slidebody">
-<div class="moa-grid"><div class="moa-scale"><div class="moa-big"><strong>60<small>곳</small></strong><span>모아타운 관리계획 변경</span></div><div class="moa-big"><strong>8<small>곳</small></strong><span>가로주택 사업시행계획 변경</span></div><div class="moa-big inverse"><strong>1.5</strong><span>이 유형의 최대 보정계수</span></div></div>
-<div class="moa-logic"><div class="section-label">일반 정비사업과 차이</div><h3>소규모정비는 공공기여 부담을 조정하는 방식이 중요합니다.</h3><p>지가는 지역 사업성의 비교 기준으로 활용되지만, 공공임대 최소 확보와 세입자 보호 등 조건은 별도로 유지합니다.</p>
- <div class="moa-conditions"><span>임대주택 최소 10%</span><span>세입자 보호</span><span>소셜믹스</span></div>
- <p class="minor">모아타운 60곳과 가로주택 8곳은 앞서 집계한 일반 재개발·재건축 57곳과 별도입니다.</p></div></div>
-</div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=455098" target="_blank" rel="noopener">서울시 소규모정비 심의 <span>↗</span></a></span><span>18 / 19</span></footer>
- </section><section class="slide" data-title="무엇을 확인했고, 무엇이 남았나" data-ch="05 / 확장과 평가" id="s19">
- <header class="slidehead"><div><div class="chapter">05 / 확장과 평가</div><h2>무엇을 확인했고, 무엇이 남았나</h2><p>제도 도입의 효과와 사업 성공을 구별하는 것이 이 발표의 결론입니다.</p></div><div class="pageid">19</div></header>
- <div class="slidebody">
-<div class="final-grid"><div class="final-statement"><span>CONCLUSION</span><h3>계획상 사업성 개선은 확인.<br><em>실제 수익성 실현은 검증 중.</em></h3><p>사업성 보정계수는 정비사업이 불리한 지역의 용적률 인센티브를 조정합니다. 그러나 분담금과 수익성의 최종 결과는 공사비·금융비·일반분양 상황까지 확인해야 합니다.</p></div><div class="final-questions"><div><span>01</span><strong>경제성</strong><p>예상 수익 증가가 확정 분담금 감소로 이어졌는가</p></div><div><span>02</span><strong>형평성</strong><p>낮은 지가 지역의 사업기회 격차를 줄였는가</p></div><div><span>03</span><strong>도시환경</strong><p>추가 밀도와 공공임대·기반시설의 균형은 적절한가</p></div></div></div>
-</div>
- <footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026년 공식 집계 <span>↗</span></a></span><span>19 / 19</span></footer>
- </section></div></main>
+<div class="moa-supply"><div><div class="section-label">2026.10 면목동 + 사당동 · 모아주택 5개 사업</div><h3>총 공급 2,121세대는 그대로</h3><p>임대주택은 503세대에서 342세대로 조정되었습니다.</p></div>
+<div><div class="supply-line"><b>변경 전</b><div class="supply-track"><i style="width:23.7%"></i></div><b>503세대</b></div><div class="supply-line"><b>변경 후</b><div class="supply-track"><i style="width:16.1%"></i></div><b>342세대</b></div></div>
+<div class="moa-big-num">−161<span style="font-size:.38em">세대</span></div><p>임대주택 약 23.7% → 16.1%. 나머지 주택의 분양 가능성은 확대되지만, 이 조정만으로 조합원별 확정 수익은 계산할 수 없습니다.</p>
+<a href="https://www.yna.co.kr/amp/view/AKR20261023048300004" target="_blank" rel="noopener">2026.10.23 서울시 심의 사례·조감도 ↗</a></div></div></div><footer class="slidefoot"><span>근거: 서울시 2026.3 심의 집계 / 2026.10.23 면목·사당 모아주택 발표. 복합계획 변경의 효과.</span><span>18 / 20</span></footer></section><section class="slide" data-ch="05 / 확장과 평가" data-title="사업성 보정계수에 대한 평가는 왜 다를까" id="s19">
+<header class="slidehead"><div><div class="chapter">05 / 확장과 평가</div><h2>사업성 보정계수에 대한 평가는 왜 다를까</h2><p>정책 효과·현장의 기대·공공성에 대한 연구를 서로 다른 평가기준으로 구분합니다.</p></div><div class="pageid">19</div></header>
+<div class="slidebody"><div class="stakeholder-grid">
+<div class="stakeholder"><span class="stamp">서울시 · 정책성과 발표</span><strong>사업성 격차를 줄이는 계획수단</strong><p>2026년 2월 기준 심의 통과 57곳, 구역당 평균 일반분양 +47세대. 이 중 54곳이 강북·서남권에 집중됐습니다.</p><small>증가 물량은 계획상 추정. 준공 후 확정 수익이 아님.</small></div>
+<div class="stakeholder"><span class="stamp">조합·정비 실무의 관점</span><strong>분담금 감소 예상은 추진 동력</strong><p>기존에 사업성이 낮았던 지역에서 조합원 부담 감소와 인허가 진전을 기대합니다. 다만 공사비·금리·실제 분양시장의 영향은 남습니다.</p><small>정량적 주민 여론조사로 일반화할 근거는 확인되지 않음.</small></div>
+<div class="stakeholder"><span class="stamp">학술연구 · 남궁지현(2025)</span><strong>임대주택과 기반시설도 함께 봐야</strong><p>34개 재개발구역 모의분석에서 기반시설 잠재 확보면적 약 13만㎡, 임대주택 총연면적 약 7만㎡ 감소 가능성이 제시됐습니다.</p><small>모의분석이며 실제 감소 실적이 아님.</small></div>
+</div><div class="teacher-note"><strong>의견을 읽는 법:</strong> 서울시의 ‘사업성 개선’은 예측치 중심, 실무의 ‘추진 동력’은 사업 여건 중심, 연구의 ‘공공성 영향’은 도시 전체에 대한 평가입니다. 서로 다른 지표로 말하고 있다는 점이 중요합니다.</div></div><footer class="slidefoot"><span><a class="source" href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 발표 ↗</a> · <a class="source" href="https://dl.nanet.go.kr/detail/KDMT12025000042351" target="_blank" rel="noopener">남궁지현(2025) 학위논문 ↗</a></span><span>19 / 20</span></footer></section>
+<section class="slide" data-ch="05 / 확장과 평가" data-title="사업성 개선은 시작, 실제 성과와 공공성 검증은 다음 과제" id="s20">
+<header class="slidehead"><div><div class="chapter">05 / 확장과 평가</div><h2>사업성 개선은 시작, 실제 성과와 공공성 검증은 다음 과제</h2><p>정비사업의 추진 가능성을 높였다는 정책 효과와 도시 차원의 평가를 함께 남깁니다.</p></div><div class="pageid">20</div></header>
+<div class="slidebody"><div class="final-statement" style="padding:clamp(18px,3.1cqw,48px);height:auto;"><span>CONCLUSION</span><h3 style="font-size:clamp(26px,3.25cqw,52px)">계획상 수익성은 개선됐다.<br><em>사업의 완성도는 아직 평가 중이다.</em></h3>
+<p>사업성 보정계수는 용적률 인센티브와 분양 가능 물량을 늘려 저사업성 정비사업을 추진할 여건을 만든다. 그러나 실제 분담금 감소가 실현됐는지, 임대주택·기반시설과 어떤 균형을 이루는지는 후속 검증이 필요하다.</p></div>
+<div class="conclusion-boxes"><div><strong>경제성</strong><p>계수 → 분양물량 → 예상 수입 및 부담 경감 효과는 확인. 확정 사업이익과 구분.</p></div><div><strong>추진 성과</strong><p>일부 구역 인허가 진전 확인. 보정계수만의 인과적 효과로 단정하지 않음.</p></div><div><strong>도시적 균형</strong><p>공공임대·기반시설 감소 가능성을 포함하여 도시 차원에서 평가할 것.</p></div></div></div><footer class="slidefoot"><span>서울시 공식 집계 · 정비사업 추진 단계 · 남궁지현(2025) 공공성 모의분석 종합</span><span>20 / 20</span></footer></section></div></main>
 <nav class="mobilebar"><button type="button" id="prevMobile">← 이전</button><b id="pageCounterMobile">01 / 19</b><button type="button" id="nextMobile">다음 →</button></nav></div>
 <div class="toc-layer" id="tocLayer" aria-hidden="true"><div class="toc-panel"><div class="toc-title"><b>발표 목차</b><button id="tocClose" aria-label="닫기">×</button></div><div id="tocList"></div></div></div>
 <script>
@@ -233,7 +307,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const up2=v=>Math.ceil((v-1e-10)*100)/100;
 const stageSlides=[...document.querySelectorAll('.slide')];
 let page=0,kind='재개발',mapType='all',selectedId=null,mapZoom=1,mapCenter=[450,290],activeCase=0,metric='gain';
-function showPage(n){page=clamp(n,0,stageSlides.length-1);stageSlides.forEach((s,i)=>s.classList.toggle('active',i===page));$('pageCounter').textContent=String(page+1).padStart(2,'0')+' / 19';$('pageCounterMobile').textContent=$('pageCounter').textContent;$('progress').style.width=((page+1)/stageSlides.length*100)+'%';$('prev').disabled=page===0;$('next').disabled=page===stageSlides.length-1;window.scrollTo(0,0);if(page===13)renderMap();location.hash='s'+String(page+1).padStart(2,'0');renderToc();}
+function showPage(n){page=clamp(n,0,stageSlides.length-1);stageSlides.forEach((s,i)=>s.classList.toggle('active',i===page));$('pageCounter').textContent=String(page+1).padStart(2,'0')+' / 20';$('pageCounterMobile').textContent=$('pageCounter').textContent;$('progress').style.width=((page+1)/stageSlides.length*100)+'%';$('prev').disabled=page===0;$('next').disabled=page===stageSlides.length-1;window.scrollTo(0,0);if(page===13)renderMap();location.hash='s'+String(page+1).padStart(2,'0');renderToc();}
 function openToc(){const layer=$('tocLayer');layer.classList.add('open');layer.setAttribute('aria-hidden','false');}
 function closeToc(){const layer=$('tocLayer');layer.classList.remove('open');layer.setAttribute('aria-hidden','true');}
 function renderToc(){const list=$('tocList');list.innerHTML='';stageSlides.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.className='toc-item'+(i===page?' active':'');b.innerHTML='<span>'+String(i+1).padStart(2,'0')+'</span>'+safe(s.dataset.title);b.onclick=()=>{closeToc();showPage(i)};list.appendChild(b);});}
@@ -303,7 +377,7 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{mapType=b.d
 function filteredProjects(){let q=$('siteSearch').value.trim().toLowerCase(),t=$('siteType').value,order=$('siteOrder').value;let data=PROJECTS.filter(p=>(t==='all'||p.type===t)&&(!q||(p.name+p.district).toLowerCase().includes(q)));if(order==='coef')data.sort((a,b)=>(b.coef||0)-(a.coef||0));else if(order==='district')data.sort((a,b)=>a.district.localeCompare(b.district,'ko'));return data}
 function renderCatalog(){const data=filteredProjects(),el=$('siteTable');el.innerHTML=data.map(p=>`<tr data-id="${p.id}"><td>${String(PROJECTS.indexOf(p)+1).padStart(2,'0')} · ${safe(p.name)}<br><small>${safe(p.district)}</small></td><td>${safe(p.type)}</td><td><strong>${safe(p.coefLabel)}</strong></td><td>${safe(p.far)}</td><td>${safe(p.gain)}<br><small>${safe(p.burden)}</small></td><td>${safe(p.stage)}</td></tr>`).join('');$('siteCount').textContent=data.length+'곳';el.querySelectorAll('tr').forEach(tr=>tr.onclick=()=>{const p=PROJECTS.find(x=>x.id===tr.dataset.id);$('catalogDetail').innerHTML=`<strong>${safe(p.name)}</strong> · ${safe(p.note)} <a href="${safe(projectLink(p))}" target="_blank" rel="noopener">근거 열기 ↗</a>`})}
 ['siteSearch','siteType','siteOrder'].forEach(x=>$(x).addEventListener('input',renderCatalog));
-function initialize(){renderProforma();syncUnified();renderRedevelop();renderAlpha();renderBeta();renderMap();renderCatalog();renderImpact();initCases();const match=location.hash.match(/s(\d+)/);showPage(match?+match[1]-1:0)}
+function initialize(){renderProforma();syncUnified();renderRedevelop();renderAlpha();renderBeta();renderMap();renderCatalog();const match=location.hash.match(/s(\d+)/);showPage(match?+match[1]-1:0)}
 ['redevelopPrice'].forEach(x=>$(x).addEventListener('input',renderRedevelop));$('alphaSlider').addEventListener('input',renderAlpha);$('betaSlider').addEventListener('input',renderBeta);
 initialize();
 </script></body></html>
