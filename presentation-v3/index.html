@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>사업성 보정계수 · 서울 정비사업 발표 V3</title>
+<meta name="description" content="서울시 정비사업 사업성 보정계수 V3 · 허용용적률, 계획요소, 상한용적률, 석관4구역 고시, 비례율과 조합원 분담금">
+<meta property="og:title" content="사업성 보정계수 — Presentation V3">
+<meta property="og:description" content="계획의 가치에 사업성의 차이를 반영하는 방식 · 서울 정비사업 사례">
+<style>
+:root{--paper:#f6f5ef;--white:#fffefb;--ink:#1f2f2a;--green:#1c5b3d;--forest:#174831;--line:#dce2d9;--muted:#5c6a62;--pale:#e9f2e9;--accent:#bd905c;--warm:#efe6da}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;background:#17281f;color:var(--ink)}
+body{overflow:hidden}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid #bd905c;outline-offset:3px}
+.deck{height:100dvh;display:flex;flex-direction:column;width:100vw;background:var(--paper)}
+.topbar{height:56px;flex:none;background:#173d2d;color:#edf0e9;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,2.8vw,50px);gap:16px;border-bottom:1px solid #37674e}
+.top-left{display:flex;align-items:center;gap:18px;min-width:0}
+.brand{font-size:15px;letter-spacing:-.03em;font-weight:850;white-space:nowrap}
+.brand-mark{display:inline-block;background:#cfad82;width:11px;height:11px;margin-right:10px}
+.v-label{font-size:11px;letter-spacing:.16em;color:#d4e3d4;font-weight:800}
+.top-right{display:flex;align-items:center;gap:9px}
+.tool{background:transparent;border:1px solid #688a77;color:#f5f3ed;padding:8px 12px;font-size:12px;font-weight:750;white-space:nowrap}
+.tool:hover,.tool[aria-pressed=true]{background:#365f47}
+.content{position:relative;flex:1;min-height:0;width:100%}
+.slide{display:none;position:absolute;inset:0;overflow-y:auto;background:var(--paper);padding:clamp(22px,2.9vw,48px) clamp(30px,5.1vw,88px) clamp(18px,2vw,32px)}
+.slide.active{display:block;animation:enter .18s ease both}
+@keyframes enter{from{opacity:.6;transform:translateY(6px)}to{opacity:1;transform:none}}
+.slide-inner{width:100%;max-width:1640px;margin:auto;display:flex;flex-direction:column;min-height:100%;gap:clamp(12px,1.5vh,20px)}
+.slide-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#397b57;font-size:12px;letter-spacing:.13em;font-weight:900}
+.slide-kicker-num{color:#899a89;font-size:11px}
+.slide-heading{flex:none}
+.slide-heading h1{font-size:clamp(29px,3.3vw,54px);letter-spacing:-.052em;margin:0 0 11px;line-height:1.13;font-weight:850}
+.slide-heading p{font-size:clamp(15px,1.4vw,20px);line-height:1.38;color:#637368;margin:0}
+.slide-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2vh,28px);min-height:0}
+.foot-source{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-top:10px;border-top:1px solid #dae0d8;font-size:clamp(10px,.8vw,12px);color:#6c776d;line-height:1.3}
+.foot-source a{color:#2c6346;text-decoration:underline;text-underline-offset:3px;font-weight:800;white-space:nowrap}
+.panel{border:1px solid #d5e0d7;background:var(--white);padding:clamp(16px,2.1vw,31px);display:flex;flex-direction:column;gap:clamp(12px,1.6vh,22px);min-width:0}
+.panel.green{background:#e7efe7;border-color:#cfdfcf}
+.panel h3{font-size:clamp(19px,2.15vw,29px);margin:0;line-height:1.45;letter-spacing:-.035em}
+.panel p{font-size:clamp(14px,1.23vw,18px);line-height:1.6;margin:0}
+.panel-label{text-transform:none;color:#356d4a;font-size:clamp(13px,1vw,15px);letter-spacing:.025em;font-weight:850}
+.muted{color:#637265!important;font-size:clamp(12px,1vw,15px)!important;line-height:1.52!important}
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(15px,2vw,28px);align-items:stretch}
+.two-col>div{min-width:0}
+.block-space>.panel{height:100%}
+.insight-box{border-left:4px solid #447d58;background:#fbfdf9;padding:clamp(12px,1.45vw,20px);line-height:1.55;font-size:clamp(14px,1.28vw,19px)}
+.compare-prices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.compare-prices>div{background:#f3f6f1;padding:clamp(18px,2vw,29px);display:flex;flex-direction:column;gap:12px}
+.compare-prices span{font-size:16px;font-weight:800;color:#396e4a}
+.compare-prices strong{font-size:clamp(41px,4.3vw,71px);line-height:1.1;letter-spacing:-.05em}
+.compare-prices small{font-size:clamp(12px,1.08vw,16px);color:#627064;line-height:1.5}
+.compare-prices small b{display:block;font-size:clamp(16px,1.55vw,22px);color:var(--ink)}
+.difference{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);gap:10px;padding-top:15px}
+.difference span{font-size:clamp(13px,1.12vw,17px)}
+.difference strong{font-size:clamp(22px,2.3vw,34px);color:var(--green)}
+.levels{display:flex;flex-direction:column;gap:10px}
+.level{display:grid;grid-template-columns:46px minmax(260px,1.3fr) minmax(120px,.5fr) minmax(200px,1fr);align-items:center;gap:18px;background:var(--white);border:1px solid #dbe3da;padding:clamp(13px,1.3vw,20px)}
+.level>span{font-size:17px;color:#91aa98;font-weight:900}
+.level>div{display:flex;flex-direction:column;gap:5px}
+.level b{font-size:clamp(16px,1.45vw,22px)}
+.level small{font-size:clamp(12px,1vw,15px);color:#748077}
+.level strong{font-size:clamp(27px,3vw,45px);letter-spacing:-.045em}
+.level em{font-style:normal;color:#66806e;font-size:clamp(12px,1vw,15px)}
+.level.highlight{background:#e5f1e5;border-color:#a3c4a6}
+.level.highlight strong,.level.highlight b{color:#1d6b42}
+.conclusion-strip{display:grid;grid-template-columns:170px 1fr;gap:20px;background:#dcebdc;padding:clamp(12px,1.5vw,22px);align-items:center}
+.conclusion-strip b{font-size:clamp(16px,1.35vw,20px);color:#236442}
+.conclusion-strip span{font-size:clamp(14px,1.24vw,18px);line-height:1.45}
+.incentive-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}
+.incentive-list{display:flex;flex-direction:column;gap:9px}
+.incentive{display:grid;grid-template-columns:50px minmax(0,1fr) 110px;align-items:center;gap:15px;border:1px solid #dce5db;background:var(--white);padding:clamp(12px,1.2vw,18px)}
+.incentive-icon{font-size:12px;font-weight:900;color:#76927d}
+.incentive>div:nth-child(2){display:flex;flex-direction:column;gap:5px}
+.incentive b{font-size:clamp(16px,1.43vw,22px)}
+.incentive span{color:#667467;font-size:clamp(12px,1vw,15px)}
+.incentive>strong{text-align:right;font-size:clamp(25px,2.5vw,37px);color:#225c40;white-space:nowrap}
+.incentive>strong small{font-size:14px}
+.large-value{font-size:clamp(55px,6.5vw,100px);font-weight:900;color:#185c3d;letter-spacing:-.07em;line-height:1.04}
+.large-value span{font-size:clamp(24px,2.4vw,36px);margin-left:4px}
+.mini-stacked{display:flex;height:27px;width:100%;gap:3px;margin-top:auto}
+.three-facilities{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.three-facilities>div{background:#e9f0e8;padding:clamp(14px,1.5vw,22px);display:flex;flex-direction:column;gap:11px}
+.three-facilities span{font-size:14px;color:#4e7660;font-weight:800}
+.three-facilities strong{font-size:clamp(22px,2.4vw,36px);white-space:nowrap;letter-spacing:-.055em}
+.note-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:12px 0;border-bottom:1px solid #e1e8df;font-size:clamp(13px,1.1vw,16px)}
+.note-row span strong{font-size:24px}
+.topline-math{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;padding:clamp(14px,1.5vw,23px);font-size:clamp(14px,1.25vw,19px)}
+.topline-math strong{font-size:clamp(31px,3.1vw,49px)}
+.topline-math.emphasis{color:var(--green);background:#cee2d0}
+.flow-down{padding:6px 14px;color:#56715c;font-size:clamp(12px,1vw,15px);text-align:center}
+.coefficient-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.eq-block{display:flex;flex-direction:column;align-items:center;gap:6px}
+.eq-block small{font-size:clamp(13px,1.05vw,16px);color:#577462}
+.eq-block strong{font-size:clamp(36px,4vw,60px);line-height:1.1;letter-spacing:-.05em}
+.eq-arrow{text-align:center;font-size:24px;color:#8c998d;line-height:1}
+.eq-result{background:#d1e4d4;padding:15px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.eq-result span{font-size:15px;font-weight:800;color:#366549}
+.eq-result strong{font-size:clamp(39px,4.3vw,65px);color:#185c3d;letter-spacing:-.05em}
+.kcompare{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kcompare>div{background:#fff;padding:clamp(14px,1.5vw,24px);display:flex;flex-direction:column;gap:13px}
+.kcompare span,.kcompare small{font-size:clamp(12px,1vw,15px);color:#5b6b61}
+.kcompare strong{font-size:clamp(33px,3.2vw,50px);letter-spacing:-.05em}
+.kcompare>.active{background:#d3e6d4;color:#1c5d3b}
+.green-text strong{color:#145337}
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.formula-label{font-size:clamp(14px,1.25vw,18px);font-weight:850;color:#657c69}
+.formula-math{font-size:clamp(21px,2.4vw,34px);font-weight:800;display:flex;gap:15px;align-items:center;min-height:92px}
+.formula-math.rebuild{font-size:clamp(24px,2.8vw,42px)}
+.formula-math b{color:var(--green)}
+.fraction{display:inline-flex;flex-direction:column;font-size:clamp(16px,1.55vw,23px);align-items:center;line-height:1.35}
+.fraction b{border-bottom:2px solid #285f46;padding-bottom:6px;color:var(--ink)}
+.fraction b+b{border:0;padding-top:6px;padding-bottom:0}
+.explanation{background:#f4f7f3;border-left:4px solid #4d8864;padding:18px;font-size:clamp(14px,1.28vw,18px);line-height:1.75}
+.condition{background:#fbfcf8;padding:16px;display:flex;flex-direction:column;gap:7px}
+.condition strong{font-size:clamp(16px,1.55vw,23px)}
+.condition span{font-size:clamp(13px,1.15vw,17px);color:#5d7164;line-height:1.45}
+.case-overview{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.schematic{background:#e9e8df;border:1px solid #d4dbd1;min-height:335px;display:flex;flex-direction:column;gap:16px;padding:18px 26px 12px;position:relative}
+.road{font-size:13px;text-align:center;letter-spacing:.06em;color:#69756c;background:#d5d7cc;padding:12px}
+.buildings{display:flex;align-items:stretch;justify-content:space-around;flex:1;gap:15px;min-height:150px}
+.tower{background:repeating-linear-gradient(0deg,#779582,#779582 9px,#afc1b2 9px,#afc1b2 11px);border:3px solid #64866f;flex:1;max-width:100px;box-shadow:8px 8px 0 #46654c16}
+.tower.smaller{height:83%;align-self:flex-end}
+.tower.slimmer{max-width:75px}
+.walkway{align-self:center;background:#fffbf3;border:2px dashed #bc986a;flex:1;max-width:160px;min-width:100px;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:7px;text-align:center;padding:9px;line-height:1.35;font-size:14px}
+.walkway small{font-size:12px;color:#996f43}
+.site-bot{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.site-bot>div{background:#c1d4c1;padding:10px;font-size:13px;color:#315c42;text-align:center;font-weight:800}
+.diagram-caption{font-size:11px;color:#6d786b;text-align:center}
+.quick-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{background:#fff;padding:12px;display:flex;flex-direction:column;gap:5px}
+.metric strong{font-size:clamp(27px,2.6vw,42px);color:#255f42}
+.metric span{font-size:clamp(12px,1vw,15px);color:#718275}
+.case-chain{display:flex;flex-direction:column;gap:6px}
+.case-chain>div{display:flex;justify-content:space-between;gap:10px;background:#dbe9db;padding:9px 13px;font-size:clamp(12px,1.1vw,16px)}
+.case-chain b{font-weight:850}
+.finance-steps{display:flex;align-items:stretch;gap:7px}
+.fstep{background:#fff;border:1px solid #dce3d9;flex:1;min-width:0;padding:clamp(15px,1.6vw,24px);display:flex;flex-direction:column;gap:18px}
+.fstep span{font-weight:900;color:#6b8b71;font-size:14px}
+.fstep b{font-size:clamp(17px,1.75vw,26px)}
+.fstep strong{font-size:clamp(17px,1.62vw,24px);color:#266343}
+.fstep small{font-size:clamp(12px,1vw,15px);color:#6d7c70;margin-top:auto}
+.f-arrow{font-size:27px;display:flex;align-items:center;color:#9da99d}
+.three-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.three-notes>div{background:#e8efe7;display:flex;flex-direction:column;gap:9px;padding:17px}
+.three-notes b{font-size:clamp(16px,1.5vw,22px)}
+.three-notes span{color:#5e6e61;font-size:clamp(12px,1vw,15px)}
+.ledger-layout{display:grid;grid-template-columns:1fr .85fr;gap:20px}
+.ledger{display:grid;gap:4px}
+.ledger>div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:clamp(12px,1.5vw,22px);background:#f1f6ee;font-size:clamp(14px,1.28vw,18px)}
+.ledger strong{font-size:clamp(29px,3vw,46px);letter-spacing:-.05em}
+.ledger-em{background:#d3e5d1!important;color:var(--green);font-weight:850}
+.ratio-formula{display:flex;align-items:center;flex-direction:column;width:100%;font-size:clamp(15px,1.3vw,19px);font-weight:800}
+.ratio-formula hr{border:0;border-top:2px solid #51745b;width:75%;margin:9px 0}
+.source-explain{font-size:clamp(11px,.96vw,14px);color:#6d7a70;line-height:1.6;background:#f5f9f4;padding:12px}
+.member-flow{display:flex;flex-direction:column;gap:18px}
+.member-row{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:10px;align-items:stretch}
+.member-row>div:not(.calc-sign){display:flex;flex-direction:column;gap:10px;align-items:flex-start;justify-content:center;padding:clamp(15px,1.7vw,27px);background:#fff;min-width:0}
+.member-row>div.accent{background:#dbeadc;color:#1b5f40}
+.member-row span{font-size:clamp(12px,1vw,15px);line-height:1.4;color:#66756c}
+.member-row strong{font-size:clamp(27px,3.3vw,51px);white-space:nowrap;letter-spacing:-.05em}
+.calc-sign{display:flex;align-items:center;justify-content:center;font-size:31px;color:#76957f}
+.member-final>div{background:#edf2eb!important}
+.member-final>div.accent{background:#bedfc4!important}
+.pair-explain{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.pair-explain .panel{gap:6px}
+.pair-explain h3{font-size:clamp(17px,1.65vw,24px)}
+.pair-explain p{font-size:clamp(12px,1vw,15px)}
+.caution{font-size:clamp(12px,.97vw,14px);color:#778279;margin:0;line-height:1.4}
+.risk-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+.risk-table{border-collapse:collapse;width:100%;font-size:clamp(13px,1.2vw,18px)}
+.risk-table th{text-align:right;background:#e7eee6;padding:clamp(13px,1.35vw,20px);color:#42654e}
+.risk-table th:first-child{text-align:left}
+.risk-table td{padding:clamp(18px,2vw,31px);border-bottom:1px solid #dde5dc;text-align:right;white-space:nowrap}
+.risk-table td:first-child{text-align:left}
+.risk-table tr.focus{background:#e1eee0;font-weight:850;color:#235f42}
+.risk-low{color:#aa6748;font-weight:850}
+.big-side-metric{display:flex;flex-direction:column;gap:8px;padding:8px 0;border-bottom:1px solid #cedbce}
+.big-side-metric span{font-size:clamp(13px,1.1vw,16px)}
+.big-side-metric strong{font-size:clamp(40px,4.4vw,65px);color:#205c3b;line-height:1.1}
+.big-side-metric.negative strong{color:#aa6748}
+.conclusion-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.big-proof{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #e4e7df}
+.big-proof span{font-size:clamp(13px,1.13vw,17px)}
+.big-proof strong{font-size:clamp(29px,3.1vw,45px);color:#1c6845}
+.open-check{display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #cddccd;padding:10px 0}
+.open-check b{font-size:clamp(15px,1.25vw,19px)}
+.open-check span{color:#627163;font-size:clamp(12px,1vw,15px);line-height:1.5}
+.last-word{background:#244d37;color:white;padding:clamp(20px,2.1vw,34px);display:flex;align-items:center;justify-content:space-between;gap:22px}
+.last-word span{font-size:clamp(15px,1.3vw,19px);color:#d3e2d4}
+.last-word strong{font-size:clamp(19px,2vw,29px);line-height:1.45;text-align:right}
+.hero-main{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero-pre{color:#568268;font-size:clamp(13px,1.1vw,17px);font-weight:850;letter-spacing:.1em;margin-bottom:18px}
+.hero-key{font-size:clamp(52px,5.7vw,92px);letter-spacing:-.07em;line-height:1.13;font-weight:900}
+.hero-key em{font-style:normal;color:#216b46}
+.hero-main p{font-size:clamp(16px,1.25vw,21px);color:#68786e;margin:27px 0}
+.hero-sequence{display:flex;flex-direction:column;gap:12px;border-left:2px solid #acc4ae;padding-left:26px}
+.hero-sequence>div{background:#e8eee6;padding:clamp(20px,2vw,30px);display:flex;flex-direction:column;gap:7px}
+.hero-sequence small{color:#56866a;font-weight:900}
+.hero-sequence b{font-size:clamp(17px,1.4vw,22px)}
+.hero-sequence span{font-size:clamp(12px,1vw,15px);color:#6e7b70}
+.bottombar{height:58px;flex:none;background:#f7f6f1;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,3vw,55px);border-top:1px solid var(--line)}
+.bottom-left{display:flex;align-items:center;gap:14px}
+.counter{font-size:14px;letter-spacing:.1em;color:#506b59;font-weight:900}
+.progress-track{height:4px;width:clamp(100px,13vw,210px);background:#dce8db}
+.progress{height:100%;width:7.69%;background:#296f48;transition:width .15s ease}
+.ctrls{display:flex;align-items:center;gap:8px}
+.nav-btn{border:1px solid #cfdbd0;background:#fff;padding:8px 14px;font-size:13px;font-weight:850;color:#2f5c40}
+.nav-btn:hover:not(:disabled){background:#dcebdc}
+.nav-btn:disabled{opacity:.35;cursor:default}
+.notes-panel{position:fixed;right:20px;top:70px;bottom:74px;width:min(510px,44vw);background:#fffffff8;border:1px solid #bdd0c0;box-shadow:0 12px 65px #15251b38;z-index:20;display:none;flex-direction:column}
+.notes-panel.show{display:flex}
+.notes-panel>header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #d6e1d8;color:#245f40;font-weight:850}
+.notes-panel>div{padding:20px 24px;overflow-y:auto;font-size:16px;line-height:1.85}
+.notes-panel h3{font-size:19px;margin:0 0 18px}
+.notes-panel p{margin:0;white-space:pre-wrap}
+.notes-panel button{border:0;background:none;font-size:22px}
+.overview{position:fixed;inset:56px 0 0;background:#f4f6efed;z-index:30;display:none;overflow-y:auto;padding:36px clamp(22px,5vw,75px)}
+.overview.show{display:block}
+.overview-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px}
+.overview h2{font-size:32px;margin:0}
+.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.overview-item{border:1px solid #d1dfd1;background:white;text-align:left;padding:23px;display:flex;flex-direction:column;gap:13px;min-height:140px}
+.overview-item:hover,.overview-item.active{border-color:#2a6e47;background:#e7f0e7}
+.overview-item small{font-weight:850;color:#538362}
+.overview-item strong{font-size:20px;line-height:1.3}
+.overview-item span{color:#718376;font-size:13px;line-height:1.35}
+@media(max-height:800px) and (min-width:1100px){.slide{padding-top:18px;padding-bottom:16px}.slide-heading h1{font-size:clamp(28px,2.75vw,45px)}.slide-heading p{font-size:15px}.slide-inner{gap:10px}.slide-body{gap:10px}.panel{gap:10px;padding:17px}.incentive{padding:9px 15px}.big-side-metric strong{font-size:38px}.member-row>div:not(.calc-sign){padding:14px}.member-row strong{font-size:34px}.large-value{font-size:61px}.case-overview .schematic{min-height:230px}.hero-key{font-size:58px}}
+@media(max-width:900px){.topbar{padding:0 16px}.v-label{display:none}.tool{padding:8px;font-size:11px}.slide{padding:22px 22px 18px}.slide-heading h1{font-size:28px}.two-col,.formula-grid,.case-overview,.coefficient-layout,.ledger-layout,.risk-layout,.conclusion-layout,.incentive-layout,.hero-main{grid-template-columns:1fr}.level{grid-template-columns:28px 1fr 100px;gap:8px}.level em{display:none}.level strong{font-size:25px}.slide-body{justify-content:flex-start}.finance-steps{flex-wrap:wrap}.fstep{min-width:170px}.f-arrow{display:none}.notes-panel{width:min(480px,90vw)}.overview-grid{grid-template-columns:1fr 1fr}.member-row{grid-template-columns:1fr 25px 1fr}.member-row>div.accent{grid-column:1/-1}.member-row .calc-sign:nth-of-type(4){display:none}.slide{overflow-y:auto}.incentive>strong{font-size:25px}}
+@media(max-width:520px){.topbar{height:50px}.brand{font-size:13px}.top-right{gap:4px}.tool{font-size:10px}.slide{padding:18px 16px 20px}.slide-heading h1{font-size:26px}.slide-heading p{font-size:14px}.panel{padding:17px}.panel h3{font-size:20px}.compare-prices strong{font-size:35px}.incentive{grid-template-columns:30px 1fr 74px;gap:7px;padding:12px}.incentive b{font-size:14px}.incentive span{font-size:11px}.incentive>strong{font-size:19px}.three-facilities{grid-template-columns:1fr}.hero-key{font-size:40px}.hero-sequence>div{padding:15px}.conclusion-strip{grid-template-columns:1fr;gap:7px}.member-row{grid-template-columns:1fr}.member-row>div{grid-column:auto!important}.member-row .calc-sign{height:12px;font-size:23px}.member-row strong{font-size:28px}.bottombar{height:52px;padding:0 9px}.progress-track{display:none}.overview{top:50px}.overview-grid{grid-template-columns:1fr}.foot-source{flex-wrap:wrap}.note-row{flex-wrap:wrap}.risk-table th,.risk-table td{padding:11px 6px;font-size:11px}.large-value{font-size:50px}.last-word{flex-direction:column;align-items:flex-start}.last-word strong{text-align:left}}
+@media print{@page{size:16in 9in;margin:0}html,body{height:auto!important;overflow:visible!important;background:#fff}.deck{display:block;height:auto}.topbar,.bottombar,.notes-panel,.overview{display:none!important}.content{display:block}.slide,.slide.active{display:block!important;position:relative!important;height:9in;page-break-after:always;break-after:page;padding:.5in .65in;overflow:hidden;animation:none}.slide-inner{height:100%}.slide-body{flex:1;justify-content:center}.panel{break-inside:avoid}a{color:inherit;text-decoration:none}.slide-heading h1{font-size:32pt}.hero-key{font-size:50pt}}
+</style></head>
+<body><div class="deck" id="deck"><header class="topbar"><div class="top-left"><div class="brand"><span class="brand-mark"></span>사업성 보정계수</div><span class="v-label">PRESENTATION V3 · SEOUL 2026</span></div><div class="top-right"><button class="tool" id="overviewToggle" aria-pressed="false" title="전체 목차 (O)">전체 보기</button><button class="tool" id="notesToggle" aria-pressed="false" title="발표자 노트 (N)">발표 노트</button><button class="tool" id="fullscreenToggle" title="전체화면 (F)">전체화면</button></div></header>
+<main class="content" id="content"><section class="slide active" data-index="0" aria-label="1번째 슬라이드: 사업성 보정계수">
+  <div class="slide-inner"><div class="slide-kicker"><span>INTRO / 01</span><span class="slide-kicker-num">01 / 13</span></div>
+  <div class="slide-heading"><h1>사업성 보정계수</h1><p>왜 서울시는 정비사업의 ‘허용용적률’을 보정할까?</p></div>
+  <div class="slide-body"><div class="hero-main"><div><div class="hero-pre">SEOUL REDEVELOPMENT · 2026</div><div class="hero-key">계획의 가치에<br><em>사업성의 차이</em>를<br>반영하는 방식</div><p>기준 → 계획 인센티브 → 사업성 보정 → 실제 사업수지</p></div><div class="hero-sequence"><div><small>01</small><b>어떤 공간을 계획하는가</b><span>허용용적률의 의미</span></div><div><small>02</small><b>왜 지역마다 다르게 보정하는가</b><span>사업성 보정계수 K</span></div><div><small>03</small><b>조합원에게 어떤 차이가 생기는가</b><span>비례율과 분담금</span></div></div></div></div>
+  <div class="foot-source"><span>정책과 산식의 설명은 서울시 기본계획 및 실제 고시에 근거</span><a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener noreferrer">서울시 사업성 개선 기준<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>01 · 사업성 보정계수</h3><p>오늘은 사업성 보정계수를 숫자 하나로 소개하기보다, 정비사업의 용적률이 정해지는 과정을 먼저 설명하겠습니다. 그리고 실제 석관4구역에서 허용 인센티브가 어떻게 생기는지, 보정계수는 여기에 왜 적용되는지, 결국 사업수지와 조합원 분담금에는 어떻게 연결되는지 살펴보겠습니다.</p></template>
+</section>
+<section class="slide" data-index="1" aria-label="2번째 슬라이드: 왜 사업성을 보정하는가">
+  <div class="slide-inner"><div class="slide-kicker"><span>BACKGROUND / 02</span><span class="slide-kicker-num">02 / 13</span></div>
+  <div class="slide-heading"><h1>왜 사업성을 보정하는가</h1><p>같은 물량을 분양해도 지역에 따라 확보되는 수입이 다릅니다.</p></div>
+  <div class="slide-body"><div class="two-col"><div class="block-space"><article class="panel "><div class="panel-label">분양가격 차이 · 가상 비교</div><div class="compare-prices"><div><span>A 지역</span><strong>10억</strong><small>100세대 × 10억 = <b>1,000억</b></small></div><div><span>B 지역</span><strong>7억</strong><small>100세대 × 7억 = <b>700억</b></small></div></div><div class="difference"><span>동일한 100세대 일반분양</span><strong>매출 차이 300억</strong></div></article></div><article class="panel green"><div class="panel-label">서울시가 보정하려는 격차</div><h3>공사비 부담은 커지는데,<br>팔 수 있는 주택의 가격과 물량은<br>사업지마다 다릅니다.</h3><div class="insight-box">공사비를 대신 내주는 제도가 아니라<br><b>추가 분양 여력을 만들어 수입 측면을 보완</b>합니다.</div><p class="muted">분양수입의 차이를 보여주는 예시일 뿐 실제 수익·이익 비교는 아닙니다.</p></article></div></div>
+  <div class="foot-source"><span>세대당 분양가격과 물량은 이해를 위한 가상 조건</span><a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener noreferrer">서울시 사업성 개선방안<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>02 · 왜 사업성을 보정하는가</h3><p>같은 일반분양 100세대를 공급해도 한 지역에서 10억 원, 다른 지역에서 7억 원에 분양한다면 총매출은 300억 원 차이가 납니다. 비용이나 종전자산까지 동일하다고 볼 수 없으므로 이것만으로 사업의 수익성을 확정할 수는 없습니다. 다만 상대적으로 분양수입을 확보하기 어려운 정비구역을 추가 공급 여력으로 보완한다는 제도의 취지는 이해할 수 있습니다. 그 수단이 용적률입니다.</p></template>
+</section>
+<section class="slide" data-index="2" aria-label="3번째 슬라이드: 보정계수보다 먼저, 용적률의 네 단계">
+  <div class="slide-inner"><div class="slide-kicker"><span>PLANNING / 03</span><span class="slide-kicker-num">03 / 13</span></div>
+  <div class="slide-heading"><h1>보정계수보다 먼저, 용적률의 네 단계</h1><p>기준·허용·상한·법적상한은 같은 용적률의 다른 결정 근거입니다.</p></div>
+  <div class="slide-body"><div class="levels"><div class="level "><span>01</span><div><b>기준용적률</b><small>190% + 소형주택 공급에 따른 완화 14.3%p</small></div><strong>204.3%</strong><em>계획의 출발점</em></div><div class="level highlight"><span>02</span><div><b>허용용적률</b><small>보행통로·BF인증·돌봄·고령자·층간소음 등</small></div><strong>241.5%</strong><em>계획 요소에 대한 인센티브</em></div><div class="level "><span>03</span><div><b>상한용적률</b><small>도로·공원·공공공지의 부지 및 건축물 제공</small></div><strong>265.5%</strong><em>별도 공공기여를 반영</em></div><div class="level "><span>04</span><div><b>법적상한용적률</b><small>법령상 추가 완화와 공공주택 공급 요건</small></div><strong>284.97%</strong><em>법적 절차·조건을 적용</em></div></div><div class="conclusion-strip"><b>핵심 구분</b><span>허용 = 계획 요구조건 이행 / 상한 = 공공시설 제공 등 공공기여</span></div></div>
+  <div class="foot-source"><span>석관4구역 고시의 획지1 결정값 · 2025.04.10, pp.293–294·304</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">정비계획 용적률 원문<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>03 · 보정계수보다 먼저, 용적률의 네 단계</h3><p>이 네 가지를 먼저 구분해야 보정계수의 위치가 보입니다. 석관4구역은 기준이 204.3%입니다. 공공보행통로와 시설 계획 등의 인센티브가 허용 단계에 반영되고, 상한은 별도의 도로·공원·공공공지 제공에 대한 산정입니다. 마지막 법적상한은 별도의 법적 요건에 따른 값입니다. 따라서 허용과 상한은 숫자만 다른 것이 아니라 인정받는 이유가 다릅니다.</p></template>
+</section>
+<section class="slide" data-index="3" aria-label="4번째 슬라이드: 허용 인센티브는 실제 어떤 계획으로 받는가">
+  <div class="slide-inner"><div class="slide-kicker"><span>PLANNING / 04</span><span class="slide-kicker-num">04 / 13</span></div>
+  <div class="slide-heading"><h1>허용 인센티브는 실제 어떤 계획으로 받는가</h1><p>석관4구역은 도시 공간과 건축 성능에 관한 다섯 가지 계획을 제시했습니다.</p></div>
+  <div class="slide-body"><div class="incentive-layout"><div class="incentive-list"><div class="incentive"><div class="incentive-icon">01</div><div><b>공공보행통로</b><span>남북 보행 연결 · 폭 6m 계획</span></div><strong>+3.5<small>%p</small></strong></div><div class="incentive"><div class="incentive-icon">02</div><div><b>BF 인증</b><span>장애물 없는 생활환경 최우수등급</span></div><strong>+5.0<small>%p</small></strong></div><div class="incentive"><div class="incentive-icon">03</div><div><b>돌봄시설</b><span>지역 돌봄·놀이시설 설치 및 제공</span></div><strong>+4.1<small>%p</small></strong></div><div class="incentive"><div class="incentive-icon">04</div><div><b>고령서비스시설</b><span>고령자 서비스 공간 설치 및 제공</span></div><strong>+2.4<small>%p</small></strong></div><div class="incentive"><div class="incentive-icon">05</div><div><b>층간소음 저감</b><span>성능기준 상향</span></div><strong>+5.0<small>%p</small></strong></div></div><article class="panel green"><div class="panel-label">인정된 허용 인센티브</div><div class="large-value">20.0<span>%p</span></div><p>다섯 개 항목을 충족하여 인정받는 <b>계획 인센티브의 합계</b>입니다.</p><div class="mini-stacked"><div style="flex:3.5;background:#8ba99b"></div><div style="flex:5;background:#4b8066"></div><div style="flex:4.1;background:#d6ab74"></div><div style="flex:2.4;background:#a6b8ad"></div><div style="flex:5;background:#28533e"></div></div><p class="muted">단지 안의 계획이면서도 주변 도시와 이용자에게 제공되는 공간·성능 조건입니다.</p></article></div></div>
+  <div class="foot-source"><span>실제 허용 인센티브 항목과 수치는 공식 고시 p.295</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">허용용적률 산출근거<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>04 · 허용 인센티브는 실제 어떤 계획으로 받는가</h3><p>허용용적률이 계획적 요소라는 말은 이런 뜻입니다. 석관4구역은 단지 남북을 연결하는 공공보행통로를 두고, 장애물 없는 생활환경 인증과 돌봄시설, 고령자를 위한 시설, 층간소음 저감을 계획합니다. 각 항목은 각각 3.5, 5, 4.1, 2.4, 5%포인트로 총 20%포인트입니다. 아무 조건 없이 인센티브를 주는 게 아니라 도시와 주거환경의 계획 기준을 충족한 결과입니다.</p></template>
+</section>
+<section class="slide" data-index="4" aria-label="5번째 슬라이드: 상한용적률은 어떻게 확보하는가">
+  <div class="slide-inner"><div class="slide-kicker"><span>PLANNING / 05</span><span class="slide-kicker-num">05 / 13</span></div>
+  <div class="slide-heading"><h1>상한용적률은 어떻게 확보하는가</h1><p>허용 인센티브와 달리, 부지·시설 제공 등 공공기여를 별도 산식으로 평가합니다.</p></div>
+  <div class="slide-body"><div class="two-col upper-layout"><article class="panel "><div class="panel-label">석관4구역의 공공기여 계획</div><div class="three-facilities"><div><span>도로</span><strong>4,911㎡</strong></div><div><span>어린이공원</span><strong>4,817㎡</strong></div><div><span>공공공지</span><strong>1,102㎡</strong></div></div><div class="note-row"><b>건축물 기부채납 환산부지</b><span>915.6㎡</span></div><div class="note-row"><b>기존 국공유지 등 공제 후 순부담</b><span><strong>5,672.6㎡</strong></span></div><p class="muted">시설 면적 단순 합계가 아니라 기존 기반시설 국공유지 등을 차감한 순부담을 반영합니다.</p></article><article class="panel green"><div class="panel-label">용적률 단계가 올라가는 이유</div><div class="topline-math"><span>허용</span><strong>241.5%</strong></div><div class="flow-down">＋ 도로·공원·공공공지·건축물 공공기여</div><div class="topline-math emphasis"><span>상한</span><strong>265.5%</strong></div><div class="flow-down">별도 법정 완화 및 주택 공급 요건</div><div class="topline-math"><span>법적상한</span><strong>284.97%</strong></div><p class="muted">상한 265.5%는 실제 가중치·부지환산·기부채납 산식을 반영한 고시의 결과값입니다.</p></article></div></div>
+  <div class="foot-source"><span>석관4구역 도로·공원·공공공지·순부담: 공식 고시 pp.293–294</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">공공기여 산정표<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>05 · 상한용적률은 어떻게 확보하는가</h3><p>상한용적률은 계획 요소를 잘 만들었다고 추가하는 허용 인센티브와는 다릅니다. 도로 4,911㎡, 어린이공원 4,817㎡, 공공공지 1,102㎡ 등 공공시설을 계획하고 부지를 제공하는 기여를 별도로 산정합니다. 기존 국공유지 등을 빼고 계산한 순부담은 약 5,673㎡입니다. 서울시는 이를 비롯한 공공기여를 정해진 방식으로 계산해 상한용적률을 265.5%로 정했습니다. 실제 산식은 단순히 제공면적에 일정 비율을 곱하는 방식만은 아닙니다.</p></template>
+</section>
+<section class="slide" data-index="5" aria-label="6번째 슬라이드: 사업성 보정계수는 왜 허용에 적용하는가">
+  <div class="slide-inner"><div class="slide-kicker"><span>POLICY / 06</span><span class="slide-kicker-num">06 / 13</span></div>
+  <div class="slide-heading"><h1>사업성 보정계수는 왜 허용에 적용하는가</h1><p>동일한 계획 요구조건을 이행했을 때, 사업 여건에 따라 인센티브 폭을 보정합니다.</p></div>
+  <div class="slide-body"><div class="coefficient-layout"><article class="panel "><div class="panel-label">동일한 다섯 개 계획 항목</div><div class="eq-block"><small>원래 인정되는 허용 인센티브</small><strong>20.0%p</strong></div><div class="eq-arrow">×</div><div class="eq-block"><small>석관4구역 사업성 보정계수</small><strong>1.86</strong></div><div class="eq-arrow">=</div><div class="eq-result"><span>보정된 허용 인센티브</span><strong>37.2%p</strong></div></article><article class="panel green"><div class="panel-label">K=1.0과 K=1.86의 차이</div><div class="kcompare"><div><span>보정 없음 · K 1.0</span><strong>224.3%</strong><small>204.3 + 20.0</small></div><div class="active"><span>석관4구역 · K 1.86</span><strong>241.5%</strong><small>204.3 + 37.2</small></div></div><div class="difference green-text"><span>같은 계획 조건의 추가 허용용적률</span><strong>+17.2%p</strong></div><p class="muted">공공기여 제공량 자체를 1.86배 하는 제도가 아닙니다.</p></article></div></div>
+  <div class="foot-source"><span>20%p × 1.86 = 37.2%p, 기준 204.3% → 허용 241.5% · 공식 고시</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">사업성 보정계수 적용 근거<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>06 · 사업성 보정계수는 왜 허용에 적용하는가</h3><p>석관4구역이 인정받은 허용 인센티브는 원래 20%포인트입니다. 그런데 이 사업의 K는 1.86이므로 같은 계획 조건에 대해 37.2%포인트를 인정합니다. 그래서 204.3%에 37.2%포인트를 더한 241.5%가 허용용적률입니다. K가 없었다면 224.3%였을 겁니다. 보정계수는 도시가 요구하는 동일한 계획 조건을 충족하면서 사업성이 불리한 지역에 더 큰 허용 인센티브를 인정하는 장치입니다.</p></template>
+</section>
+<section class="slide" data-index="6" aria-label="7번째 슬라이드: 재개발과 재건축은 왜 산식이 다른가">
+  <div class="slide-inner"><div class="slide-kicker"><span>POLICY / 07</span><span class="slide-kicker-num">07 / 13</span></div>
+  <div class="slide-heading"><h1>재개발과 재건축은 왜 산식이 다른가</h1><p>지가비율을 기본으로 하되, 재건축은 단지 규모와 기존 세대밀도까지 고려합니다.</p></div>
+  <div class="slide-body"><div class="formula-grid"><article class="panel "><div class="panel-label">재개발</div><div class="formula-label">지가 차이 중심</div><div class="formula-math">K = <span class="fraction"><b>서울시 평균 공시지가</b><b>사업지 평균 공시지가</b></span></div><div class="explanation">석관4구역 적용 고시 기준<br><b>5,861,129 ÷ 3,167,883 ≈ 1.8502</b><br>소수점 셋째 자리 올림 → <b>K 1.86</b></div></article><article class="panel green"><div class="panel-label">재건축</div><div class="formula-label">지가 + 단지의 구조적 조건</div><div class="formula-math rebuild">K = 지가비율 <b>+ α + β</b></div><div class="condition"><strong>α · 대지면적</strong><span>대지가 작으면 확보 가능한 신축 물량의 총량이 제한될 수 있음</span></div><div class="condition"><strong>β · 기존 세대밀도</strong><span>기존 소유자에게 배정할 주택이 많으면 일반분양 물량이 적을 수 있음</span></div></article></div><div class="conclusion-strip"><b>제도의 판단</b><span>사업유형별 불리함을 산식에 반영 · 최종 K는 1.0~2.0 범위, 개별 적용조건 확인</span></div></div>
+  <div class="foot-source"><span>석관4구역 지가비율은 고시 p.295 · 재건축 α·β는 서울시 정비기본계획 세부기준</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">석관4구역 K 산정 원문<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>07 · 재개발과 재건축은 왜 산식이 다른가</h3><p>산식이 다른 이유는 두 사업의 불리함을 평가하는 항목이 다르기 때문입니다. 재개발은 서울시와 사업지의 공시지가 비율을 기본으로 합니다. 석관4구역은 실제 고시에서 약 1.8502를 소수점 처리해 1.86을 적용했습니다. 재건축은 이 지가 차이에 더해 대지가 작아 신축 물량 확보에 불리하거나 기존 조합원 수가 많아 일반분양 여력이 부족한 경우를 α와 β로 반영합니다. α·β가 무조건 적용되는 것은 아니고 세부 요건을 충족해야 합니다.</p></template>
+</section>
+<section class="slide" data-index="7" aria-label="8번째 슬라이드: 석관4구역: 하나의 사업을 따라가면">
+  <div class="slide-inner"><div class="slide-kicker"><span>CASE / 08</span><span class="slide-kicker-num">08 / 13</span></div>
+  <div class="slide-heading"><h1>석관4구역: 하나의 사업을 따라가면</h1><p>계획 인센티브와 보정계수·공공기여가 하나의 정비계획으로 연결됩니다.</p></div>
+  <div class="slide-body"><div class="case-overview"><div class="schematic" aria-label="실제 지형과 다른 설명용 석관4구역 계획 다이어그램"><div class="road top">지역 보행 네트워크</div><div class="buildings"><div class="tower"></div><div class="tower smaller"></div><div class="walkway"><b>남북 공공보행통로</b><small>폭 6m</small></div><div class="tower slimmer"></div></div><div class="site-bot"><div>돌봄·고령자 서비스</div><div>공원과 공공공지</div></div><div class="diagram-caption">위치·배치를 재현한 실측도가 아닌 계획 요소 설명도</div></div><article class="panel green"><div class="panel-label">고시가 결정한 계획</div><div class="quick-facts"><div class="metric "><strong>1,530</strong><span>총 계획 세대</span></div><div class="metric "><strong>253</strong><span>임대주택 세대</span></div><div class="metric "><strong>36층</strong><span>최고 계획</span></div><div class="metric "><strong>64,876㎡</strong><span>정비구역 면적</span></div></div><div class="case-chain"><div><span>계획 요소</span><b>허용 20%p</b></div><div><span>사업성 보정</span><b>K 1.86</b></div><div><span>공공기여</span><b>상한 265.5%</b></div></div><p class="muted">같은 사업에서도 허용 인센티브와 공공기여 산식은 서로 다른 단계입니다.</p></article></div></div>
+  <div class="foot-source"><span>석관4구역 계획: 2025.04.10 정비계획·정비구역 지정 고시</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">석관4구역 공식 고시<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>08 · 석관4구역: 하나의 사업을 따라가면</h3><p>이 사례를 정리해 보면 단지 안을 남북으로 연결하는 보행통로를 만들고, 돌봄시설과 고령자 시설 등을 제공하는 것이 허용 인센티브의 근거입니다. 보정계수 K 1.86은 그 계획 인센티브를 보정합니다. 별도의 도로와 공원, 공공공지 제공은 상한용적률에 반영됩니다. 같은 사업 안에서 서로 다른 용적률 단계가 연결되지만 각각 인정 근거는 다릅니다.</p></template>
+</section>
+<section class="slide" data-index="8" aria-label="9번째 슬라이드: 용적률 증가가 바로 사업수익은 아니다">
+  <div class="slide-inner"><div class="slide-kicker"><span>FINANCE / 09</span><span class="slide-kicker-num">09 / 13</span></div>
+  <div class="slide-heading"><h1>용적률 증가가 바로 사업수익은 아니다</h1><p>보정된 허용용적률이 실제 분양 가능한 주택과 사업수지로 연결되는 중간 과정입니다.</p></div>
+  <div class="slide-body"><div class="finance-steps"><div class="fstep"><span>01</span><b>허용용적률 증가</b><strong>+17.2%p</strong><small>계획상 가능량</small></div><div class="f-arrow">→</div><div class="fstep"><span>02</span><b>건축계획 실현</b><strong>동 배치·높이·코어</strong><small>실제 건축면적</small></div><div class="f-arrow">→</div><div class="fstep"><span>03</span><b>공급 물량 배분</b><strong>조합원·임대·일반분양</strong><small>실제로 팔 수 있는 주택</small></div><div class="f-arrow">→</div><div class="fstep"><span>04</span><b>사업수지 산정</b><strong>수입 − 총사업비</strong><small>조합원 권리가액의 기초</small></div></div><div class="three-notes"><div><b>허용용적률</b><span>계획 기준에 따른 가능량</span></div><div><b>일반분양수입</b><span>물량 × 실제 분양가격</span></div><div><b>사업수지</b><span>매출에 추가 공사비·비용 반영</span></div></div><div class="conclusion-strip"><b>계산의 핵심</b><span>추가 허용 면적 = 추가 일반분양 면적 = 순이익이라는 등식은 성립하지 않습니다.</span></div></div>
+  <div class="foot-source"><span>실제 수지 산식은 다음 페이지의 서울시 고시 사업수지표로 확인</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">석관4구역 사업수지표<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>09 · 용적률 증가가 바로 사업수익은 아니다</h3><p>허용용적률이 17.2%포인트 늘었다고 해서 그 면적이 모두 일반분양이 되지는 않습니다. 실제로 지을 수 있는 설계안으로 바꾸고 조합원·임대주택 계획을 반영해야 합니다. 이후 일반분양 가능 물량과 가격을 정하고 공사비·금융비 등을 차감해야 사업수지가 나옵니다. 결국 조합원에게 중요한 것은 추가 매출 그 자체가 아니라 남는 사업수지입니다.</p></template>
+</section>
+<section class="slide" data-index="9" aria-label="10번째 슬라이드: 실제 사업수지: 석관4구역">
+  <div class="slide-inner"><div class="slide-kicker"><span>FINANCE / 10</span><span class="slide-kicker-num">10 / 13</span></div>
+  <div class="slide-heading"><h1>실제 사업수지: 석관4구역</h1><p>공식 고시의 전체 추정수지입니다. K만의 금전적 개선분을 뜻하지는 않습니다.</p></div>
+  <div class="slide-body"><div class="ledger-layout"><article class="panel "><div class="panel-label">2025.04.10 공식 사업수지 · 억 원</div><div class="ledger"><div><span>추정 총수입</span><strong>11,686.9</strong></div><div><span>추정 총지출</span><strong>−7,934.9</strong></div><div class="ledger-em"><span>잔여 사업수지</span><strong>3,752.0</strong></div><div><span>종전자산 추정 총액</span><strong>3,497.2</strong></div></div></article><article class="panel green"><div class="panel-label">고시의 추정 비례율</div><div class="large-value">107.28<span>%</span></div><div class="ratio-formula"><div>총수입 − 총사업비</div><hr/><div>조합원 종전자산 총액</div></div><p class="muted">종전자산 총액과 비교해, 조합원별 기존 자산에 적용할 권리가액 비율을 계산합니다.</p><div class="source-explain">수입 1,168,692,802천 원<br>지출 793,493,701천 원<br>종전자산 349,722,321천 원</div></article></div><div class="conclusion-strip"><b>비례율 ≠ 수익률</b><span>107.28%는 투자수익률이 아니라 조합원 권리가액을 산정하기 위한 비율입니다.</span></div></div>
+  <div class="foot-source"><span>고시 p.287의 원자료를 억 원으로 반올림 · 고시 비례율 107.28% 사용</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">공식 추정 수지·비례율 표<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>10 · 실제 사업수지: 석관4구역</h3><p>이제 실제 고시 수지를 봅시다. 석관4구역의 총수입은 약 1조 1,687억 원, 총지출은 약 7,935억 원입니다. 남는 사업수지는 약 3,752억 원입니다. 종전자산 추정 총액은 약 3,497억 원이므로 고시는 비례율을 107.28%로 제시합니다. 여기서 비례율은 투자수익률이 아닙니다. 사업 전체의 잔여금액을 기존 조합원들의 종전자산 총액과 비교해 권리가액을 산정하기 위한 비율입니다.</p></template>
+</section>
+<section class="slide" data-index="10" aria-label="11번째 슬라이드: 비례율이 조합원 분담금이 되는 과정">
+  <div class="slide-inner"><div class="slide-kicker"><span>FINANCE / 11</span><span class="slide-kicker-num">11 / 13</span></div>
+  <div class="slide-heading"><h1>비례율이 조합원 분담금이 되는 과정</h1><p>종전자산 평가 → 비례율 → 권리가액 → 새 주택 분양가와 비교</p></div>
+  <div class="slide-body"><div class="member-flow"><div class="member-row"><div><span>① 기존 토지·건물 종전자산</span><strong>2.00억</strong></div><div class="calc-sign">×</div><div><span>② 고시 추정 비례율</span><strong>107.28%</strong></div><div class="calc-sign">=</div><div class="accent"><span>③ 조합원 권리가액</span><strong>2.1456억</strong></div></div><div class="member-row member-final"><div><span>④ 새 주택 조합원분양가 · 가상</span><strong>5.00억</strong></div><div class="calc-sign">−</div><div><span>③ 권리가액</span><strong>2.1456억</strong></div><div class="calc-sign">=</div><div class="accent"><span>⑤ 추가 분담금</span><strong>2.8544억</strong></div></div></div><div class="pair-explain"><article class="panel "><div class="panel-label">비례율 100%라면</div><h3>종전자산 2억 → 권리가액 2억</h3><p>가상 주택분양가 5억일 때 분담금 3억</p></article><article class="panel green"><div class="panel-label">비례율 107.28%라면</div><h3>권리가액 +1,456만 원</h3><p>다른 조건이 같을 때 분담금 2억 8,544만 원</p></article></div><p class="caution">조합원 종전자산 2억 원·분양가 5억 원은 설명용 가정. 공식 고시의 실제 개인별 분담금이나 K 도입 전후 효과가 아닙니다.</p></div>
+  <div class="foot-source"><span>비례율 107.28%는 고시 실제 수치, 조합원 예시는 가상</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">고시 추정비례율 근거<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>11 · 비례율이 조합원 분담금이 되는 과정</h3><p>이해를 위해 종전자산 2억 원인 조합원을 가정해 보겠습니다. 사업 비례율 107.28%를 적용하면 권리가액은 2억 1,456만 원입니다. 새 주택의 조합원분양가를 5억 원으로 가정하면 추가 분담금은 2억 8,544만 원입니다. 같은 조건에서 비례율이 100%였다면 분담금은 3억 원입니다. 따라서 비례율이 올라 권리가액이 높아지면 개인 분담금은 줄어듭니다. 단, 이것은 산식을 보여주는 예시이지 석관4구역의 실제 특정 조합원 정보는 아닙니다.</p></template>
+</section>
+<section class="slide" data-index="11" aria-label="12번째 슬라이드: 사업성이 얼마나 흔들릴 수 있는가">
+  <div class="slide-inner"><div class="slide-kicker"><span>FINANCE / 12</span><span class="slide-kicker-num">12 / 13</span></div>
+  <div class="slide-heading"><h1>사업성이 얼마나 흔들릴 수 있는가</h1><p>석관4구역 공식 고시가 제시한 분양가·사업비 변동별 비례율입니다.</p></div>
+  <div class="slide-body"><div class="risk-layout"><article class="panel "><div class="panel-label">고시의 공식 민감도 표</div><table class="risk-table"><thead><tr><th>분양가 (일반분양 기준)</th><th>사업비 기준</th><th>사업비 +5%</th></tr></thead><tbody><tr><td>+5%</td><td>116.55%</td><td>105.21%</td></tr><tr class="focus"><td>변동 없음</td><td><b>107.28%</b></td><td>95.94%</td></tr><tr><td>−5%</td><td>98.02%</td><td class="risk-low">86.67%</td></tr></tbody></table><p class="muted">정비계획 고시의 실제 민감도 표 중 ±5% 범위를 발췌한 것입니다. 조합의 미래 실적을 확정하는 예측치는 아닙니다.</p></article><article class="panel green"><div class="panel-label">이 표에서 보이는 것</div><div class="big-side-metric"><span>기준 비례율</span><strong>107.28%</strong></div><div class="big-side-metric negative"><span>분양가 −5%, 사업비 +5%</span><strong>86.67%</strong></div><div class="insight-box">허용용적률이 확대돼도<br><b>분양가와 사업비가 달라지면<br>조합원 권리가액도 달라집니다.</b></div></article></div></div>
+  <div class="foot-source"><span>석관4구역 고시 p.287 '공사비 및 분양가 변동표'의 실제 값</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">공식 민감도 분석표<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>12 · 사업성이 얼마나 흔들릴 수 있는가</h3><p>여기서는 임의로 위험폭을 정한 것이 아니라 석관4구역 고시 자체에 있는 표를 활용했습니다. 기준 비례율 107.28%에서 사업비가 5% 늘고 일반분양 가격이 5% 낮아지는 조건이면 비례율은 86.67%로 계산됩니다. 건축 규모를 늘려도 실제 비용과 분양가격이 달라지면 조합원 부담은 바뀔 수 있다는 뜻입니다. 이 값은 고시 시점의 민감도 계산이지 미래 결과가 확정된 것은 아닙니다.</p></template>
+</section>
+<section class="slide" data-index="12" aria-label="13번째 슬라이드: 확인된 효과와 아직 확인할 효과">
+  <div class="slide-inner"><div class="slide-kicker"><span>CONCLUSION / 13</span><span class="slide-kicker-num">13 / 13</span></div>
+  <div class="slide-heading"><h1>확인된 효과와 아직 확인할 효과</h1><p>K는 ‘허용 인센티브’를 보정합니다. 실제 사업성은 별도로 검토해야 합니다.</p></div>
+  <div class="slide-body"><div class="conclusion-layout"><article class="panel "><div class="panel-label">공식 고시로 확인된 것</div><div class="big-proof"><span>석관4구역 K</span><strong>1.86</strong></div><div class="big-proof"><span>허용용적률 추가 인정</span><strong>+17.2%p</strong></div><div class="big-proof"><span>변경 후 전체 추정 비례율</span><strong>107.28%</strong></div><p>각 수치의 근거와 의미가 서로 다릅니다.</p></article><article class="panel green"><div class="panel-label">아직 구분해서 검증할 것</div><div class="open-check"><b>① K만의 금전적 효과</b><span>다른 계획·비용 조건을 통제한 미적용 사업수지 비교가 필요</span></div><div class="open-check"><b>② 실제 조합원 부담</b><span>자산평가·분양가·사업비 확정과 변경을 반영해야 함</span></div><div class="open-check"><b>③ 최종 사업 추진 성과</b><span>착공·실분양·사업기간 및 최종 정산 확인 필요</span></div></article></div><div class="last-word"><span>사업성 보정계수는</span><strong>계획상의 가능성을 넓히는 제도이지,<br>실제 사업수익을 보장하는 숫자는 아닙니다.</strong></div></div>
+  <div class="foot-source"><span>최종: 서울특별시 고시 제2025-194호 · 제도 근거는 서울시 정비기본계획</span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener noreferrer">공식 고시 원문 전체<span aria-hidden="true"> ↗</span></a></div></div><template class="speaker-text"><h3>13 · 확인된 효과와 아직 확인할 효과</h3><p>정리하면 사업성 보정계수는 공공보행통로·돌봄시설 등 계획 조건으로 얻은 허용 인센티브를 지역 사업 여건에 맞게 확대하는 제도입니다. 석관4구역은 K 1.86으로 같은 계획에 대해 허용용적률 17.2%포인트를 추가 인정받았습니다. 그러나 비례율 107.28%는 공공기여와 예상 분양가, 사업비가 모두 반영된 전체 수지의 결과입니다. 최종 부담과 실제 추진 효과는 사업이 진행되면서 확인해야 합니다. 이상입니다.</p></template>
+</section></main><footer class="bottombar"><div class="bottom-left"><span class="counter" id="count">01 / 13</span><div class="progress-track"><div id="progress" class="progress"></div></div></div><div class="ctrls"><button class="nav-btn" id="prev" type="button">← 이전</button><button class="nav-btn" id="next" type="button">다음 →</button></div></footer>
+<aside class="notes-panel" id="notes" aria-hidden="true"><header><span>발표자 노트 · N</span><button type="button" id="notesClose" aria-label="닫기">×</button></header><div id="note-body"></div></aside>
+<div class="overview" id="overview" aria-hidden="true"><div class="overview-header"><h2>전체 슬라이드 · V3</h2><button type="button" class="tool" id="overviewClose" style="color:#284b36;border-color:#adbdae">발표로 돌아가기 ×</button></div><div class="overview-grid" id="overviewGrid"></div></div></div>
+<script>
+(function(){
+  const deck=document.getElementById('deck'),slides=[...document.querySelectorAll('.slide')],n=slides.length;
+  const counter=document.getElementById('count'),progress=document.getElementById('progress'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  const notePanel=document.getElementById('notes'),noteBody=document.getElementById('note-body'),noteToggle=document.getElementById('notesToggle'),overview=document.getElementById('overview');
+  const overviewGrid=document.getElementById('overviewGrid');let at=0;
+  const overviewButtons=slides.map((el,i)=>{const b=document.createElement('button');b.type='button';b.className='overview-item';b.innerHTML='<small>'+String(i+1).padStart(2,'0')+' / '+n+'</small><strong>'+el.querySelector('h1').textContent+'</strong><span>'+el.querySelector('.slide-heading p').textContent+'</span>';b.addEventListener('click',()=>{go(i);toggleOverview(false)});overviewGrid.appendChild(b);return b});
+  function go(i){
+    if(!Number.isInteger(i))return;at=Math.max(0,Math.min(n-1,i));
+    slides.forEach((s,k)=>{s.classList.toggle('active',k===at);s.setAttribute('aria-hidden',k!==at?'true':'false');if(k===at)s.scrollTop=0});
+    overviewButtons.forEach((b,k)=>b.classList.toggle('active',k===at));
+    counter.textContent=String(at+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
+    progress.style.width=((at+1)/n*100)+'%';prev.disabled=at===0;next.disabled=at===n-1;
+    noteBody.innerHTML=slides[at].querySelector('template.speaker-text').innerHTML;
+    if(location.hash!=='#s'+(at+1))history.replaceState(null,'','#s'+(at+1));
+  }
+  function toggleNotes(force){const show=force===undefined?!notePanel.classList.contains('show'):Boolean(force);notePanel.classList.toggle('show',show);notePanel.setAttribute('aria-hidden',String(!show));noteToggle.setAttribute('aria-pressed',String(show));}
+  function toggleOverview(force){const show=force===undefined?!overview.classList.contains('show'):Boolean(force);overview.classList.toggle('show',show);overview.setAttribute('aria-hidden',String(!show));document.getElementById('overviewToggle').setAttribute('aria-pressed',String(show));}
+  function full(){if(!document.fullscreenElement){if(deck.requestFullscreen)deck.requestFullscreen().catch(()=>{})}else if(document.exitFullscreen)document.exitFullscreen().catch(()=>{})}
+  prev.addEventListener('click',()=>go(at-1));next.addEventListener('click',()=>go(at+1));
+  noteToggle.addEventListener('click',()=>toggleNotes());document.getElementById('notesClose').addEventListener('click',()=>toggleNotes(false));
+  document.getElementById('overviewToggle').addEventListener('click',()=>toggleOverview());document.getElementById('overviewClose').addEventListener('click',()=>toggleOverview(false));
+  document.getElementById('fullscreenToggle').addEventListener('click',full);
+  document.addEventListener('keydown',e=>{
+    if(e.target instanceof HTMLElement&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
+    if(e.key==='Escape'){toggleOverview(false);toggleNotes(false);return}
+    if(e.key==='n'||e.key==='N'){e.preventDefault();toggleNotes();return}
+    if(e.key==='o'||e.key==='O'){e.preventDefault();toggleOverview();return}
+    if(e.key==='f'||e.key==='F'){e.preventDefault();full();return}
+    if(overview.classList.contains('show'))return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(at+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(at-1)}
+    if(e.key==='Home'){e.preventDefault();go(0)}if(e.key==='End'){e.preventDefault();go(n-1)}
+  });
+  window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#s(\d+)$/);if(m)go(Number(m[1])-1)});
+  const initial=location.hash.match(/^#s(\d+)$/);go(initial?Number(initial[1])-1:0);
+})();
+</script></body></html>
