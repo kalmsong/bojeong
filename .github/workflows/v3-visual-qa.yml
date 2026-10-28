@@ -45,10 +45,10 @@ jobs:
                 await page.evaluate(()=>location.hash='s12');
                 await page.waitForTimeout(100);
                 const readCount=()=>page.locator('#v12MatchCount').textContent();
-                if((await readCount()).trim()!=='20곳')throw Error('Map initial count wrong: '+await readCount());
+                if((await readCount()).trim()!=='21곳')throw Error('Map initial count wrong: '+await readCount());
                 await page.locator('#v12K').selectOption('max');
                 const high=parseInt(await readCount());
-                if(high<=0||high>=20)throw Error('K-range filter failed: '+high);
+                if(high<=0||high>=21)throw Error('K-range filter failed: '+high);
                 await page.locator('#v12District').selectOption('노원구');
                 const inNowon=parseInt(await readCount());
                 if(inNowon<1||inNowon>high)throw Error('District filter failed: '+inNowon);
@@ -56,7 +56,15 @@ jobs:
                 const stageCount=parseInt(await readCount());
                 if(stageCount<1||stageCount>inNowon)throw Error('Stage filter failed: '+stageCount);
                 await page.locator('#v12Reset').click();
-                if((await readCount()).trim()!=='20곳'||await page.locator('#v4Sites .v4-map-pin').count()!==20)throw Error('Map reset failed');
+                if((await readCount()).trim()!=='21곳'||await page.locator('#v4Sites .v4-map-pin').count()!==21)throw Error('Map reset failed');
+                await page.locator('#v4MapItems .v4-site-entry').last().click();
+                if(!(await page.locator('#v4MapDetails').textContent()).includes('석관4구역'))throw Error('Seokgwan selected project missing detail');
+                if(!(await page.locator('#v4MapDetails').textContent()).includes('64,876'))throw Error('Seokgwan official area missing');
+                await page.evaluate(()=>location.hash='s13');
+                if(await page.locator('#slide-19 .v31-step-grid span').count()!==14)throw Error('14 development stage legend missing');
+                await page.evaluate(()=>location.hash='s17');
+                if(!(await page.locator('#extra-far').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
+                
                 await page.evaluate(()=>location.hash='s11');
                 const img=page.locator('#v4-57 .v12-official-figure img');
                 await img.evaluate(async el=>{if(!el.complete)await new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,3000)});});
