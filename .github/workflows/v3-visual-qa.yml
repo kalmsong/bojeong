@@ -1,0 +1,87 @@
+name: V3 presentation visual QA
+on:
+  push:
+    paths:
+      - 'presentation-v3/index.html'
+      - '.github/workflows/v3-visual-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tester
+        run: |
+          npm install --no-save playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test 36 pages at desktop and mobile sizes
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/v3-qa-server.log 2>&1 &
+          sleep 2
+          mkdir -p /tmp/v3-screens
+          node <<'JS'
+          const {chromium}=require('playwright');
+          const fs=require('fs');
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+            const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
+            const capture=new Set([4,5,6,7,11,14,15,18,19,20,21,27,29,30,31,36]);
+            for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
+              const page=await browser.newPage({viewport,deviceScaleFactor:1});
+              const errors=[];
+              page.on('pageerror',e=>errors.push(String(e)));
+              await page.goto('http://127.0.0.1:8123/presentation-v3/index.html',{waitUntil:'domcontentloaded'});
+              const count=await page.locator('.stage > section.slide').count();
+              const slides=[];
+              for(let i=1;i<=count;i++){
+                await page.evaluate(i=>location.hash='s'+i,i);
+                await page.waitForTimeout(48);
+                const entry=await page.evaluate(i=>{
+                  const slides=[...document.querySelectorAll('.stage > section.slide')],s=slides[i-1];
+                  const head=s?.querySelector('.slide-head'),main=s?.querySelector('.slide-main'),foot=s?.querySelector('.slide-foot');
+                  const box=x=>{if(!x)return null;const b=x.getBoundingClientRect();return {x:Math.round(b.left),y:Math.round(b.top),w:Math.round(b.width),h:Math.round(b.height),bottom:Math.round(b.bottom)}};
+                  const isVisible=x=>x&&getComputedStyle(x).display!=='none';
+                  const images=[...s.querySelectorAll('img')].filter(isVisible).map(im=>({src:im.currentSrc?.slice(0,160),loaded:im.complete&&im.naturalWidth>0}));
+                  const r=box(s),h=box(head),m=box(main),f=box(foot);
+                  return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
+                },i);
+                slides.push(entry);
+                if(viewport.width===1440&&capture.has(i))await page.screenshot({path:'/tmp/v3-screens/slide-'+String(i).padStart(2,'0')+'.png'});
+              }
+              report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
+              await page.close();
+            }
+            report.summary={desktopSlideCount:report.viewports[0].slideCount,desktopOverflow:report.viewports[0].overflowSlides.length,desktopHorizontalOverflow:report.viewports[0].horizontalOverflow.length,desktopOverlap:report.viewports[0].overlaps.length,mobileHorizontalOverflow:report.viewports[2].horizontalOverflow.length,pageErrors:report.viewports.reduce((n,x)=>n+x.errors.length,0)};
+            fs.writeFileSync('presentation-v3/qa-visual-report.json',JSON.stringify(report,null,2));
+            console.log('VISUAL_QA_SUMMARY',JSON.stringify(report.summary));
+            for(const vp of report.viewports)console.log('VIEWPORT',JSON.stringify({size:vp.size,overflow:vp.overflowSlides,horizontal:vp.horizontalOverflow,overlaps:vp.overlaps,imagesFailed:vp.imagesFailed,jsErrors:vp.errors}));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3-visual-qa
+          path: |
+            /tmp/v3-screens/
+            presentation-v3/qa-visual-report.json
+          if-no-files-found: warn
+      - name: Save machine-readable result
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add presentation-v3/qa-visual-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record V3 browser visual QA result [skip ci]'
+            git push
+          fi
