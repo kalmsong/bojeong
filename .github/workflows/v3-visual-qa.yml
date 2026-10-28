@@ -50,19 +50,19 @@ jobs:
                   const box=x=>{if(!x)return null;const b=x.getBoundingClientRect();return {x:Math.round(b.left),y:Math.round(b.top),w:Math.round(b.width),h:Math.round(b.height),bottom:Math.round(b.bottom)}};
                   const isVisible=x=>x&&getComputedStyle(x).display!=='none';
                   const images=[...s.querySelectorAll('img')].filter(isVisible).map(im=>({src:im.currentSrc?.slice(0,160),loaded:im.complete&&im.naturalWidth>0}));
-                  const r=box(s),h=box(head),m=box(main),f=box(foot);
-                  return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
+                  const r=box(s),h=box(head),m=box(main),f=box(foot),childBoxes=[...(main?.children||[])].filter(isVisible).map(box).filter(Boolean);
+                  return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,childHeadOverlap:childBoxes.some(b=>h&&b.y<h.bottom-3),childFooterOverlap:childBoxes.some(b=>f&&b.bottom>f.y+3),viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
                 },i);
                 slides.push(entry);
                 if(viewport.width===1440&&capture.has(i))await page.screenshot({path:'/tmp/v3-screens/slide-'+String(i).padStart(2,'0')+'.png'});
               }
-              report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
+              report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),contentCollisions:slides.filter(x=>x.childHeadOverlap||x.childFooterOverlap).map(x=>({page:x.page,head:x.childHeadOverlap,footer:x.childFooterOverlap})),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
               await page.close();
             }
-            report.summary={desktopSlideCount:report.viewports[0].slideCount,desktopOverflow:report.viewports[0].overflowSlides.length,desktopHorizontalOverflow:report.viewports[0].horizontalOverflow.length,desktopOverlap:report.viewports[0].overlaps.length,mobileHorizontalOverflow:report.viewports[2].horizontalOverflow.length,pageErrors:report.viewports.reduce((n,x)=>n+x.errors.length,0)};
+            report.summary={desktopSlideCount:report.viewports[0].slideCount,desktopOverflow:report.viewports[0].overflowSlides.length,desktopHorizontalOverflow:report.viewports[0].horizontalOverflow.length,desktopOverlap:report.viewports[0].overlaps.length,desktopContentCollision:report.viewports[0].contentCollisions.length,mobileHorizontalOverflow:report.viewports[2].horizontalOverflow.length,pageErrors:report.viewports.reduce((n,x)=>n+x.errors.length,0)};
             fs.writeFileSync('presentation-v3/qa-visual-report.json',JSON.stringify(report,null,2));
             console.log('VISUAL_QA_SUMMARY',JSON.stringify(report.summary));
-            for(const vp of report.viewports)console.log('VIEWPORT',JSON.stringify({size:vp.size,overflow:vp.overflowSlides,horizontal:vp.horizontalOverflow,overlaps:vp.overlaps,imagesFailed:vp.imagesFailed,jsErrors:vp.errors}));
+            for(const vp of report.viewports)console.log('VIEWPORT',JSON.stringify({size:vp.size,overflow:vp.overflowSlides,horizontal:vp.horizontalOverflow,overlaps:vp.overlaps,collisions:vp.contentCollisions,imagesFailed:vp.imagesFailed,jsErrors:vp.errors}));
             await browser.close();
           })().catch(e=>{console.error(e);process.exit(1)});
           JS
