@@ -1,7 +1,7 @@
 {
-  "runId": "40651868256",
-  "commit": "e961625c20344a5e438529bb35057b1220980ac8",
-  "checkedAt": "2026-10-28T07:43:29.619Z",
+  "runId": "40652048243",
+  "commit": "0f62a54bdc5d57670d1d14ac7906e3fe83b735e2",
+  "checkedAt": "2026-10-28T07:45:21.520Z",
   "viewports": [
     {
       "size": {
@@ -13,6 +13,23 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
+      "contentCollisions": [
+        {
+          "page": 4,
+          "head": true,
+          "footer": true
+        },
+        {
+          "page": 13,
+          "head": true,
+          "footer": true
+        },
+        {
+          "page": 32,
+          "head": true,
+          "footer": true
+        }
+      ],
       "imagesFailed": [],
       "slides": [
         {
@@ -23,6 +40,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -35,6 +54,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -47,6 +68,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -59,6 +82,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -71,6 +96,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -83,6 +110,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -95,6 +124,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -107,6 +138,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -119,6 +152,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -131,6 +166,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -143,6 +180,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -155,6 +194,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -167,6 +208,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -179,6 +222,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -191,6 +236,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -203,6 +250,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -215,6 +264,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -227,6 +278,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -239,6 +292,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -251,6 +306,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -263,6 +320,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -275,6 +334,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -287,6 +348,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -299,6 +362,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -311,6 +376,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -323,6 +390,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -335,6 +404,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -347,6 +418,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -359,6 +432,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -371,6 +446,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -383,6 +460,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -395,6 +474,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -407,6 +488,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -419,6 +502,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -431,6 +516,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -443,6 +530,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -459,6 +548,28 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
+      "contentCollisions": [
+        {
+          "page": 4,
+          "head": true,
+          "footer": false
+        },
+        {
+          "page": 13,
+          "head": true,
+          "footer": true
+        },
+        {
+          "page": 16,
+          "head": true,
+          "footer": true
+        },
+        {
+          "page": 32,
+          "head": true,
+          "footer": true
+        }
+      ],
       "imagesFailed": [],
       "slides": [
         {
@@ -469,6 +580,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -481,6 +594,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -493,6 +608,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -505,6 +622,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -517,6 +636,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -529,6 +650,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -541,6 +664,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -553,6 +678,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -565,6 +692,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -577,6 +706,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -589,6 +720,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -601,6 +734,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -613,6 +748,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -625,6 +762,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -637,6 +776,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -649,6 +790,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -661,6 +804,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -673,6 +818,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -685,6 +832,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -697,6 +846,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -709,6 +860,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -721,6 +874,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -733,6 +888,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -745,6 +902,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -757,6 +916,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -769,6 +930,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -781,6 +944,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -793,6 +958,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -805,6 +972,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -817,6 +986,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -829,6 +1000,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -841,6 +1014,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": true,
+          "childFooterOverlap": true,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -853,6 +1028,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -865,6 +1042,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -877,6 +1056,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -889,6 +1070,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -905,6 +1088,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
+      "contentCollisions": [],
       "imagesFailed": [],
       "slides": [
         {
@@ -915,6 +1099,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 764,
           "images": [],
           "footerOnScreen": true
@@ -927,6 +1113,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 934,
           "images": [],
           "footerOnScreen": true
@@ -939,6 +1127,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1087,
           "images": [],
           "footerOnScreen": false
@@ -951,6 +1141,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1267,
           "images": [],
           "footerOnScreen": false
@@ -963,6 +1155,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1103,
           "images": [],
           "footerOnScreen": false
@@ -975,6 +1169,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1050,
           "images": [],
           "footerOnScreen": false
@@ -987,6 +1183,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 966,
           "images": [],
           "footerOnScreen": false
@@ -999,6 +1197,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 913,
           "images": [],
           "footerOnScreen": true
@@ -1011,6 +1211,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 892,
           "images": [],
           "footerOnScreen": true
@@ -1023,6 +1225,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 995,
           "images": [],
           "footerOnScreen": false
@@ -1035,6 +1239,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 910,
           "images": [],
           "footerOnScreen": true
@@ -1047,6 +1253,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1053,
           "images": [],
           "footerOnScreen": false
@@ -1059,6 +1267,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1253,
           "images": [],
           "footerOnScreen": false
@@ -1071,6 +1281,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1152,
           "images": [],
           "footerOnScreen": false
@@ -1083,7 +1295,9 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "viewportHeight": 1210,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
+          "viewportHeight": 1009,
           "images": [],
           "footerOnScreen": false
         },
@@ -1095,6 +1309,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1419,
           "images": [],
           "footerOnScreen": false
@@ -1107,6 +1323,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1032,
           "images": [],
           "footerOnScreen": false
@@ -1119,6 +1337,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1036,
           "images": [],
           "footerOnScreen": false
@@ -1131,6 +1351,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 902,
           "images": [],
           "footerOnScreen": true
@@ -1143,6 +1365,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 942,
           "images": [],
           "footerOnScreen": true
@@ -1155,6 +1379,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 925,
           "images": [],
           "footerOnScreen": true
@@ -1167,6 +1393,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 898,
           "images": [],
           "footerOnScreen": true
@@ -1179,6 +1407,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 764,
           "images": [],
           "footerOnScreen": true
@@ -1191,6 +1421,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1052,
           "images": [],
           "footerOnScreen": false
@@ -1203,6 +1435,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 811,
           "images": [],
           "footerOnScreen": true
@@ -1215,6 +1449,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1211,
           "images": [],
           "footerOnScreen": false
@@ -1227,6 +1463,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 914,
           "images": [],
           "footerOnScreen": true
@@ -1239,6 +1477,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 982,
           "images": [],
           "footerOnScreen": false
@@ -1251,6 +1491,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1065,
           "images": [],
           "footerOnScreen": false
@@ -1263,6 +1505,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1171,
           "images": [],
           "footerOnScreen": false
@@ -1275,6 +1519,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1667,
           "images": [],
           "footerOnScreen": false
@@ -1287,6 +1533,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1216,
           "images": [],
           "footerOnScreen": false
@@ -1299,6 +1547,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 831,
           "images": [],
           "footerOnScreen": true
@@ -1311,6 +1561,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 937,
           "images": [],
           "footerOnScreen": true
@@ -1323,6 +1575,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1129,
           "images": [],
           "footerOnScreen": false
@@ -1335,6 +1589,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 1071,
           "images": [],
           "footerOnScreen": false
@@ -1347,6 +1603,7 @@
     "desktopOverflow": 0,
     "desktopHorizontalOverflow": 0,
     "desktopOverlap": 0,
+    "desktopContentCollision": 3,
     "mobileHorizontalOverflow": 0,
     "pageErrors": 0
   },
