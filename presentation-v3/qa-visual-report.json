@@ -1,7 +1,7 @@
 {
-  "runId": "40652318061",
-  "commit": "2febcddbfd0110e66c6afa60ef404e53d0482dc7",
-  "checkedAt": "2026-10-28T07:47:39.833Z",
+  "runId": "40652633016",
+  "commit": "d43545722b28af74960486dd26d2eb6948b69162",
+  "checkedAt": "2026-10-28T07:50:40.712Z",
   "viewports": [
     {
       "size": {
@@ -532,23 +532,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
-      "contentCollisions": [
-        {
-          "page": 13,
-          "head": false,
-          "footer": true
-        },
-        {
-          "page": 16,
-          "head": true,
-          "footer": true
-        },
-        {
-          "page": 32,
-          "head": false,
-          "footer": true
-        }
-      ],
+      "contentCollisions": [],
       "imagesFailed": [],
       "slides": [
         {
@@ -728,7 +712,7 @@
           "headMainOverlap": false,
           "mainFooterOverlap": false,
           "childHeadOverlap": false,
-          "childFooterOverlap": true,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -769,8 +753,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
-          "childFooterOverlap": true,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
@@ -994,7 +978,7 @@
           "headMainOverlap": false,
           "mainFooterOverlap": false,
           "childHeadOverlap": false,
-          "childFooterOverlap": true,
+          "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
           "footerOnScreen": true
