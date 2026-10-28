@@ -33,16 +33,16 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set(Array.from({length:26},(_,i)=>i+1));
+            const capture=new Set(Array.from({length:24},(_,i)=>i+1));
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
               page.on('pageerror',e=>errors.push(String(e)));
               await page.goto('http://127.0.0.1:8123/presentation-v3/index.html',{waitUntil:'domcontentloaded'});
               const count=await page.locator('.stage > section.slide').count();
-              if(count!==26)throw new Error('Expected 26 pages; got '+count);
+              if(count!==24)throw new Error('Expected 24 pages; got '+count);
               if(viewport.width===1440){
-                await page.evaluate(()=>location.hash='s15');
+                await page.evaluate(()=>location.hash='s12');
                 await page.waitForTimeout(100);
                 const readCount=()=>page.locator('#v12MatchCount').textContent();
                 if((await readCount()).trim()!=='20곳')throw Error('Map initial count wrong: '+await readCount());
@@ -57,7 +57,7 @@ jobs:
                 if(stageCount<1||stageCount>inNowon)throw Error('Stage filter failed: '+stageCount);
                 await page.locator('#v12Reset').click();
                 if((await readCount()).trim()!=='20곳'||await page.locator('#v4Sites .v4-map-pin').count()!==20)throw Error('Map reset failed');
-                await page.evaluate(()=>location.hash='s14');
+                await page.evaluate(()=>location.hash='s11');
                 const img=page.locator('#v4-57 .v12-official-figure img');
                 await img.evaluate(async el=>{if(!el.complete)await new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,3000)});});
                 if(!(await img.evaluate(el=>el.complete&&el.naturalWidth>0)))throw Error('Seoul 57 map image failed to load');
