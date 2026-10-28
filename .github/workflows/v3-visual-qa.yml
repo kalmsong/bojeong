@@ -33,13 +33,35 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set(Array.from({length:26},(_,i)=>i+1).concat([27,28,29,30,31,32]));
+            const capture=new Set(Array.from({length:31},(_,i)=>i+1));
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
               page.on('pageerror',e=>errors.push(String(e)));
               await page.goto('http://127.0.0.1:8123/presentation-v3/index.html',{waitUntil:'domcontentloaded'});
               const count=await page.locator('.stage > section.slide').count();
+              if(count!==31)throw new Error('Expected 31 pages; got '+count);
+              if(viewport.width===1440){
+                await page.evaluate(()=>location.hash='s18');
+                await page.waitForTimeout(100);
+                const readCount=()=>page.locator('#v12MatchCount').textContent();
+                if((await readCount()).trim()!=='20곳')throw Error('Map initial count wrong: '+await readCount());
+                await page.locator('#v12K').selectOption('max');
+                const high=parseInt(await readCount());
+                if(high<=0||high>=20)throw Error('K-range filter failed: '+high);
+                await page.locator('#v12District').selectOption('노원구');
+                const inNowon=parseInt(await readCount());
+                if(inNowon<1||inNowon>high)throw Error('District filter failed: '+inNowon);
+                await page.locator('#v12Stage').selectOption('계획·심의');
+                const stageCount=parseInt(await readCount());
+                if(stageCount<1||stageCount>inNowon)throw Error('Stage filter failed: '+stageCount);
+                await page.locator('#v12Reset').click();
+                if((await readCount()).trim()!=='20곳'||await page.locator('#v4Sites .v4-map-pin').count()!==20)throw Error('Map reset failed');
+                await page.evaluate(()=>location.hash='s16');
+                const img=page.locator('#v4-57 .v12-official-figure img');
+                await img.evaluate(async el=>{if(!el.complete)await new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,3000)});});
+                if(!(await img.evaluate(el=>el.complete&&el.naturalWidth>0)))throw Error('Seoul 57 map image failed to load');
+              }
               const slides=[];
               for(let i=1;i<=count;i++){
                 await page.evaluate(i=>location.hash='s'+i,i);
@@ -54,7 +76,7 @@ jobs:
                   return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,childHeadOverlap:childBoxes.some(b=>h&&b.y<h.bottom-3),childFooterOverlap:childBoxes.some(b=>f&&b.bottom>f.y+3),viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
                 },i);
                 slides.push(entry);
-                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[2,6,7,12,13,14,17,22,24,25,26,32].includes(i)))await page.screenshot({path:'/tmp/v3-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
+                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[5,6,9,16,18,20,21,22,23,26,27,28].includes(i)))await page.screenshot({path:'/tmp/v3-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
               }
               report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),contentCollisions:slides.filter(x=>x.childHeadOverlap||x.childFooterOverlap).map(x=>({page:x.page,head:x.childHeadOverlap,footer:x.childFooterOverlap})),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
               await page.close();
