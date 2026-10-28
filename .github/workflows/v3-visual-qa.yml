@@ -33,7 +33,7 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set([4,5,6,7,11,14,15,18,19,20,21,27,29,30,31,36]);
+            const capture=new Set([4,5,6,7,11,13,14,15,16,18,19,20,21,27,29,30,31,32,36]);
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
