@@ -1,7 +1,7 @@
 {
-  "runId": "40651470532",
-  "commit": "ec74385373348a8dd19e91a067b9d642ebe996c0",
-  "checkedAt": "2026-10-28T07:39:48.768Z",
+  "runId": "40651868256",
+  "commit": "e961625c20344a5e438529bb35057b1220980ac8",
+  "checkedAt": "2026-10-28T07:43:29.619Z",
   "viewports": [
     {
       "size": {
@@ -13,9 +13,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
-      "imagesFailed": [
-        30
-      ],
+      "imagesFailed": [],
       "slides": [
         {
           "page": 1,
@@ -368,18 +366,13 @@
         {
           "page": 30,
           "id": "v4-map-57",
-          "title": "서울시 전체 57곳 · 발표 당시 공식 분포도",
+          "title": "서울시 공식 57곳 · 권역별 분포",
           "viewportOverflow": 0,
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
           "viewportHeight": 810,
-          "images": [
-            {
-              "src": "",
-              "loaded": false
-            }
-          ],
+          "images": [],
           "footerOnScreen": true
         },
         {
@@ -466,9 +459,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
-      "imagesFailed": [
-        30
-      ],
+      "imagesFailed": [],
       "slides": [
         {
           "page": 1,
@@ -821,18 +812,13 @@
         {
           "page": 30,
           "id": "v4-map-57",
-          "title": "서울시 전체 57곳 · 발표 당시 공식 분포도",
+          "title": "서울시 공식 57곳 · 권역별 분포",
           "viewportOverflow": 0,
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
           "viewportHeight": 720,
-          "images": [
-            {
-              "src": "",
-              "loaded": false
-            }
-          ],
+          "images": [],
           "footerOnScreen": true
         },
         {
@@ -919,9 +905,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
-      "imagesFailed": [
-        30
-      ],
+      "imagesFailed": [],
       "slides": [
         {
           "page": 1,
@@ -1274,19 +1258,14 @@
         {
           "page": 30,
           "id": "v4-map-57",
-          "title": "서울시 전체 57곳 · 발표 당시 공식 분포도",
+          "title": "서울시 공식 57곳 · 권역별 분포",
           "viewportOverflow": 0,
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "viewportHeight": 780,
-          "images": [
-            {
-              "src": "",
-              "loaded": false
-            }
-          ],
-          "footerOnScreen": true
+          "viewportHeight": 1171,
+          "images": [],
+          "footerOnScreen": false
         },
         {
           "page": 31,
