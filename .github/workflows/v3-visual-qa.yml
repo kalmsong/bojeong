@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install --no-save playwright@1.56.0
           npx playwright install --with-deps chromium
-      - name: Test 36 pages at desktop and mobile sizes
+      - name: Check all current slides at desktop, compact desktop and mobile sizes
         run: |
           python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/v3-qa-server.log 2>&1 &
           sleep 2
@@ -33,7 +33,7 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set([4,5,6,7,11,13,14,15,16,18,19,20,21,27,29,30,31,32,36]);
+            const capture=new Set(Array.from({length:26},(_,i)=>i+1).concat([27,28,29,30,31,32]));
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
@@ -54,7 +54,7 @@ jobs:
                   return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,childHeadOverlap:childBoxes.some(b=>h&&b.y<h.bottom-3),childFooterOverlap:childBoxes.some(b=>f&&b.bottom>f.y+3),viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
                 },i);
                 slides.push(entry);
-                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[13,15,16,32].includes(i)))await page.screenshot({path:'/tmp/v3-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
+                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[2,6,7,12,13,14,17,22,24,25,26,32].includes(i)))await page.screenshot({path:'/tmp/v3-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
               }
               report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),contentCollisions:slides.filter(x=>x.childHeadOverlap||x.childFooterOverlap).map(x=>({page:x.page,head:x.childHeadOverlap,footer:x.childFooterOverlap})),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
               await page.close();
