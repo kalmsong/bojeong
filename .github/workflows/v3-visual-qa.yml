@@ -85,7 +85,9 @@ jobs:
             fs.writeFileSync('presentation-v3/qa-visual-report.json',JSON.stringify(report,null,2));
             console.log('VISUAL_QA_SUMMARY',JSON.stringify(report.summary));
             for(const vp of report.viewports)console.log('VIEWPORT',JSON.stringify({size:vp.size,overflow:vp.overflowSlides,horizontal:vp.horizontalOverflow,overlaps:vp.overlaps,collisions:vp.contentCollisions,imagesFailed:vp.imagesFailed,jsErrors:vp.errors}));
+            const critical=report.viewports.slice(0,2).some(vp=>vp.overflowSlides.length||vp.horizontalOverflow.length||vp.overlaps.length||vp.contentCollisions.length||vp.imagesFailed.length||vp.errors.length)||report.viewports[2].horizontalOverflow.length||report.viewports[2].imagesFailed.length||report.viewports[2].errors.length;
             await browser.close();
+            if(critical)throw new Error('V3 visual QA failed: unresolved overflow/collision/image/script issue');
           })().catch(e=>{console.error(e);process.exit(1)});
           JS
       - name: Upload screenshots
