@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   check:
@@ -75,13 +75,6 @@ jobs:
             /tmp/v3-screens/
             presentation-v3/qa-visual-report.json
           if-no-files-found: warn
-      - name: Save machine-readable result
-        if: success()
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add presentation-v3/qa-visual-report.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Record V3 browser visual QA result [skip ci]'
-            git push
-          fi
+      # The screenshot/artifact step above preserves the report. Avoid
+      # auto-pushing the generated JSON back to main: simultaneous edits
+      # can fail with a non-fast-forward rejection despite successful QA.
