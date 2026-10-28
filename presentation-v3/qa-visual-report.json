@@ -1,7 +1,7 @@
 {
-  "runId": "40652048243",
-  "commit": "0f62a54bdc5d57670d1d14ac7906e3fe83b735e2",
-  "checkedAt": "2026-10-28T07:45:21.520Z",
+  "runId": "40652318061",
+  "commit": "2febcddbfd0110e66c6afa60ef404e53d0482dc7",
+  "checkedAt": "2026-10-28T07:47:39.833Z",
   "viewports": [
     {
       "size": {
@@ -13,23 +13,7 @@
       "overflowSlides": [],
       "horizontalOverflow": [],
       "overlaps": [],
-      "contentCollisions": [
-        {
-          "page": 4,
-          "head": true,
-          "footer": true
-        },
-        {
-          "page": 13,
-          "head": true,
-          "footer": true
-        },
-        {
-          "page": 32,
-          "head": true,
-          "footer": true
-        }
-      ],
+      "contentCollisions": [],
       "imagesFailed": [],
       "slides": [
         {
@@ -82,8 +66,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
-          "childFooterOverlap": true,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -208,8 +192,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
-          "childFooterOverlap": true,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -474,8 +458,8 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
-          "childFooterOverlap": true,
+          "childHeadOverlap": false,
+          "childFooterOverlap": false,
           "viewportHeight": 810,
           "images": [],
           "footerOnScreen": true
@@ -550,13 +534,8 @@
       "overlaps": [],
       "contentCollisions": [
         {
-          "page": 4,
-          "head": true,
-          "footer": false
-        },
-        {
           "page": 13,
-          "head": true,
+          "head": false,
           "footer": true
         },
         {
@@ -566,7 +545,7 @@
         },
         {
           "page": 32,
-          "head": true,
+          "head": false,
           "footer": true
         }
       ],
@@ -622,7 +601,7 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
+          "childHeadOverlap": false,
           "childFooterOverlap": false,
           "viewportHeight": 720,
           "images": [],
@@ -748,7 +727,7 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
+          "childHeadOverlap": false,
           "childFooterOverlap": true,
           "viewportHeight": 720,
           "images": [],
@@ -1014,7 +993,7 @@
           "scrollWidthOver": 0,
           "headMainOverlap": false,
           "mainFooterOverlap": false,
-          "childHeadOverlap": true,
+          "childHeadOverlap": false,
           "childFooterOverlap": true,
           "viewportHeight": 720,
           "images": [],
@@ -1143,7 +1122,7 @@
           "mainFooterOverlap": false,
           "childHeadOverlap": false,
           "childFooterOverlap": false,
-          "viewportHeight": 1267,
+          "viewportHeight": 1130,
           "images": [],
           "footerOnScreen": false
         },
@@ -1269,7 +1248,7 @@
           "mainFooterOverlap": false,
           "childHeadOverlap": false,
           "childFooterOverlap": false,
-          "viewportHeight": 1253,
+          "viewportHeight": 1099,
           "images": [],
           "footerOnScreen": false
         },
@@ -1535,7 +1514,7 @@
           "mainFooterOverlap": false,
           "childHeadOverlap": false,
           "childFooterOverlap": false,
-          "viewportHeight": 1216,
+          "viewportHeight": 1077,
           "images": [],
           "footerOnScreen": false
         },
@@ -1603,7 +1582,7 @@
     "desktopOverflow": 0,
     "desktopHorizontalOverflow": 0,
     "desktopOverlap": 0,
-    "desktopContentCollision": 3,
+    "desktopContentCollision": 0,
     "mobileHorizontalOverflow": 0,
     "pageErrors": 0
   },
