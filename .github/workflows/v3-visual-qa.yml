@@ -33,14 +33,14 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set(Array.from({length:23},(_,i)=>i+1));
+            const capture=new Set(Array.from({length:22},(_,i)=>i+1));
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
               page.on('pageerror',e=>errors.push(String(e)));
               await page.goto('http://127.0.0.1:8123/presentation-v3/index.html',{waitUntil:'domcontentloaded'});
               const count=await page.locator('.stage > section.slide').count();
-              if(count!==23)throw new Error('Expected 23 pages; got '+count);
+              if(count!==22)throw new Error('Expected 22 pages; got '+count);
               if(viewport.width===1440){
                 await page.evaluate(()=>location.hash='s12');
                 await page.waitForTimeout(100);
@@ -65,8 +65,10 @@ jobs:
                 await page.evaluate(()=>location.hash='s15');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('1,530')||!(await page.locator('#v3-public-facilities').textContent()).includes('253'))throw Error('Housing counts not found');
-                await page.evaluate(()=>location.hash='s21');
-                if(await page.locator('#v2026-era .v35-restart>div:not(.v35-arrow)').count()!==3 || !(await page.locator('#v2026-era').textContent()).includes('101세대'))throw Error('Stalled Sanggye5 restart evidence missing');
+                await page.evaluate(()=>location.hash='s20');
+                if(await page.locator('#v2026-era .v36-timeline>div').count()!==6 || !(await page.locator('#v2026-era').textContent()).includes('7,000만'))throw Error('Sanggye5 timeline/financial evidence missing');
+                await page.evaluate(()=>location.hash='s19');
+                if(!(await page.locator('#v4-solutions').textContent()).includes('67.6%'))throw Error('34->57 K expansion percentage missing');
                 
                 await page.evaluate(()=>location.hash='s02');
                 await page.locator('#v26EditToggle').click();
