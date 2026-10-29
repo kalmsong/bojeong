@@ -1174,6 +1174,31 @@ body.v26-edit-active .v26-edit-target:focus{outline:2px solid #286e4b;outline-of
 #v4-small .v4-moa-case>p{font-size:clamp(11px,.92cqw,14px);line-height:1.45;color:#4b5f51}
 @container (max-width:760px){#v4-alpha-beta .v4-ab-cases,#v4-small .v4-moa-top{grid-template-columns:1fr}#v4-alpha-beta .v4-ab-line{grid-template-columns:82px 1fr 88px}#v4-small .v4-moa-top>div{padding:10px}#v4-small .v4-moa-before{grid-template-columns:1fr 20px 1fr}#v4-small .v4-moa-before .v4-moa-delta{grid-column:1/-1}#v4-small .v4-moa-case-head{align-items:flex-start;flex-direction:column}}
 @media(max-height:760px) and (min-width:901px){#v4-alpha-beta .v4-ab-case{gap:7px;padding:13px}#v4-alpha-beta .v4-ab-lines{gap:5px}#v4-alpha-beta .v4-ab-rule{padding-top:7px}#v4-small .v4-moa-case{gap:8px;padding:14px}#v4-small .v4-moa-before>div{padding:9px}}
+</style><style>
+/* V4 mobile overflow repair — numeric examples and Moa composition */
+@container (max-width:760px) {
+  #v4-alpha-beta .v4-ab-cases, #v4-alpha-beta .v4-ab-case,
+  #v4-small .v4-moa-top, #v4-small .v4-moa-top>div,
+  #v4-small .v4-moa-case, #v4-small .v4-moa-before>div {min-width:0;max-width:100%;width:100%}
+  #v4-alpha-beta .v4-ab-case{padding:10px;gap:7px}
+  #v4-alpha-beta .v4-ab-head strong{font-size:15px;overflow-wrap:anywhere}
+  #v4-alpha-beta .v4-ab-line{grid-template-columns:minmax(0,78px) minmax(0,1fr) minmax(0,82px);gap:4px;font-size:10px}
+  #v4-alpha-beta .v4-ab-line span,#v4-alpha-beta .v4-ab-line b{font-size:10px;white-space:normal;overflow-wrap:anywhere}
+  #v4-alpha-beta .v4-ab-rule{gap:7px;flex-wrap:wrap;font-size:10px}
+  #v4-alpha-beta .v4-ab-rule span{min-width:0;overflow-wrap:anywhere}
+  #v4-small .v4-moa-top>div{flex-direction:column;align-items:flex-start;padding:10px;gap:3px}
+  #v4-small .v4-moa-top strong{font-size:22px;white-space:normal}
+  #v4-small .v4-moa-top span{overflow-wrap:anywhere}
+  #v4-small .v4-moa-case{padding:10px;gap:6px}
+  #v4-small .v4-moa-case-head>div{min-width:0}
+  #v4-small .v4-moa-case-head strong{font-size:17px;overflow-wrap:anywhere}
+  #v4-small .v4-moa-case-head>b{white-space:normal;font-size:10px}
+  #v4-small .v4-moa-before{grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr);gap:4px}
+  #v4-small .v4-moa-before>div{padding:7px;min-width:0}
+  #v4-small .v4-moa-before small{font-size:10px;overflow-wrap:anywhere}
+  #v4-small .v4-moa-before strong{font-size:19px;white-space:normal;overflow-wrap:anywhere}
+  #v4-small .v4-moa-before>span{font-size:14px}
+}
 </style></head><body><div class="app"><main class="stage" aria-label="사업성 보정계수 발표자료"><section class="slide cover" aria-label="슬라이드 1: 사업성 보정계수" id="slide-01" data-chapter="INTRODUCTION">
  <div class="slide-head"><div class="kicker">INTRODUCTION</div><h2>사업성 보정계수</h2><div class="subtitle">서울시 정비사업은 왜 K를 도입했고, 실제 무엇이 달라졌나</div></div>
  <div class="slide-main">
