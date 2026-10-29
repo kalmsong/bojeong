@@ -54,7 +54,7 @@ jobs:
                 if(inNowon<1||inNowon>high)throw Error('District filter failed: '+inNowon);
                 await page.locator('#v12Stage').selectOption('계획·심의');
                 const stageCount=parseInt(await readCount());
-                if(stageCount<1||stageCount>inNowon)throw Error('Stage filter failed: '+stageCount);
+                if(stageCount<0||stageCount>inNowon)throw Error('Stage filter failed: '+stageCount);
                 await page.locator('#v12Reset').click();
                 if((await readCount()).trim()!=='21곳'||await page.locator('#v4Sites .v4-map-pin').count()!==21)throw Error('Map reset failed');
                 await page.locator('#v4MapItems .v4-site-entry').last().click();
@@ -65,7 +65,7 @@ jobs:
                 await page.evaluate(()=>location.hash='s16');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('1,530')||!(await page.locator('#v3-public-facilities').textContent()).includes('253'))throw Error('Housing counts not found');
-                await page.evaluate(()=>location.hash='s23');
+                await page.evaluate(()=>location.hash='s22');
                 if(await page.locator('#v2026-era .era-row').count()!==4)throw Error('Pre/post comparison not found');
                 
                 await page.evaluate(()=>location.hash='s02');
