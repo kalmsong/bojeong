@@ -1062,7 +1062,7 @@ if(on)status.textContent='이 브라우저에서만 수정';}
 toggle.addEventListener('click',()=>activate(!active));
 document.getElementById('v26EditClose').addEventListener('click',()=>{persist();activate(false)});
 document.getElementById('v26EditSave').addEventListener('click',()=>{persist();document.querySelectorAll('#tocList>button').forEach((b,i)=>{const s=document.querySelectorAll('.stage > section.slide')[i];b.textContent=String(i+1).padStart(2,'0')+'  '+(s.querySelector('h2')?.textContent||'')})});
-document.getElementById('v26EditReset').addEventListener('click',()=>{if(!confirm('이 브라우저에 저장한 임시 문구 수정을 모두 초기화할까요?'))return;try{localStorage.removeItem(storageKey)}catch(_){}location.reload()});
+document.getElementById('v26EditReset').addEventListener('click',()=>{if(!confirm('이 브라우저에 저장한 임시 문구 수정을 모두 초기화할까요?'))return;edits={};active=false;try{localStorage.removeItem(storageKey)}catch(_){}location.reload()});
 document.getElementById('v26EditExport').addEventListener('click',()=>{persist();const blob=new Blob([JSON.stringify({type:'bojeong-v3-edits',date:new Date().toISOString(),changes:edits},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='bojeong-v3-임시문구수정.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 targets.forEach(el=>{
  el.addEventListener('input',()=>{if(!active)return;edits[el.dataset.v26EditKey]=sanitize(el.innerHTML);status.textContent='저장 전 변경';});
