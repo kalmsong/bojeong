@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>사업성 보정계수 | V4</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}
+#presentation{display:block;width:100%;height:100vh;height:100dvh;border:0;background:#fff}
+</style>
+</head>
+<body>
+<iframe id="presentation" src="../presentation-v4/" title="사업성 보정계수 V4 발표자료" loading="eager" allow="fullscreen"></iframe>
+<script>
+(function(){
+  const deck=document.getElementById('presentation');
+  function syncSlide(){
+    if(/^#s\d{1,2}$/.test(location.hash)){
+      try{if(deck.contentWindow.location.hash!==location.hash) deck.contentWindow.location.hash=location.hash;}
+      catch(e){ /* Presentation remains available even if hash sync is blocked. */ }
+    }
+  }
+  deck.addEventListener('load',syncSlide);
+  window.addEventListener('hashchange',syncSlide);
+})();
+</script>
+</body>
+</html>
