@@ -1358,6 +1358,89 @@ body.v26-edit-active .v26-edit-target:focus{outline:2px solid #286e4b;outline-of
  #v4-alpha-beta-concept .v4-ab-concept-label>strong{font-size:35px}
  #v4-alpha-beta-concept .v4-ab-concept-summary{padding:12px;gap:7px}
 }
+</style><style>
+/* 2026-10-29: formulas and official 57-site location map */
+#slide-12 .v4-alpha-formula-main,#slide-13 .v4-beta-formula-main{gap:clamp(10px,1.2cqw,17px)}
+#slide-12 .v4-ab-calc-layout,#slide-13 .v4-ab-calc-layout{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(12px,1.45cqw,20px);align-items:stretch}
+#slide-12 .v4-ab-calc-layout>div,#slide-13 .v4-ab-calc-layout>div{min-width:0;background:#eef3ee;padding:clamp(17px,1.6cqw,23px);display:flex;flex-direction:column;gap:clamp(12px,1.3cqw,18px)}
+#slide-12 .v4-ab-calc-criteria,#slide-13 .v4-ab-calc-criteria{background:#f4f5f0!important}
+#slide-12 .v4-ab-calc-heading,#slide-13 .v4-ab-calc-heading{display:flex;flex-direction:column;gap:5px}
+#slide-12 .v4-ab-calc-heading small,#slide-13 .v4-ab-calc-heading small{font-size:clamp(11px,.9cqw,14px);font-weight:800;color:#357552}
+#slide-12 .v4-ab-calc-heading strong,#slide-13 .v4-ab-calc-heading strong{font-size:clamp(18px,1.55cqw,24px);letter-spacing:-.04em}
+#slide-12 .v4-ab-calc-bar,#slide-13 .v4-ab-beta-row{display:flex;flex-direction:column;gap:8px}
+#slide-12 .v4-ab-calc-bar>div,#slide-13 .v4-ab-beta-row>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+#slide-12 .v4-ab-calc-bar span,#slide-13 .v4-ab-beta-row span{font-size:clamp(12px,1.02cqw,16px);font-weight:700}
+#slide-12 .v4-ab-calc-bar b{font-size:clamp(15px,1.27cqw,19px);color:#287450;white-space:nowrap}
+#slide-12 .v4-ab-calc-bar>i,#slide-13 .v4-ab-beta-row>i{height:clamp(15px,1.4cqw,22px);display:block;background:#d4e1d6;position:relative}
+#slide-12 .v4-ab-calc-bar em,#slide-13 .v4-ab-beta-row em{display:block;height:100%;background:#46835e}
+#slide-12 .v4-ab-calc-example>p{font-size:clamp(12px,1.1cqw,17px);line-height:1.45;color:#46604d}
+#slide-12 .v4-ab-calc-example-result,#slide-13 .v4-ab-calc-example-result{margin-top:auto;padding-top:12px;border-top:1px solid #d0ddd2;display:flex;flex-direction:column;gap:4px}
+#slide-12 .v4-ab-calc-example-result>small,#slide-13 .v4-ab-calc-example-result>small{color:#4e7258;font-size:clamp(11px,.92cqw,14px)}
+#slide-12 .v4-ab-calc-example-result>strong,#slide-13 .v4-ab-calc-example-result>strong{font-size:clamp(16px,1.34cqw,20px);color:#27694a}
+#slide-12 .v4-ab-calc-example-result>span,#slide-13 .v4-ab-calc-example-result>span{font-size:clamp(11px,.98cqw,15px);color:#526656;line-height:1.35}
+#slide-13 .v4-ab-beta-row>div strong{font-size:clamp(20px,1.85cqw,28px);color:#2c724e}
+#slide-13 .v4-ab-beta-row>div strong small{font-size:.48em;color:#526f5a}
+#slide-13 .v4-ab-beta-row>b{color:#2e7552;font-size:clamp(12px,1cqw,15px)}
+#slide-12 .v4-ab-calc-bands,#slide-13 .v4-ab-calc-bands{display:flex;flex-direction:column;gap:7px}
+#slide-12 .v4-ab-calc-bands>div,#slide-13 .v4-ab-calc-bands>div{display:flex;align-items:center;justify-content:space-between;gap:9px;background:#fff;padding:clamp(9px,.85cqw,13px)}
+#slide-12 .v4-ab-calc-bands>div.focus,#slide-13 .v4-ab-calc-bands>div.focus{background:#dbeadd}
+#slide-12 .v4-ab-calc-bands span,#slide-13 .v4-ab-calc-bands span{font-size:clamp(11px,.96cqw,14px);color:#485c4e}
+#slide-12 .v4-ab-calc-bands b,#slide-13 .v4-ab-calc-bands b{font-size:clamp(12px,1.07cqw,16px);color:#276b4c;white-space:nowrap}
+#slide-12 .v4-ab-calc-formula,#slide-13 .v4-ab-calc-formula{display:flex;flex-direction:column;gap:7px;padding:clamp(11px,1.15cqw,17px);background:#e2eee4}
+#slide-12 .v4-ab-calc-formula>small,#slide-13 .v4-ab-calc-formula>small{font-size:clamp(10px,.9cqw,13px);font-weight:750;color:#3a7956}
+#slide-12 .v4-ab-calc-formula>strong,#slide-13 .v4-ab-calc-formula>strong{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:clamp(17px,1.65cqw,25px);font-weight:850;line-height:1.2;letter-spacing:-.035em;white-space:normal}
+#slide-12 .v4-inline-frac,#slide-13 .v4-inline-frac{display:inline-flex;flex-direction:column;align-items:center;gap:2px;vertical-align:middle;font-size:.73em;line-height:1.05;white-space:nowrap}
+#slide-12 .v4-inline-frac span:first-child,#slide-13 .v4-inline-frac span:first-child{border-bottom:1px solid currentColor;padding:0 5px 3px}
+#slide-12 .v4-ab-calc-formula em,#slide-13 .v4-ab-calc-formula em{font-style:normal;color:#586b5c;font-size:clamp(10px,.92cqw,14px)}
+#slide-12 .v4-ab-calc-result,#slide-13 .v4-ab-calc-result{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:clamp(12px,1.02cqw,15px)}
+#slide-12 .v4-ab-calc-result strong,#slide-13 .v4-ab-calc-result strong{color:#26754e;font-size:clamp(17px,1.7cqw,26px);white-space:nowrap}
+#slide-12 .v4-ab-calc-note,#slide-13 .v4-ab-calc-note{display:flex;align-items:center;gap:10px;background:#e5efe5;padding:clamp(10px,1.08cqw,16px);font-size:clamp(11px,1cqw,15px);color:#3e5846;line-height:1.4}
+#slide-12 .v4-ab-calc-note>b,#slide-13 .v4-ab-calc-note>b{color:#266d49;white-space:nowrap}
+#v4-regions .v4-region-photo-main{gap:clamp(9px,.95cqw,14px);justify-content:center}
+#v4-regions .v4-region-photo-layout{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,.74fr);gap:clamp(13px,1.4cqw,20px);align-items:stretch;min-width:0}
+#v4-regions .v4-region-source-figure{margin:0;min-width:0;background:#f3f4ef;padding:clamp(8px,.9cqw,12px);display:flex;flex-direction:column;gap:8px;justify-content:center}
+#v4-regions .v4-region-source-figure a{min-width:0;width:100%;display:block}
+#v4-regions .v4-region-source-figure img{display:block;max-width:100%;width:100%;height:auto;max-height:clamp(300px,36cqw,530px);object-fit:contain;object-position:center}
+#v4-regions .v4-region-source-figure figcaption{font-size:clamp(10px,.85cqw,13px);color:#6b7a70;line-height:1.35}
+#v4-regions .v4-region-photo-stat{min-width:0;display:flex;flex-direction:column;gap:clamp(11px,1.3cqw,19px)}
+#v4-regions .v4-region-photo-numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#v4-regions .v4-region-photo-numbers>div{display:flex;flex-direction:column;gap:5px;background:#edf3ec;padding:clamp(12px,1.25cqw,18px);min-width:0}
+#v4-regions .v4-region-photo-numbers small{font-size:clamp(10px,.87cqw,13px);color:#4e6c56;line-height:1.3}
+#v4-regions .v4-region-photo-numbers strong{font-size:clamp(34px,3.9cqw,56px);color:#245e40;letter-spacing:-.06em;line-height:1}
+#v4-regions .v4-region-photo-numbers em{font-size:.33em;letter-spacing:0;font-style:normal}
+#v4-regions .v4-region-photo-bars{display:flex;flex-direction:column;gap:clamp(10px,1.1cqw,16px);padding:clamp(13px,1.5cqw,22px);background:#eef3ed}
+#v4-regions .v4-region-photo-bars>b{font-size:clamp(14px,1.25cqw,19px);color:#2d6246}
+#v4-regions .v4-region-photo-bars>div{display:grid;grid-template-columns:54px minmax(0,1fr) 25px;gap:9px;align-items:center;font-size:clamp(11px,.98cqw,15px)}
+#v4-regions .v4-region-photo-bars i{height:clamp(10px,1cqw,14px);background:#d6e3d6;display:block}
+#v4-regions .v4-region-photo-bars i em{background:#44815d;height:100%;display:block}
+#v4-regions .v4-region-photo-bars>div strong{text-align:right;color:#2d5e40}
+#v4-regions .v4-region-photo-key{display:flex;flex-direction:column;gap:5px;background:#dceadb;padding:clamp(12px,1.3cqw,20px);line-height:1.45}
+#v4-regions .v4-region-photo-key strong{font-size:clamp(13px,1.13cqw,17px);color:#225e42}
+#v4-regions .v4-region-photo-key span{font-size:clamp(12px,.96cqw,15px)}
+#v4-regions .v4-region-photo-note{display:flex;gap:10px;align-items:center;padding:clamp(10px,1cqw,15px);background:#e5ede5;font-size:clamp(11px,.99cqw,15px)}
+#v4-regions .v4-region-photo-note b{white-space:nowrap;color:#2d7351}
+@media(max-height:760px) and (min-width:901px){
+ #slide-12 .v4-ab-calc-layout>div,#slide-13 .v4-ab-calc-layout>div{padding:12px;gap:7px}
+ #slide-12 .v4-ab-calc-heading strong,#slide-13 .v4-ab-calc-heading strong{font-size:18px}
+ #slide-12 .v4-ab-calc-formula,#slide-13 .v4-ab-calc-formula{padding:9px}
+ #slide-12 .v4-ab-calc-bands>div,#slide-13 .v4-ab-calc-bands>div{padding:7px}
+ #slide-12 .v4-ab-calc-note,#slide-13 .v4-ab-calc-note{padding:8px}
+ #v4-regions .v4-region-photo-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+ #v4-regions .v4-region-source-figure img{max-height:390px}
+ #v4-regions .v4-region-photo-bars{gap:7px;padding:12px}
+ #v4-regions .v4-region-photo-key{padding:10px}
+}
+@media(max-width:900px){
+ #slide-12 .v4-ab-calc-layout,#slide-13 .v4-ab-calc-layout,#v4-regions .v4-region-photo-layout{grid-template-columns:1fr}
+ #slide-12 .v4-ab-calc-layout>div,#slide-13 .v4-ab-calc-layout>div{padding:13px;gap:10px}
+ #slide-12 .v4-ab-calc-formula>strong,#slide-13 .v4-ab-calc-formula>strong{font-size:17px}
+ #slide-12 .v4-ab-calc-note,#slide-13 .v4-ab-calc-note{align-items:flex-start;flex-direction:column;gap:4px}
+ #v4-regions .v4-region-source-figure img{max-height:none}
+ #v4-regions .v4-region-photo-numbers strong{font-size:34px}
+ #v4-regions .v4-region-photo-stat{gap:9px}
+ #v4-regions .v4-region-photo-bars{gap:8px}
+ #v4-regions .v4-region-photo-note{align-items:flex-start;flex-direction:column;gap:4px}
+}
 </style></head><body><div class="app"><main class="stage" aria-label="사업성 보정계수 발표자료"><section class="slide cover" aria-label="사업성 보정계수" id="slide-01" data-chapter="INTRODUCTION">
  <div class="slide-head"><div class="kicker">INTRODUCTION</div><h2>사업성 보정계수</h2><div class="subtitle">서울시 정비사업 · 도입 배경 · 산정 기준 · 적용 현황 · 성과 분석</div></div>
  <div class="slide-main">
@@ -1487,13 +1570,77 @@ body.v26-edit-active .v26-edit-target:focus{outline:2px solid #286e4b;outline-of
  </div>
  <div class="slide-foot"><span>서울시 「정비사업 사업성 개선방안 세부기준」 · 예시는 개념 설명용 가상 비교 · 세부 산정은 다음 2페이지</span><span class="slide-no">09</span></div>
 </section>
-<section class="slide remodel v3-lesson v3-alpha" id="slide-12" data-chapter="03 / 산정 기준" aria-label="재건축 · 대지면적 보정(α)"><div class="slide-head"><div class="kicker">03 / 산정 기준</div><h2>재건축 · 대지면적 보정(α)</h2><div class="subtitle">대지 8,000㎡와 25,000㎡의 동일 인센티브 적용 면적 비교</div></div><div class="slide-main"><div class="v3-alpha-grid"><div class="v3-alpha-left"><h3>대지면적별 추가 연면적</h3><div class="v3-alpha-row"><div><b>A · 작은 대지</b><strong>8,000㎡</strong></div><div class="v3-alpha-track"><i style="width:32%"></i></div><small>추가 20% → <b>1,600㎡</b></small></div><div class="v3-alpha-row"><div><b>B · 큰 대지</b><strong>25,000㎡</strong></div><div class="v3-alpha-track"><i style="width:100%"></i></div><small>추가 20% → <b>5,000㎡</b></small></div><p>막대: 대지면적 0~25,000㎡ 공통 축 · 동일 인센티브에도 확보 면적은 차이</p></div><div class="v3-alpha-right"><h3>서울시 α 적용 기준</h3><div class="v3-alpha-rule"><span>대지 1만㎡ 이하</span><strong>+0.20</strong></div><div class="v3-alpha-rule"><span>1만㎡ 초과 ~ 2만㎡ 미만</span><strong>직선보간</strong></div><div class="v3-alpha-rule"><span>2만㎡ 이상</span><strong>적용 제외</strong></div><div class="v3-lesson-note">1만~2만㎡ 사이는 보간 적용. 2만㎡ 이상은 α 제외.</div><button type="button" class="next-official-open" data-official-index="3">서울시 공식 α 기준 보기 ↗</button></div></div><div class="extra-note"><strong>α는 작은 대지에서 추가 확보 면적이 적은 조건을 보정한다.</strong><span>20%p 비교는 면적 효과를 설명한 가상 사례로, 실제 K 산정과 구별한다.</span></div></div><div class="slide-foot"><span>α: <a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener">서울시 공식 세부기준 ↗</a> / 8,000·25,000㎡ 사례는 가상</span><span class="slide-no">09</span></div></section>
-<section class="slide remodel vbeta" id="slide-13" data-chapter="03 / 산정 기준" aria-label="재건축 · 세대밀도 보정(β)"><div class="slide-head"><div class="kicker">03 / 산정 기준</div><h2>재건축 · 세대밀도 보정(β)</h2><div class="subtitle">공급 가능 연면적 30,000㎡ · 기존 250세대와 350세대 비교</div></div><div class="slide-main remodel-body"><div class="beta-true-grid"><div class="beta-same"><div class="beta-head"><span>비교의 공통 조건</span><strong>공급 가능 총 연면적 30,000㎡</strong></div><div class="beta-axis"><span>0</span><span>20,000㎡</span><span>40,000㎡</span></div><div class="beta-true-case"><div><b>A · 기존 250세대</b><strong>세대당 120㎡</strong></div><small>가용 연면적 <em style="width:75%"></em></small><small>110㎡ 공급 필요 <i style="width:68.75%"></i></small><p>30,000 ÷ 250 = 120㎡ → 110㎡ 기준 충족 · <b>β 0.00</b></p></div><div class="beta-true-case"><div><b>B · 기존 350세대</b><strong>세대당 85.7㎡</strong></div><small>가용 연면적 <em style="width:75%"></em></small><small>110㎡ 공급 필요 <i style="width:96.25%"></i></small><p>30,000 ÷ 350 = 85.7㎡ → 110㎡ 미달 · <b>β 0.19</b></p></div><div class="beta-key"><span class="beta-color supply"></span> 공급 가능 연면적　<span class="beta-color demand"></span> 기존 세대당 110㎡ 공급 시 필요한 면적</div></div><div class="beta-rule"><h3>서울시 β 산정 기준</h3><div class="beta-rule-strong">세대당 공급 가능 면적<br><strong>가용 용적률 적용 연면적 ÷ 기존 세대수</strong></div><div class="beta-rule-lines"><div><span>80㎡ 미만</span><b>β +0.20</b></div><div><span>80~110㎡ 미만</span><b>직선보간</b></div><div><span>110㎡ 이상</span><b>적용 제외</b></div></div><div class="beta-rule-calc"><strong>350세대 예시</strong><span>0.20 − (85.7−80) ÷ 30 × 0.10 ≈ 0.181 → <b>0.19</b></span></div><p>세대당 공급 가능 면적 80~110㎡ 구간은 보간하며, 110㎡ 이상이면 β를 적용하지 않는다.</p><button type="button" class="next-official-open" data-official-index="4">서울시 공식 β 산식 원본 보기 ↗</button></div></div></div><div class="slide-foot"><span>β: <a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener">서울시 공식 세부기준 ↗</a> / 30,000㎡·250/350세대 비교는 가상</span><span class="slide-no">10</span></div></section>
+<section class="slide v4-clean" id="slide-12" data-chapter="03 / 산정 기준" aria-label="재건축 대지면적 보정 알파">
+<div class="slide-head"><div class="kicker">03 / 산정 기준</div><h2>재건축 · 대지면적 보정(α)</h2><div class="subtitle">대지가 작으면 같은 용적률 인센티브로 확보하는 연면적도 적다</div></div>
+<div class="slide-main v4-alpha-formula-main">
+ <div class="v4-ab-calc-layout">
+  <div class="v4-ab-calc-example">
+   <div class="v4-ab-calc-heading"><small>01 / 가상 비교</small><strong>동일한 허용 인센티브 +20%p</strong></div>
+   <div class="v4-ab-calc-bar">
+    <div><span>대지 8,000㎡</span><b>추가 1,600㎡</b></div>
+    <i><em style="width:32%"></em></i>
+   </div>
+   <div class="v4-ab-calc-bar">
+    <div><span>대지 25,000㎡</span><b>추가 5,000㎡</b></div>
+    <i><em style="width:100%"></em></i>
+   </div>
+   <p>같은 20%p를 적용해도 작은 대지는 추가 확보 면적이 적다.</p>
+   <div class="v4-ab-calc-example-result"><small>α의 보정 대상</small><strong>대지면적 2만㎡ 미만</strong><span>α는 허용용적률에 직접 더하지 않고 K를 산정할 때 가산한다.</span></div>
+  </div>
+  <div class="v4-ab-calc-criteria">
+    <div class="v4-ab-calc-heading"><small>02 / 서울시 적용 기준</small><strong>고정값 · 직선보간 · 제외</strong></div>
+    <div class="v4-ab-calc-bands"><div><span>10,000㎡ 이하</span><b>α = 0.20</b></div><div class="focus"><span>10,000㎡ 초과 ~ 20,000㎡ 미만</span><b>직선보간</b></div><div><span>20,000㎡ 이상</span><b>적용 제외</b></div></div>
+    <div class="v4-ab-calc-formula"><small>직선보간 산식 · 10,000 &lt; A &lt; 20,000</small><strong>α = 0.20 − <span class="v4-inline-frac"><span>A − 10,000</span><span>10,000</span></span> × 0.10</strong><em>A = 대지면적(㎡)</em></div>
+    <div class="v4-ab-calc-result"><span>예: A = 15,000㎡</span><strong>α = 0.15</strong></div>
+  </div>
+ </div>
+ <div class="v4-ab-calc-note"><b>적용 경계</b><span>2만㎡에서는 적용 대상에서 제외된다. 산정값은 세부기준에 따라 소수점 셋째 자리에서 올림한다.</span></div>
+</div>
+<div class="slide-foot"><span>출처: <a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener">서울시 사업성 개선 세부기준 ↗</a> · 면적·예시는 설명용 가정</span><span class="slide-no">10</span></div></section>
+<section class="slide v4-clean" id="slide-13" data-chapter="03 / 산정 기준" aria-label="재건축 세대밀도 보정 베타">
+<div class="slide-head"><div class="kicker">03 / 산정 기준</div><h2>재건축 · 세대밀도 보정(β)</h2><div class="subtitle">기존 세대당 공급 가능한 면적이 작을수록 일반분양 여력이 줄어든다</div></div>
+<div class="slide-main v4-beta-formula-main">
+ <div class="v4-ab-calc-layout">
+  <div class="v4-ab-calc-example">
+   <div class="v4-ab-calc-heading"><small>01 / 가상 비교</small><strong>가용 연면적 30,000㎡ 동일</strong></div>
+   <div class="v4-ab-beta-row"><div><span>기존 250세대</span><strong>120㎡<small>/세대</small></strong></div><i><em style="width:100%"></em></i><b>β 제외</b></div>
+   <div class="v4-ab-beta-row"><div><span>기존 350세대</span><strong>85.7㎡<small>/세대</small></strong></div><i><em style="width:71.4%"></em></i><b>β ≈ 0.19</b></div>
+   <div class="v4-ab-calc-example-result"><small>세대당 공급 가능 면적 S</small><strong>가용 연면적 ÷ 기존 세대수</strong><span>기존 세대수가 많아 세대당 면적이 작은 단지를 보정한다.</span></div>
+  </div>
+  <div class="v4-ab-calc-criteria">
+    <div class="v4-ab-calc-heading"><small>02 / 서울시 적용 기준</small><strong>고정값 · 직선보간 · 제외</strong></div>
+    <div class="v4-ab-calc-bands"><div><span>80㎡ 미만</span><b>β = 0.20</b></div><div class="focus"><span>80㎡ 이상 ~ 110㎡ 미만</span><b>직선보간</b></div><div><span>110㎡ 이상</span><b>적용 제외</b></div></div>
+    <div class="v4-ab-calc-formula"><small>직선보간 산식 · 80 ≤ S &lt; 110</small><strong>β = 0.20 − <span class="v4-inline-frac"><span>S − 80</span><span>30</span></span> × 0.10</strong><em>S = 세대당 공급 가능 면적(㎡)</em></div>
+    <div class="v4-ab-calc-result"><span>예: S = 95㎡</span><strong>β = 0.15</strong></div>
+  </div>
+ </div>
+ <div class="v4-ab-calc-note"><b>적용 경계</b><span>110㎡ 이상은 적용 대상에서 제외한다. 중간 구간의 보간값은 소수점 셋째 자리에서 올림한다.</span></div>
+</div>
+<div class="slide-foot"><span>출처: <a href="https://news.seoul.go.kr/citybuild/archives/525626" target="_blank" rel="noopener">서울시 사업성 개선 세부기준 ↗</a> · 250·350세대는 설명용 가정</span><span class="slide-no">11</span></div></section>
 <section class="slide v3-lesson" id="v3-seokgwan-k" data-chapter="04 / 석관4구역" aria-label="석관4구역 · 보정계수 적용"><div class="slide-head"><div class="kicker">04 / 석관4구역</div><h2>석관4구역 · 보정계수 적용</h2><div class="subtitle">인센티브 20% × K 1.86 · 허용용적률 241.5%</div></div><div class="slide-main"><div class="v15-case-incentives"><div class="v15-case-incentive-label"><b>인정된 허용 인센티브</b><strong>합계 20.0%</strong></div><div class="v15-incentive-row"><span>공공보행통로 <b>3.5%</b></span><span>BF 인증 <b>5.0%</b></span><span>돌봄시설 <b>4.1%</b></span><span>고령서비스 <b>2.4%</b></span><span>층간소음 저감 <b>5.0%</b></span></div></div><div class="v3-case-grid"><div class="v3-case-left"><div class="v3-k-stage"><span>기준용적률</span><strong>204.3%</strong></div><div class="v3-k-stage"><span>계획 인센티브 (5개 항목)</span><strong>20.0%</strong></div><div class="v3-k-stage dark"><span>사업성 보정계수 · 2023 지가</span><strong>× 1.86</strong></div><div class="v3-k-stage focus"><span>최종 허용용적률</span><strong>241.5%</strong></div></div><div class="v3-case-right"><div class="v3-compare-captions"><b>K 1.0 비교</b><b>고시 K 1.86</b></div><div class="v3-comp-bars"><div><span>224.3%</span><i style="height:74.767%"></i></div><div class="focus"><span>241.5%</span><i style="height:80.500%"></i></div></div><div class="v3-main-diff">허용용적률 추가 인정 <strong>+17.2%p</strong></div><div class="v3-lesson-note"><b>2023년 지가비율:</b> 5,861,129 ÷ 3,167,883 ≈ 1.8502 → K 1.86. 비교 기준 224.3%는 K=1로 재계산한 값. 막대는 0~300% 공통 축.</div></div></div><div class="v7-stage-case"><b>사업 추진단계 · 2026년 기준</b><span>2025.04 정비구역 지정 → <strong>2026.04 조합설립추진위원회 승인</strong> → 조합설립인가·사업시행인가 전 단계</span><a href="https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=290900001181W88" target="_blank" rel="noopener">서울시 정보몽땅 사업단계 ↗</a></div><div class="v5-policyeffect"><b>2024.12 서울시 발표</b><span>공람안 대비 분양 가능 1,191 → 1,277세대 <b>(+86세대)</b>, 조합원 평균 추정분담금 약 <b>7,700만 원 감소</b></span><small>분양물량·분담금 변화는 여러 계획 변경이 반영된 추정치로, K만의 순효과는 아니다. <a href="https://www.seoul.go.kr/news/news_report.do?nttNo=425090" target="_blank" rel="noopener">서울시 2024.12.17 발표</a></small></div></div><div class="slide-foot"><span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener">출처: 석관4구역 고시 p.294–295 · K 1.86, 허용 241.5%, 상한 265.5% ↗</a></span><span class="slide-no">11</span></div></section>
 <section class="slide v3-lesson" id="v3-public-facilities" data-chapter="04 / 석관4구역" aria-label="석관4구역 · 용적률 단계"><div class="slide-head"><div class="kicker">04 / 석관4구역</div><h2>석관4구역 · 용적률 단계</h2><div class="subtitle">허용 241.5% → 공공기여 상한 265.5% → 건축계획 284.97%</div></div><div class="slide-main"><div class="v3-upper-grid"><div class="v3-upper-left"><h3>정비구역 토지구성 및 공공시설</h3><div class="v34-land-summary"><div><small>정비구역 전체</small><b>64,876㎡</b></div><div><small>도로·공원·공공공지</small><b>10,830㎡</b><em>16.7%</em></div><div><small>그 외 주택획지 등</small><b>54,046㎡</b><em>83.3%</em></div></div><div class="v3-facility-stack"><div style="width:45.346%;background:#447f60" title="도로 4,911㎡"><span>도로</span><strong>4,911㎡</strong></div><div style="width:44.478%;background:#8bb497" title="어린이공원 4,817㎡"><span>어린이공원</span><strong>4,817㎡</strong></div><div style="width:10.175%;background:#c4a070" title="공공공지 1,102㎡"><span>공공공지</span><strong>1,102㎡</strong></div></div><div class="v3-facility-label"><span><i style="background:#447f60"></i>도로 4,911㎡</span><span><i style="background:#8bb497"></i>어린이공원 4,817㎡</span><span><i style="background:#c4a070"></i>공공공지 1,102㎡</span></div><div class="v3-facility-math"><span>계획상 공공시설 합계</span><b>10,830㎡</b><span>기존 국공유지 등 공제 후 순부담</span><b>5,672.6㎡</b></div><p>공공시설 10,830㎡는 전체 구역의 16.7%. 기존 국공유지 등을 공제한 순부담 면적은 5,672.6㎡이다.</p></div><div class="v3-upper-right v2026-stage-panel"><div class="v2026-far-row"><small>① 허용용적률 · 계획 항목 인센티브 × K</small><b>241.5%</b></div><div class="v2026-far-row"><small>② 상한용적률 · 도로·공원 등의 공공기여</small><b>265.5%</b></div><div class="v2026-far-row final"><small>③ 법적상한 활용 · 추가 용적률 일부를 공공주택으로 확보</small><b>284.97%</b></div><div class="v2026-homes"><div><small>계획 주택</small><strong>1,530<em>세대</em></strong></div><div><small>공공임대주택</small><strong>253<em>세대</em></strong><span>의무임대 201 + 법적상한 활용 52</span></div></div><p class="v2026-explain"><b>265.5%는 공공기여를 반영한 상한용적률이다.</b> 법적상한 활용과 공공주택을 반영한 <b>계획 용적률은 284.97%</b>이며, 건축심의 과정에서 달라질 수 있다.</p></div></div></div><div class="slide-foot"><span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener">출처: 석관4구역 정비계획 고시 · 용적률 단계, 전체·임대 세대수 ↗</a></span><span class="slide-no">12</span></div></section>
 <section class="slide v3-lesson" id="v3-seok-ledger" data-chapter="04 / 석관4구역" aria-label="석관4구역 · 추정 사업수지"><div class="slide-head"><div class="kicker">04 / 석관4구역</div><h2>석관4구역 · 추정 사업수지</h2><div class="subtitle">정비계획 고시 · 수입·비용·종전자산과 비례율 107.28%</div></div><div class="slide-main"><div class="extra-grid two"><div class="extra-table"><table><tbody><tr><td>추정 총사업수입</td><td><b>11,686.9억</b></td></tr><tr><td>추정 총사업비</td><td><b>−7,934.9억</b></td></tr><tr class="highlight"><td>잔여 사업수지</td><td><b>3,752.0억</b></td></tr><tr><td>종전자산 총액</td><td><b>3,497.2억</b></td></tr></tbody></table></div><div class="extra-dark"><span>고시의 추정 비례율</span><strong>107.28%</strong><b>3,752.0억 ÷ 3,497.2억</b><p>개인별 가상 계산: 종전자산 2억 원 × 비례율 107.28% = 권리가액 약 2.15억 원</p></div></div><div class="extra-note"><strong>권리가액 = 내 종전자산 × 비례율 · 분담금 = 조합원 분양가 − 권리가액</strong><span>가상 조합원분양가 5억 원이라면 분담금은 약 2.85억 원. 비례율 100%는 종전자산과 권리가액이 같다는 뜻이다.</span></div></div><div class="slide-foot"><span><a href="https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11290NTC202504180005/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2025-194%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf" target="_blank" rel="noopener">출처: 석관4구역 고시 p.287 · 수지 추정 및 비례율 ↗</a></span><span class="slide-no">13</span></div></section>
 <section class="slide v4-clean" id="v4-total-vs-k" data-chapter="05 / 적용 현황" aria-label="보정계수 적용 사업지 증가"><div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>보정계수 적용 사업지 증가</h2><div class="subtitle">서울시 K 반영 심의 통과 34곳(2025.09) → 57곳(2026.02)</div></div><div class="slide-main v4-clear-main"><div class="v4-total-k"><div><small>K 반영 심의 통과 사업지 · 서울시 집계</small><strong>34곳 <i>→</i> 57곳</strong><b>5개월간 +23곳 · +67.6%</b></div><p>2025년 9월 34곳(재건축 9·재개발 25) → 2026년 2월 57곳. 계획상 적용 실적의 증가다.</p></div><div class="v4-total-boxes"><div><small>도입 이전 · 2024.03</small><strong>정비사업 412곳</strong><span>재개발 247 · 재건축 165</span><b>당시 재개발·재건축 추진구역</b></div><div><small>집계 방식 상이 · 2026.03</small><strong>직접 비교 불가</strong><span>서울시 공정관리 대상 494곳</span><b>2024년 추진구역 통계와 집계 범위가 다름</b></div></div><div class="v4-lesson"><strong>비교 범위</strong><span>34→57곳은 동일 유형의 K 적용 실적 비교다. 412곳과 494곳을 직접 비교하거나 착공 증가의 원인으로 해석할 수는 없다.</span></div></div><div class="slide-foot"><span><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=411920" target="_blank" rel="noopener">2024 정비사업 현황 ↗</a> · <a href="https://mas.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0069744.pdf?time=20260624194924" target="_blank" rel="noopener">2025 K 적용 34곳 ↗</a> · <a href="https://www.seoul.go.kr/news/news_report.do?nttNo=457891" target="_blank" rel="noopener">2026 공정관리 대상 ↗</a> · <a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">K 적용 57곳 ↗</a></span><span class="slide-no">14</span></div></section>
-<section class="slide v4-clean" id="v4-regions" data-chapter="05 / 적용 현황" aria-label="57개 사업지의 권역별 분포"><div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>57개 사업지의 권역별 분포</h2><div class="subtitle">서울시 2026.02 공식 57곳 · 동북·서남권 각각 24곳</div></div><div class="slide-main v4-clear-main"><div class="v4-region-summary"><div><small>K 적용 심의 통과</small><strong>57<em>곳</em></strong></div><div><small>강북·서남권 합계</small><strong>54<em>곳</em></strong></div><div><small>구역당 일반분양 증가(추정)</small><strong>약 +47<em>세대</em></strong></div></div><div class="v4-region-bars"><div><span>동북권</span><i><b style="width:100%"></b></i><strong>24곳</strong></div><div><span>서남권</span><i><b style="width:100%"></b></i><strong>24곳</strong></div><div><span>서북권</span><i><b style="width:25%"></b></i><strong>6곳</strong></div><div><span>동남권</span><i><b style="width:8.333333333333332%"></b></i><strong>2곳</strong></div><div><span>도심권</span><i><b style="width:4.166666666666666%"></b></i><strong>1곳</strong></div></div><div class="v4-lesson"><strong>집계 기준</strong><span>57곳은 <b>K 반영 정비계획 심의 통과 사업지</b>다. 착공·공급 완료나 확정 분담금 실적과는 구분한다.</span></div></div><div class="slide-foot"><span>서울시 2026.02.25 공식 보도자료 · 강북 30곳(동북 24+서북 6), 서남 24곳, 동남 2곳, 도심 1곳</span><span class="slide-no">15</span></div></section>
+<section class="slide v4-clean" id="v4-regions" data-chapter="05 / 적용 현황" aria-label="57개 사업지의 권역별 분포">
+<div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>57개 사업지의 권역별 분포</h2><div class="subtitle">2026년 2월 서울시 발표 · 사업성 보정계수 반영 정비계획 심의 통과</div></div>
+<div class="slide-main v4-region-photo-main">
+ <div class="v4-region-photo-layout">
+  <figure class="v4-region-source-figure"><a href="https://img.khan.co.kr/news/2026/02/25/news-p.v1.20260225.40c8f34c7d4b4cf3aeea4f3cd1630cf5.jpg" target="_blank" rel="noopener noreferrer" title="서울시 제공 분포도 원본 확대"><img src="https://img.khan.co.kr/news/2026/02/25/news-p.v1.20260225.40c8f34c7d4b4cf3aeea4f3cd1630cf5.jpg" referrerpolicy="no-referrer" loading="eager" alt="서울시 제공 사업성 보정계수 적용 57개 정비구역의 지역별 위치와 분양 가능 세대수 증가 분포도"></a><figcaption>서울시 제공 57개 정비구역 분포도 · 이미지 선택 시 확대</figcaption></figure>
+  <div class="v4-region-photo-stat">
+   <div class="v4-region-photo-numbers"><div><small>K 적용 심의 통과</small><strong>57<em>곳</em></strong></div><div><small>구역당 일반분양 증가(추정)</small><strong>+47<em>세대</em></strong></div></div>
+   <div class="v4-region-photo-bars"><b>권역별 적용</b>
+    <div><span>동북권</span><i><em style="width:100%"></em></i><strong>24</strong></div>
+    <div><span>서남권</span><i><em style="width:100%"></em></i><strong>24</strong></div>
+    <div><span>서북권</span><i><em style="width:25%"></em></i><strong>6</strong></div>
+    <div><span>동남권</span><i><em style="width:8.33%"></em></i><strong>2</strong></div>
+    <div><span>도심권</span><i><em style="width:4.17%"></em></i><strong>1</strong></div>
+   </div>
+   <div class="v4-region-photo-key"><strong>강북권 30곳 + 서남권 24곳</strong><span>총 54곳 · 전체 57곳의 약 95%</span></div>
+  </div>
+ </div>
+ <div class="v4-region-photo-note"><b>집계 기준</b><span>57곳은 K 반영 정비계획 심의 통과 사업지로, 착공·공급 완료 실적과는 구분된다.</span></div>
+</div>
+<div class="slide-foot"><span><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026.02.25 공식 발표 ↗</a> · <a href="https://www.khan.co.kr/article/202602251115011/amp" target="_blank" rel="noopener">이미지 게재: 경향신문 ↗</a></span><span class="slide-no">16</span></div></section>
 <section class="slide v4-educational" id="v4-map-20" data-chapter="05 / 적용 현황" aria-label="21개 사업지 위치 및 추진단계"><div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>21개 사업지 위치 및 추진단계</h2><div class="subtitle">별도 조사 21곳 · 사업유형·지역·추진단계·K 필터</div></div><div class="slide-main v4-body"><div class="v12-map-toolbar" role="group" aria-label="사업지 필터"><label>사업유형<select id="v12Type"><option value="all">전체 유형</option><option value="재개발">재개발</option><option value="재건축">재건축</option></select></label><label>지역<select id="v12District"><option value="all">서울 전체</option></select></label><label>추진단계<select id="v12Stage"><option value="all">전체 단계</option><option value="계획·심의">계획·심의</option><option value="정비구역">구역지정</option><option value="조합설립">조합설립</option><option value="사업시행">사업시행</option><option value="이주">이주</option></select></label><label>보정계수 K<select id="v12K"><option value="all">전체 계수</option><option value="low">1.50 미만</option><option value="mid">1.50~1.79</option><option value="high">1.80~1.99</option><option value="max">2.00</option></select></label><button type="button" id="v12Reset" class="v12-reset">초기화</button></div><div class="v4-map-interface"><div class="v4-map-canvas"><svg id="v4SitesSvg" viewBox="0 0 950 620" role="img" aria-label="서울시 자치구 경계와 별도 조사 20곳, 석관4구역의 근사 위치"><g id="v4Boundary"></g><g id="v4Sites"></g></svg><div class="v4-map-footer"><span>서울 25개 자치구 · 사업지 위치(근사)</span><span>별도 조사 21곳</span></div></div><div class="v4-map-list"><div class="v4-map-counts v13-stage-summary"><strong id="v12MatchCount">21곳</strong><span id="v2026StageCounts">공개 자료 기준 추진단계 분류</span></div><div id="v4MapItems" class="v4-items"></div><div id="v4MapDetails" class="v4-details">지도 핀 또는 사업지를 선택하면 구역면적·주택계획·추진단계가 표시됩니다.</div></div></div></div><div class="slide-foot"><span>별도 조사 21곳(공식 57곳 전수 아님) · 월계동신은 K 도입 이전인 2023년 관리처분인가 · <a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 공식 집계 ↗</a></span><span class="slide-no">16</span></div></section>
 <section class="slide " aria-label="주요 7개 사업지 효과 비교" id="slide-19" data-chapter="05 / 적용 현황">
  <div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>주요 7개 사업지 효과 비교</h2><div class="subtitle">별도 선정 7곳 · 계획상 물량변화·추정 분담금·최근 추진단계</div></div>
