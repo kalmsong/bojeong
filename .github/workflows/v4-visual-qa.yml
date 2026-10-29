@@ -1,0 +1,120 @@
+name: V4 presentation visual QA
+on:
+  push:
+    paths:
+      - 'presentation-v4/index.html'
+      - '.github/workflows/v4-visual-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tester
+        run: |
+          npm install --no-save playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Check all current slides at desktop, compact desktop and mobile sizes
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/v4-qa-server.log 2>&1 &
+          sleep 2
+          mkdir -p /tmp/v4-screens
+          node <<'JS'
+          const {chromium}=require('playwright');
+          const fs=require('fs');
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+            const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
+            const capture=new Set(Array.from({length:17},(_,i)=>i+1));
+            for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
+              const page=await browser.newPage({viewport,deviceScaleFactor:1});
+              const errors=[];
+              page.on('pageerror',e=>errors.push(String(e)));
+              await page.goto('http://127.0.0.1:8123/presentation-v4/index.html',{waitUntil:'domcontentloaded'});
+              const count=await page.locator('.stage > section.slide').count();
+              if(count!==17)throw new Error('Expected 17 pages; got '+count);
+              if(viewport.width===1440){
+                await page.evaluate(()=>location.hash='s11');
+                await page.waitForTimeout(140);
+                const readCount=()=>page.locator('#v12MatchCount').textContent();
+                if((await readCount()).trim()!=='21곳')throw Error('21-site map count wrong: '+await readCount());
+                await page.locator('#v12K').selectOption('max');
+                const high=parseInt(await readCount());
+                if(high<1||high>=21)throw Error('K filter failed');
+                await page.locator('#v12District').selectOption('노원구');
+                const nowon=parseInt(await readCount());
+                if(nowon<0||nowon>high)throw Error('District filter failed');
+                await page.locator('#v12Reset').click();
+                if((await readCount()).trim()!=='21곳'||await page.locator('#v4Sites .v4-map-pin').count()!==21)throw Error('Map reset failed');
+                await page.locator('#v4MapItems .v4-site-entry').last().click();
+                if(!(await page.locator('#v4MapDetails').textContent()).includes('석관4구역'))throw Error('Map detail failed');
+                if(await page.locator('#v4-map-20 .slide-main img').count()!==0)throw Error('Photo in map');
+                await page.evaluate(()=>location.hash='s03');
+                if(!(await page.locator('#v4-mechanism').textContent()).includes('250%'))throw Error('Mechanism explanation missing');
+                await page.evaluate(()=>location.hash='s08');
+                if(!(await page.locator('#v3-public-facilities').textContent()).includes('284.97%'))throw Error('Seokgwan official FAR missing');
+                await page.evaluate(()=>location.hash='s13');
+                if(!(await page.locator('#v4-total-vs-k').textContent()).includes('412')||!(await page.locator('#v4-total-vs-k').textContent()).includes('494'))throw Error('All-site scope comparison missing');
+                await page.evaluate(()=>location.hash='s14');
+                if(!(await page.locator('#v4-restart').textContent()).includes('101세대'))throw Error('Restart evidence missing');
+                await page.evaluate(()=>location.hash='s02');
+                await page.locator('#v26EditToggle').click();
+                const h=page.locator('#v4-background h2');
+                if(await h.getAttribute('contenteditable')!=='true')throw Error('Editor unavailable');
+                await h.fill('V4 테스트 편집');
+                await page.locator('#v26EditSave').click();
+                await page.reload({waitUntil:'domcontentloaded'});
+                if((await page.locator('#v4-background h2').textContent())!=='V4 테스트 편집')throw Error('Local edit not restored');
+                page.once('dialog',d=>d.accept());
+                await page.locator('#v26EditToggle').click();
+                await page.locator('#v26EditReset').click();
+                await page.waitForFunction(()=>document.querySelector('#v4-background h2')?.textContent!=='V4 테스트 편집',null,{timeout:10000});
+              }
+              const slides=[];
+              for(let i=1;i<=count;i++){
+                await page.evaluate(i=>location.hash='s'+i,i);
+                await page.waitForTimeout(48);
+                const entry=await page.evaluate(i=>{
+                  const slides=[...document.querySelectorAll('.stage > section.slide')],s=slides[i-1];
+                  const head=s?.querySelector('.slide-head'),main=s?.querySelector('.slide-main'),foot=s?.querySelector('.slide-foot');
+                  const box=x=>{if(!x)return null;const b=x.getBoundingClientRect();return {x:Math.round(b.left),y:Math.round(b.top),w:Math.round(b.width),h:Math.round(b.height),bottom:Math.round(b.bottom)}};
+                  const isVisible=x=>x&&getComputedStyle(x).display!=='none';
+                  const images=[...s.querySelectorAll('img')].filter(isVisible).map(im=>({src:im.currentSrc?.slice(0,160),loaded:im.complete&&im.naturalWidth>0}));
+                  const r=box(s),h=box(head),m=box(main),f=box(foot),childBoxes=[...(main?.children||[])].filter(isVisible).map(box).filter(Boolean);
+                  return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,childHeadOverlap:childBoxes.some(b=>h&&b.y<h.bottom-3),childFooterOverlap:childBoxes.some(b=>f&&b.bottom>f.y+3),viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
+                },i);
+                slides.push(entry);
+                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].includes(i)))await page.screenshot({path:'/tmp/v4-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
+              }
+              report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),contentCollisions:slides.filter(x=>x.childHeadOverlap||x.childFooterOverlap).map(x=>({page:x.page,head:x.childHeadOverlap,footer:x.childFooterOverlap})),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
+              await page.close();
+            }
+            report.summary={desktopSlideCount:report.viewports[0].slideCount,desktopOverflow:report.viewports[0].overflowSlides.length,desktopHorizontalOverflow:report.viewports[0].horizontalOverflow.length,desktopOverlap:report.viewports[0].overlaps.length,desktopContentCollision:report.viewports[0].contentCollisions.length,mobileHorizontalOverflow:report.viewports[2].horizontalOverflow.length,pageErrors:report.viewports.reduce((n,x)=>n+x.errors.length,0)};
+            fs.writeFileSync('presentation-v4/qa-visual-report.json',JSON.stringify(report,null,2));
+            console.log('VISUAL_QA_SUMMARY',JSON.stringify(report.summary));
+            for(const vp of report.viewports)console.log('VIEWPORT',JSON.stringify({size:vp.size,overflow:vp.overflowSlides,horizontal:vp.horizontalOverflow,overlaps:vp.overlaps,collisions:vp.contentCollisions,imagesFailed:vp.imagesFailed,jsErrors:vp.errors}));
+            const critical=report.viewports.slice(0,2).some(vp=>vp.overflowSlides.length||vp.horizontalOverflow.length||vp.overlaps.length||vp.contentCollisions.length||vp.imagesFailed.length||vp.errors.length)||report.viewports[2].horizontalOverflow.length||report.viewports[2].imagesFailed.length||report.viewports[2].errors.length;
+            await browser.close();
+            if(critical)throw new Error('V4 visual QA failed: unresolved overflow/collision/image/script issue');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v4-visual-qa
+          path: |
+            /tmp/v4-screens/
+            presentation-v4/qa-visual-report.json
+          if-no-files-found: warn
+      # The screenshot/artifact step above preserves the report. Avoid
+      # auto-pushing the generated JSON back to main: simultaneous edits
+      # can fail with a non-fast-forward rejection despite successful QA.
