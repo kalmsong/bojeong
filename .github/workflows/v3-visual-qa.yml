@@ -61,10 +61,25 @@ jobs:
                 if(!(await page.locator('#v4MapDetails').textContent()).includes('석관4구역'))throw Error('Seokgwan selected project missing detail');
                 if(!(await page.locator('#v4MapDetails').textContent()).includes('64,876'))throw Error('Seokgwan official area missing');
                 await page.evaluate(()=>location.hash='s13');
-                if(await page.locator('#slide-19 .v31-step-grid span').count()!==14)throw Error('14 development stage legend missing');
-                await page.evaluate(()=>location.hash='s17');
-                if(!(await page.locator('#extra-far').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
+                if(await page.locator('#slide-19 .v31-step-grid span').count()!==8)throw Error('8 key redevelopment stages missing');
+                await page.evaluate(()=>location.hash='s16');
+                if(!(await page.locator('#v3-public-facilities').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
+                if(!(await page.locator('#v3-public-facilities').textContent()).includes('1,530')||!(await page.locator('#v3-public-facilities').textContent()).includes('253'))throw Error('Housing counts not found');
+                await page.evaluate(()=>location.hash='s23');
+                if(await page.locator('#v2026-era .era-row').count()!==4)throw Error('Pre/post comparison not found');
                 
+                await page.evaluate(()=>location.hash='s02');
+                await page.locator('#v26EditToggle').click();
+                const editH=page.locator('#slide-02 h2');
+                if(await editH.getAttribute('contenteditable')!=='true')throw Error('Edit mode is not functional');
+                await editH.fill('임시 편집 QA 제목');
+                await page.locator('#v26EditSave').click();
+                await page.reload({waitUntil:'domcontentloaded'});
+                if((await page.locator('#slide-02 h2').textContent())!=='임시 편집 QA 제목')throw Error('Temporary text not restored');
+                page.once('dialog',d=>d.accept());
+                await page.locator('#v26EditToggle').click();
+                await page.locator('#v26EditReset').click();
+                if((await page.locator('#slide-02 h2').textContent())==='임시 편집 QA 제목')throw Error('Editor reset failed');
                 await page.evaluate(()=>location.hash='s11');
                 const img=page.locator('#v4-57 .v12-official-figure img');
                 await img.evaluate(async el=>{if(!el.complete)await new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,3000)});});
