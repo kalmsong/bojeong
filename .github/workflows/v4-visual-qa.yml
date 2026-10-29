@@ -92,7 +92,15 @@ jobs:
                   return {page:i,id:s.id,title:s.querySelector('h2')?.textContent?.trim(),viewportOverflow:Math.max(0,s.scrollHeight-s.clientHeight),scrollWidthOver:Math.max(0,s.scrollWidth-s.clientWidth),headMainOverlap:h&&m&&h.bottom>m.y+5,mainFooterOverlap:m&&f&&m.bottom>f.y+5,childHeadOverlap:childBoxes.some(b=>h&&b.y<h.bottom-3),childFooterOverlap:childBoxes.some(b=>f&&b.bottom>f.y+3),viewportHeight:r?.h,images,footerOnScreen:f?f.bottom<=window.innerHeight:false};
                 },i);
                 slides.push(entry);
-                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].includes(i)))await page.screenshot({path:'/tmp/v4-screens/'+(viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
+                if(viewport.width===390&&[6,15].includes(i)){
+                  const offending=await page.evaluate(i=>{
+                    const sl=[...document.querySelectorAll('.stage > section.slide')][i-1],r=sl.getBoundingClientRect();
+                    return [...sl.querySelectorAll('*')].map(x=>({tag:x.tagName.toLowerCase(),cls:String(x.className?.baseVal||x.className||'').slice(0,60),text:(x.textContent||'').trim().slice(0,35),right:Math.round(x.getBoundingClientRect().right-r.right),width:Math.round(x.getBoundingClientRect().width),scrollWidth:x.scrollWidth,clientWidth:x.clientWidth})).filter(o=>o.right>3||o.scrollWidth-o.clientWidth>12).sort((a,b)=>b.right-a.right).slice(0,15);
+                  },i);
+                  console.log('MOBILE_OFFENDERS',i,JSON.stringify(offending));
+                }
+
+                if((viewport.width===1440&&capture.has(i))||(viewport.width===1280&&[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].includes(i))||(viewport.width===390&&[6,15].includes(i)))await page.screenshot({path:'/tmp/v4-screens/'+(viewport.width===390?'mobile-':viewport.width===1280?'compact-':'slide-')+String(i).padStart(2,'0')+'.png'});
               }
               report.viewports.push({size:viewport,slideCount:count,errors,overflowSlides:slides.filter(x=>x.viewportOverflow>8).map(x=>({page:x.page,px:x.viewportOverflow})),horizontalOverflow:slides.filter(x=>x.scrollWidthOver>8).map(x=>({page:x.page,px:x.scrollWidthOver})),overlaps:slides.filter(x=>x.headMainOverlap||x.mainFooterOverlap).map(x=>x.page),contentCollisions:slides.filter(x=>x.childHeadOverlap||x.childFooterOverlap).map(x=>({page:x.page,head:x.childHeadOverlap,footer:x.childFooterOverlap})),imagesFailed:slides.filter(x=>x.images.some(im=>!im.loaded)).map(x=>x.page),slides});
               await page.close();
