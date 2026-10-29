@@ -1441,6 +1441,21 @@ body.v26-edit-active .v26-edit-target:focus{outline:2px solid #286e4b;outline-of
  #v4-regions .v4-region-photo-bars{gap:8px}
  #v4-regions .v4-region-photo-note{align-items:flex-start;flex-direction:column;gap:4px}
 }
+</style><style>
+/* Reduce map slide vertical stack while retaining clickable source figure. */
+@media (min-width:901px){
+ #v4-regions .v4-region-photo-main{gap:8px;justify-content:center;padding-top:0;padding-bottom:0}
+ #v4-regions .v4-region-photo-layout{gap:13px}
+ #v4-regions .v4-region-source-figure{padding:6px 8px;gap:4px}
+ #v4-regions .v4-region-source-figure img{max-height:clamp(330px,29cqw,412px)}
+ #v4-regions .v4-region-source-figure figcaption{font-size:11px;line-height:1.2}
+ #v4-regions .v4-region-photo-stat{gap:8px}
+ #v4-regions .v4-region-photo-numbers>div{padding:9px 12px;gap:3px}
+ #v4-regions .v4-region-photo-numbers strong{font-size:clamp(30px,3cqw,43px)}
+ #v4-regions .v4-region-photo-bars{gap:8px;padding:12px}
+ #v4-regions .v4-region-photo-bars>div{gap:7px}
+ #v4-regions .v4-region-photo-key{padding:10px;gap:2px}
+}
 </style></head><body><div class="app"><main class="stage" aria-label="사업성 보정계수 발표자료"><section class="slide cover" aria-label="사업성 보정계수" id="slide-01" data-chapter="INTRODUCTION">
  <div class="slide-head"><div class="kicker">INTRODUCTION</div><h2>사업성 보정계수</h2><div class="subtitle">서울시 정비사업 · 도입 배경 · 산정 기준 · 적용 현황 · 성과 분석</div></div>
  <div class="slide-main">
@@ -1638,9 +1653,9 @@ body.v26-edit-active .v26-edit-target:focus{outline:2px solid #286e4b;outline-of
    <div class="v4-region-photo-key"><strong>강북권 30곳 + 서남권 24곳</strong><span>총 54곳 · 전체 57곳의 약 95%</span></div>
   </div>
  </div>
- <div class="v4-region-photo-note"><b>집계 기준</b><span>57곳은 K 반영 정비계획 심의 통과 사업지로, 착공·공급 완료 실적과는 구분된다.</span></div>
+ 
 </div>
-<div class="slide-foot"><span><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026.02.25 공식 발표 ↗</a> · <a href="https://www.khan.co.kr/article/202602251115011/amp" target="_blank" rel="noopener">이미지 게재: 경향신문 ↗</a></span><span class="slide-no">16</span></div></section>
+<div class="slide-foot"><span><a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 2026.02.25 공식 발표 (심의 통과, 착공 아님) ↗</a> · <a href="https://www.khan.co.kr/article/202602251115011/amp" target="_blank" rel="noopener">이미지 게재: 경향신문 ↗</a></span><span class="slide-no">16</span></div></section>
 <section class="slide v4-educational" id="v4-map-20" data-chapter="05 / 적용 현황" aria-label="21개 사업지 위치 및 추진단계"><div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>21개 사업지 위치 및 추진단계</h2><div class="subtitle">별도 조사 21곳 · 사업유형·지역·추진단계·K 필터</div></div><div class="slide-main v4-body"><div class="v12-map-toolbar" role="group" aria-label="사업지 필터"><label>사업유형<select id="v12Type"><option value="all">전체 유형</option><option value="재개발">재개발</option><option value="재건축">재건축</option></select></label><label>지역<select id="v12District"><option value="all">서울 전체</option></select></label><label>추진단계<select id="v12Stage"><option value="all">전체 단계</option><option value="계획·심의">계획·심의</option><option value="정비구역">구역지정</option><option value="조합설립">조합설립</option><option value="사업시행">사업시행</option><option value="이주">이주</option></select></label><label>보정계수 K<select id="v12K"><option value="all">전체 계수</option><option value="low">1.50 미만</option><option value="mid">1.50~1.79</option><option value="high">1.80~1.99</option><option value="max">2.00</option></select></label><button type="button" id="v12Reset" class="v12-reset">초기화</button></div><div class="v4-map-interface"><div class="v4-map-canvas"><svg id="v4SitesSvg" viewBox="0 0 950 620" role="img" aria-label="서울시 자치구 경계와 별도 조사 20곳, 석관4구역의 근사 위치"><g id="v4Boundary"></g><g id="v4Sites"></g></svg><div class="v4-map-footer"><span>서울 25개 자치구 · 사업지 위치(근사)</span><span>별도 조사 21곳</span></div></div><div class="v4-map-list"><div class="v4-map-counts v13-stage-summary"><strong id="v12MatchCount">21곳</strong><span id="v2026StageCounts">공개 자료 기준 추진단계 분류</span></div><div id="v4MapItems" class="v4-items"></div><div id="v4MapDetails" class="v4-details">지도 핀 또는 사업지를 선택하면 구역면적·주택계획·추진단계가 표시됩니다.</div></div></div></div><div class="slide-foot"><span>별도 조사 21곳(공식 57곳 전수 아님) · 월계동신은 K 도입 이전인 2023년 관리처분인가 · <a href="https://www.seoul.go.kr/news/news_report.do?nttNo=452930" target="_blank" rel="noopener">서울시 공식 집계 ↗</a></span><span class="slide-no">16</span></div></section>
 <section class="slide " aria-label="주요 7개 사업지 효과 비교" id="slide-19" data-chapter="05 / 적용 현황">
  <div class="slide-head"><div class="kicker">05 / 적용 현황</div><h2>주요 7개 사업지 효과 비교</h2><div class="subtitle">별도 선정 7곳 · 계획상 물량변화·추정 분담금·최근 추진단계</div></div>
