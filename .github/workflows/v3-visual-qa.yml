@@ -33,14 +33,14 @@ jobs:
           (async()=>{
             const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
             const report={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),viewports:[],summary:{},exceptions:[]};
-            const capture=new Set(Array.from({length:24},(_,i)=>i+1));
+            const capture=new Set(Array.from({length:23},(_,i)=>i+1));
             for(const viewport of [{width:1440,height:900},{width:1280,height:720},{width:390,height:844}]){
               const page=await browser.newPage({viewport,deviceScaleFactor:1});
               const errors=[];
               page.on('pageerror',e=>errors.push(String(e)));
               await page.goto('http://127.0.0.1:8123/presentation-v3/index.html',{waitUntil:'domcontentloaded'});
               const count=await page.locator('.stage > section.slide').count();
-              if(count!==24)throw new Error('Expected 24 pages; got '+count);
+              if(count!==23)throw new Error('Expected 23 pages; got '+count);
               if(viewport.width===1440){
                 await page.evaluate(()=>location.hash='s12');
                 await page.waitForTimeout(100);
@@ -61,12 +61,12 @@ jobs:
                 if(!(await page.locator('#v4MapDetails').textContent()).includes('석관4구역'))throw Error('Seokgwan selected project missing detail');
                 if(!(await page.locator('#v4MapDetails').textContent()).includes('64,876'))throw Error('Seokgwan official area missing');
                 await page.evaluate(()=>location.hash='s13');
-                if(await page.locator('#slide-19 .v31-step-grid .v32-phase').count()!==8 || await page.locator('#slide-19 .v32-stage-badge').count()!==7)throw Error('Stage guide and row badges are not aligned');
-                await page.evaluate(()=>location.hash='s16');
+                if(await page.locator('#slide-19 .v31-step-grid .v32-phase').count()!==8 || await page.locator('#slide-19 .v35-pill').count()!==7)throw Error('Stage guide and row badges are not aligned');
+                await page.evaluate(()=>location.hash='s15');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('284.97'))throw Error('Actual Seokgwan building plan FAR missing');
                 if(!(await page.locator('#v3-public-facilities').textContent()).includes('1,530')||!(await page.locator('#v3-public-facilities').textContent()).includes('253'))throw Error('Housing counts not found');
-                await page.evaluate(()=>location.hash='s22');
-                if(await page.locator('#v2026-era .v33-project-diffs>div').count()!==2 || await page.locator('#v2026-era .v33-rows>div').count()!==3)throw Error('Updated K plan differences and milestone table missing');
+                await page.evaluate(()=>location.hash='s21');
+                if(await page.locator('#v2026-era .v35-restart>div:not(.v35-arrow)').count()!==3 || !(await page.locator('#v2026-era').textContent()).includes('101세대'))throw Error('Stalled Sanggye5 restart evidence missing');
                 
                 await page.evaluate(()=>location.hash='s02');
                 await page.locator('#v26EditToggle').click();
