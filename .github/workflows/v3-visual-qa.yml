@@ -79,6 +79,7 @@ jobs:
                 page.once('dialog',d=>d.accept());
                 await page.locator('#v26EditToggle').click();
                 await page.locator('#v26EditReset').click();
+                await page.waitForFunction(()=>document.querySelector('#slide-02 h2')?.textContent!=='임시 편집 QA 제목',null,{timeout:10000});
                 if((await page.locator('#slide-02 h2').textContent())==='임시 편집 QA 제목')throw Error('Editor reset failed');
                 await page.evaluate(()=>location.hash='s11');
                 const img=page.locator('#v4-57 .v12-official-figure img');
